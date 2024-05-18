@@ -16,14 +16,6 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
 
   const [state, setState] = useState<TDefaultCardsState>(defaultCardsState);
 
-  function handleToggleSettingsModal() {
-    const updateTarget = {
-      isSettingsOpen: { $set: !state.isSettingsOpen },
-    };
-
-    setState(update(state, updateTarget));
-  }
-
   function handleSaveSettings(values: Partial<TDefaultCardsState>) {
     const updateTarget = {
       isSettingsOpen: { $set: false },
@@ -42,9 +34,7 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
   }, []);
 
   return (
-    <CardsContext.Provider
-      value={{ state, handleSaveSettings, handleToggleSettingsModal }}
-    >
+    <CardsContext.Provider value={{ state, handleSaveSettings }}>
       {children}
     </CardsContext.Provider>
   );

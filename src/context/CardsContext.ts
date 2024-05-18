@@ -3,8 +3,7 @@ import { TCard } from "@types";
 
 export type TDefaultCardsState = {
   currentCardIndex: number;
-  isSettingsOpen: boolean;
-  isSufflingOn: boolean;
+  isShufflingOn: boolean;
   totalCorrect: number;
   cardSetName: string;
   totalCards: number;
@@ -15,9 +14,8 @@ export type TDefaultCardsState = {
 };
 
 export const defaultCardsState: TDefaultCardsState = {
-  isSettingsOpen: false,
   currentCardIndex: 0,
-  isSufflingOn: false,
+  isShufflingOn: false,
   totalCorrect: 0,
   cardSetName: "",
   totalCards: 0,
@@ -30,7 +28,6 @@ export const defaultCardsState: TDefaultCardsState = {
 export const defaultContext = {
   state: defaultCardsState,
   handleSaveSettings: (values: Partial<TDefaultCardsState>) => {},
-  handleToggleSettingsModal: () => {},
 };
 
 export const CardsContext = createContext(defaultContext);

@@ -1,16 +1,17 @@
+import { useCardsContext } from "./context/CardsContextProvider";
 import { useState, useEffect, HTMLAttributes } from "react";
+import { Settings } from "./Settings";
 
 import "./Progress.scss";
-import { useCardsContext } from "./context/CardsContextProvider";
 
 export function Progress(props: HTMLAttributes<HTMLSelectElement>) {
   const ctx = useCardsContext();
-  const { handleToggleSettingsModal } = ctx;
 
   const { className, ...restOfProps } = props;
-  let totalCards = 0,
-    wrongAmount = 0,
-    correctAmount = 0;
+
+  const totalCards = ctx.state.totalCards;
+  const totalCorrect = ctx.state.totalCorrect;
+  const totalWrong = ctx.state.totalWrong;
 
   const [correctBarPercentage, setCorrectBarPercentage] = useState(50);
   const [wrongBarPercentage, setWrongBarPercentage] = useState(50);
@@ -18,22 +19,22 @@ export function Progress(props: HTMLAttributes<HTMLSelectElement>) {
   const [allWrong, setAllWrong] = useState(false);
 
   useEffect(() => {
-    const totalCardsGuessed = wrongAmount + correctAmount;
+    const totalCardsGuessed = totalWrong + totalCorrect;
 
     if (
       totalCards > 0 &&
       totalCardsGuessed > 0 &&
-      (correctAmount > 0 || wrongAmount > 0)
+      (totalCorrect > 0 || totalWrong > 0)
     ) {
-      setCorrectBarPercentage((correctAmount / totalCardsGuessed) * 100);
-      setWrongBarPercentage((wrongAmount / totalCardsGuessed) * 100);
-      setAllCorrect(wrongAmount === 0 && correctAmount > 0);
-      setAllWrong(correctAmount === 0 && wrongAmount > 0);
+      setCorrectBarPercentage((totalCorrect / totalCardsGuessed) * 100);
+      setWrongBarPercentage((totalWrong / totalCardsGuessed) * 100);
+      setAllCorrect(totalWrong === 0 && totalCorrect > 0);
+      setAllWrong(totalCorrect === 0 && totalWrong > 0);
     } else {
       setWrongBarPercentage(50);
       setCorrectBarPercentage(50);
     }
-  }, [totalCards, wrongAmount, correctAmount]);
+  }, [totalCards, totalWrong, totalCorrect]);
 
   return (
     <section className={`${className} progress-72lh`} {...restOfProps}>
@@ -45,15 +46,11 @@ export function Progress(props: HTMLAttributes<HTMLSelectElement>) {
           }`}
           style={{ width: `${wrongBarPercentage}%` }}
         >
-          <b>{wrongAmount}</b>
+          <b>{totalWrong}</b>
         </div>
         {/* settings */}
-        <button
-          className='progress-72lh__settings p-0 m-0 d-flex align-items-center justify-content-center bg-gamma'
-          onClick={handleToggleSettingsModal}
-        >
-          <span className='icon icon-settings-outline' />
-        </button>
+        <Settings />
+
         {/* correct */}
         <div
           className={`d-flex align-items-center justify-content-end bar right correct bg-success p-3 color-beta ${
@@ -61,7 +58,7 @@ export function Progress(props: HTMLAttributes<HTMLSelectElement>) {
           }`}
           style={{ width: `${correctBarPercentage}%` }}
         >
-          <b>{correctAmount}</b>
+          <b>{totalCorrect}</b>
         </div>
       </div>
     </section>
