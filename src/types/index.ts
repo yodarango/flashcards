@@ -1,1 +1,1 @@
-export { type TCard } from "./card";
+export { EGuessedCorrectly, type TCard } from "./card";

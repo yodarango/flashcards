@@ -4,7 +4,8 @@ import {
   defaultCardsState,
   CardsContext,
 } from "./CardsContext";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { getCardSet } from "@utils";
 
 type TCardsContextProvider = {
   children: React.ReactNode;
@@ -31,6 +32,14 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
 
     setState(update(state, updateTarget));
   }
+
+  useEffect(() => {
+    const updateTarget = {
+      allCards: { $set: getCardSet() },
+    };
+
+    setState(update(state, updateTarget));
+  }, []);
 
   return (
     <CardsContext.Provider

@@ -1,0 +1,14 @@
+.add-hint-63xd {
+  width: calc(90vw - 1.5rem);
+  max-width: 50rem;
+  margin: auto;
+}
+
+.add-hint-63xd__modal-content {
+  container-type: inline-size;
+  .add-hint-63xd__actions {
+    @container (max-width: 40rem) {
+      flex-wrap: wrap-reverse;
+    }
+  }
+}

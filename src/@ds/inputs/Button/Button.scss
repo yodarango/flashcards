@@ -12,6 +12,9 @@
 
 .base-Button-root.primary {
   background-image: linear-gradient(-10deg, var(--dr-epsilon), var(--dr-zeta));
+}
+
+.base-Button-root.primary:hover {
   box-shadow: var(--dr-box-shadow);
 }
 

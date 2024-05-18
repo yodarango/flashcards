@@ -21,8 +21,10 @@
     "noFallthroughCasesInSwitch": true,
     "paths": {
       "@context": ["./src/context"],
+      "@utils": ["./src/utils"],
       "@types": ["./src/types"],
-      "@ds": ["./src/@ds"]
+      "@ds": ["./src/@ds"],
+      "@seed": ["./seed"]
     }
   },
   "include": ["src"],

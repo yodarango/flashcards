@@ -6,6 +6,7 @@ export type TDefaultCardsState = {
   isSettingsOpen: boolean;
   isSufflingOn: boolean;
   totalCorrect: number;
+  cardSetName: string;
   totalCards: number;
   totalWrong: number;
   startIndex: number;
@@ -18,6 +19,7 @@ export const defaultCardsState: TDefaultCardsState = {
   currentCardIndex: 0,
   isSufflingOn: false,
   totalCorrect: 0,
+  cardSetName: "",
   totalCards: 0,
   totalWrong: 0,
   startIndex: 0,

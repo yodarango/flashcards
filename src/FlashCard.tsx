@@ -41,7 +41,8 @@ export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
       {...restOfProps}
     >
       <div className={`flashcard-inner`}>
-        <div className='front bg-mu d-flex align-items-center justify-content-center'>
+        {/* front */}
+        <div className='front bg-gamma d-flex align-items-center justify-content-center'>
           {/* actions */}
           <button className='flashcard-actions action-left d-flex align-items-center justify-content-center'>
             <span className='icon icon-chevron-back-outline color-alpha' />
@@ -50,7 +51,9 @@ export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
             <span className='icon icon-chevron-forward-outline color-alpha' />
           </button>
         </div>
-        <div className='back bg-gamma d-flex align-items-center justify-content-center'>
+
+        {/* back */}
+        <div className='back bg-mu d-flex align-items-center justify-content-center'>
           {/* actions */}
           <button className='flashcard-actions action-left d-flex align-items-center justify-content-center'>
             <span className='icon icon-chevron-back-outline color-alpha' />

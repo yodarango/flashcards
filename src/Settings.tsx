@@ -1,12 +1,14 @@
 import { TDefaultCardsState, useCardsContext } from "@context";
 import { Button, Input, Modal, Switch } from "./@ds";
-import { useState } from "react";
+import { HTMLAttributes, useState } from "react";
 
 // styles
 import "./Settings.scss";
 
-export const Settings = () => {
+export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
   const ctx = useCardsContext();
+
+  const { className = "", ...restOfProps } = props;
 
   const [formData, setFormData] = useState<Partial<TDefaultCardsState>>({
     isSufflingOn: false,
@@ -31,7 +33,7 @@ export const Settings = () => {
       open={isModalOpen}
       title='Settings'
     >
-      <div className='settings-00oo'>
+      <section className={`settings-00oo ${className}`} {...restOfProps}>
         <p>Enter the range you want to be quizzed in</p>
         <p className='mb-4 color-lambda'>
           Total cards in this set: {totalCards}
@@ -72,9 +74,6 @@ export const Settings = () => {
 
         {/* actions */}
         <div className='settings-00oo__actions d-flex align-items-center justify-center-center gap-4'>
-          <Button onClick={saveSettings} className='w-100' primary>
-            Save
-          </Button>
           <Button
             onClick={handleToggleSettingsModal}
             className='w-100'
@@ -82,8 +81,11 @@ export const Settings = () => {
           >
             Cancel
           </Button>
+          <Button onClick={saveSettings} className='w-100' primary>
+            Save
+          </Button>
         </div>
-      </div>
+      </section>
     </Modal>
   );
 };
