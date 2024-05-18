@@ -1,0 +1,8 @@
+.settings-00oo {
+  container-type: inline-size;
+  .settings-00oo__actions {
+    @container (max-width: 40rem) {
+      flex-wrap: wrap;
+    }
+  }
+}

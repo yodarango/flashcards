@@ -1,0 +1,36 @@
+.textarea-shrood-47ks {
+  background-color: var(--dr-gamma);
+  border-radius: 1.5rem;
+  color: var(--dr-color-alpha);
+  padding: var(--dr-spacing-4);
+  font-family: var(--dr-body-font-family);
+  font-size: var(--dr-body-font-size);
+  resize: none;
+  outline: none;
+  display: block;
+  max-width: unset;
+  width: 100%;
+}
+
+.textarea-shrood-47ks.bordered {
+  border: 1px solid var(--dr-delta);
+}
+
+.textarea-shrood-47ks.bordered:focus {
+  box-shadow: 0 0 5px var(--dr-delta), -5px 0 20px var(--dr-delta),
+    5px 0 20px var(--dr-delta);
+}
+
+.textarea-shrood-47ks::placeholder {
+  color: var(--dr-color-alpha);
+  opacity: 0.4;
+}
+
+.textarea-shrood-47ks.danger {
+  border-color: var(--dr-danger);
+}
+
+.textarea-shrood-47ks.danger input:focus {
+  box-shadow: 0 0 5px var(--dr-danger), -5px 0 20px var(--dr-danger),
+    5px 0 20px var(--dr-danger);
+}

@@ -1,0 +1,17 @@
+.avatar-37gh {
+  cursor: pointer;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  > div {
+    &:hover {
+      scale: 0.95;
+    }
+
+    img {
+      border-radius: inherit;
+    }
+  }
+}

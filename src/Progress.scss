@@ -1,0 +1,34 @@
+.progress-72lh {
+  position: relative;
+
+  .progress-72lh__settings {
+    border-bottom-right-radius: 6rem;
+    border-bottom-left-radius: 6rem;
+    position: absolute;
+    overflow: hidden;
+    height: 6rem;
+    margin: auto;
+    width: 8rem;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+
+    span {
+      margin-top: 1rem;
+    }
+  }
+
+  .bar {
+    transition: all 350ms ease-in;
+    height: 2rem;
+  }
+
+  .percentage {
+    min-width: 5rem;
+  }
+
+  .full-bar {
+    border-radius: 2rem;
+  }
+}

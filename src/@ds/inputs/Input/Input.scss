@@ -1,0 +1,36 @@
+.base-Input-root input {
+  padding: var(--dr-spacing-2) var(--dr-spacing-4);
+  background: var(--dr-gamma);
+  color: var(--dr-alpha);
+  border-radius: 2em;
+  outline: none;
+  width: 100%;
+  border: none;
+}
+
+.base-Input-root.border {
+  border: none;
+}
+
+.base-Input-root.base--focused input {
+  box-shadow: none !important;
+}
+
+.base-Input-root.base--focused.shine-on-focus input:focus {
+  box-shadow: 0 0 5px var(--dr-delta), -5px 0 20px var(--dr-delta),
+    5px 0 20px var(--dr-delta);
+}
+
+.base-Input-root input::placeholder {
+  color: var(--dr-color-alpha);
+  opacity: 0.4;
+}
+
+.base-Input-root.danger input {
+  border-color: var(--dr-danger);
+}
+
+.base-Input-root.base--focused.danger.shine-on-focus input:focus {
+  box-shadow: 0 0 5px var(--dr-danger), -5px 0 20px var(--dr-danger),
+    5px 0 20px var(--dr-danger);
+}

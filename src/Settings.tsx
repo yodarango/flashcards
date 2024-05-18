@@ -1,0 +1,89 @@
+import { TDefaultCardsState, useCardsContext } from "@context";
+import { Button, Input, Modal, Switch } from "./@ds";
+import { useState } from "react";
+
+// styles
+import "./Settings.scss";
+
+export const Settings = () => {
+  const ctx = useCardsContext();
+
+  const [formData, setFormData] = useState<Partial<TDefaultCardsState>>({
+    isSufflingOn: false,
+    startIndex: 0,
+    endIndex: 0,
+  });
+  const { handleToggleSettingsModal, handleSaveSettings, state } = ctx;
+  const isModalOpen = state.isSettingsOpen;
+  const totalCards = state.totalCards;
+
+  function handleChange(targetName: string, value: number | boolean) {
+    setFormData((prev) => ({ ...prev, [targetName]: value }));
+  }
+
+  function saveSettings() {
+    handleSaveSettings(formData);
+  }
+
+  return (
+    <Modal
+      onClose={handleToggleSettingsModal}
+      open={isModalOpen}
+      title='Settings'
+    >
+      <div className='settings-00oo'>
+        <p>Enter the range you want to be quizzed in</p>
+        <p className='mb-4 color-lambda'>
+          Total cards in this set: {totalCards}
+        </p>
+        <div className='mb-4 '>
+          <label className='opacity-60'>Start at:</label>
+          <Input
+            onChange={({ target: { value } }) =>
+              handleChange("startIndex", Number(value))
+            }
+            value={formData.startIndex}
+            placeholder='Card number'
+            type='number'
+          />
+        </div>
+        <div className='mb-4'>
+          <label className='opacity-60'>End at:</label>
+          <Input
+            onChange={({ target: { value } }) =>
+              handleChange("endIndex", Number(value))
+            }
+            value={formData.endIndex}
+            placeholder='Card number'
+            type='number'
+          />
+        </div>
+
+        {/* shuffle */}
+        <div className='d-flex align-items-center justify-between gap-4 mb-4'>
+          <label className='opacity-60'>Shuffle:</label>
+          <Switch
+            onChange={({ target: { checked } }) =>
+              setFormData((prev) => ({ ...prev, isSufflingOn: checked }))
+            }
+            checked={formData.isSufflingOn}
+          />
+        </div>
+
+        {/* actions */}
+        <div className='settings-00oo__actions d-flex align-items-center justify-center-center gap-4'>
+          <Button onClick={saveSettings} className='w-100' primary>
+            Save
+          </Button>
+          <Button
+            onClick={handleToggleSettingsModal}
+            className='w-100'
+            secondary
+          >
+            Cancel
+          </Button>
+        </div>
+      </div>
+    </Modal>
+  );
+};

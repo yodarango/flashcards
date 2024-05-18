@@ -1,0 +1,27 @@
+.base-Badge-root {
+  position: relative;
+  display: inline-block;
+
+  .base-Badge-badge {
+    display: inline-flex;
+    padding: 0 var(--dr-spacing-1);
+    align-items: center;
+    justify-content: center;
+    font-size: var(--dr-font-size-6);
+    background: var(--dr-danger);
+    height: 2rem;
+    min-width: 2rem;
+    top: -0.5rem;
+    right: -0.5rem;
+    position: absolute;
+    z-index: 5;
+    border-radius: 2em;
+    line-height: 1;
+    text-align: center;
+    color: var(--dr-alpha);
+  }
+
+  .base-Badge-invisible {
+    display: none;
+  }
+}

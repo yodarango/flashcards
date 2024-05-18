@@ -1,0 +1,102 @@
+.accordion-11cn {
+  border-radius: 1rem;
+
+  details {
+    transition: all 0.4s ease-in-out;
+
+    .accordion-11cn__trigger {
+      background-color: var(--dr-gamma);
+      box-shadow: var(--dr-shadow-4);
+      justify-content: between;
+      display: flex;
+      width: 100%;
+      padding: var(--dr-spacing-2);
+      margin: 0;
+      border-radius: 1em;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 0.2rem var(--dr-mu), -0.2rem 0 1rem var(--dr-),
+        0.2rem 0 1rem var(--dr-mu);
+
+      &:hover {
+        transform: scale(0.98);
+        transition: all 0.3s ease;
+        box-shadow: none;
+      }
+    }
+
+    .accordion-11cn__content {
+      background-color: var(--dr-gamma);
+      transition: all 0.3s ease;
+      padding: var(--dr-spacing-4);
+      border-radius: 1em;
+    }
+
+    &[open] {
+      .icon {
+        transform: rotate(90deg);
+        animation: rotate 200ms ease-in;
+      }
+
+      .accordion-11cn__content {
+        animation: slideDown 200ms ease-in;
+      }
+
+      .accordion-11cn__trigger {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom: 1px solid var(--dr-delta);
+
+        &:hover {
+          transform: none;
+        }
+      }
+
+      .accordion-11cn__content {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+
+      @keyframes slideDown {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+
+  &.primary {
+    .accordion-11cn__trigger {
+      border: none;
+      background-color: var(--dr-gamma);
+    }
+
+    .accordion-11cn__content {
+      background-color: var(--dr-gamma);
+      border: none;
+    }
+  }
+
+  &.secondary {
+    .accordion-11cn__trigger {
+      border-color: var(--dr-alpha);
+      background: rgba(var(--dr-alpha-rgb), 0.3);
+    }
+
+    .accordion-11cn__content {
+      // background: rgba(var(--dr-alpha-rgb), 0.1);
+      border-color: var(--dr-alpha);
+    }
+  }
+}

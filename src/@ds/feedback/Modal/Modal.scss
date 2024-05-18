@@ -1,0 +1,51 @@
+.shrood-modal-0elj {
+  position: fixed;
+
+  .shrood-modal-0elj__backdrop {
+    background-color: rgb(var(--dr-epsilon-rgb), 0.4);
+    -webkit-tap-highlight-color: transparent;
+    overflow: hidden;
+    position: fixed;
+    inset: 0;
+  }
+
+  .shrood-modal-0elj__content {
+    background-color: var(--dr-beta);
+    max-height: calc(70vh - 2rem);
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1em;
+    overflow: hidden;
+    max-width: 60rem;
+    position: fixed;
+    top: calc(20vh);
+    display: flex;
+    bottom: auto;
+    height: auto;
+    margin: auto;
+    width: 90%;
+    right: 0;
+    left: 0;
+
+    .shrood-modal-0elj-content__content {
+      position: relative;
+      width: 100%;
+      z-index: 2;
+    }
+
+    .shrood-modal-0elj__close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 3;
+    }
+
+    .shrood-modal-0elj__waves {
+      width: calc(100% + 4.8rem);
+      position: relative;
+      margin: -4rem;
+      z-index: 1;
+    }
+  }
+}

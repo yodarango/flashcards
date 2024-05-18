@@ -1,0 +1,27 @@
+.toast-04hl {
+  border-radius: 1rem;
+  position: fixed;
+  top: 5rem;
+  left: calc(50%);
+  transform: translateX(-50%);
+  right: auto;
+  bottom: auto;
+  z-index: 10;
+  animation: topToBottom 300ms ease-in-out;
+
+  div {
+    h5,
+    p {
+      color: inherit;
+    }
+  }
+}
+
+@keyframes topToBottom {
+  0% {
+    top: -6rem;
+  }
+  100% {
+    top: 5rem;
+  }
+}

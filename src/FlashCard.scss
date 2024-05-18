@@ -1,0 +1,74 @@
+.flashcard {
+  transition: transform 0.8s ease;
+  border-radius: 2rem;
+  position: relative;
+  max-height: 50rem;
+  overflow: hidden;
+  max-width: 50rem;
+  height: 90vw;
+  width: 90vw;
+}
+
+.flashcard:active {
+  transform: scale(0.95);
+}
+
+.flashcard-inner {
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  height: calc(100% - 1.5rem); /* allow some space for the padding*/
+  width: calc(100% - 1.5rem); /* allow some space for the padding*/
+  border-radius: 2rem;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+
+.flashcard-inner .flashcard-actions {
+  background-color: rgba(var(--dr-alpha-rgb), 0.05);
+  position: absolute;
+  border-radius: 0;
+  padding: 0.5rem;
+  width: 3rem;
+  height: 100%;
+  z-index: 2;
+  right: 0;
+  top: 0;
+}
+
+.flashcard-actions.action-left {
+  border-bottom-left-radius: 2rem;
+  border-top-left-radius: 2rem;
+  left: 0;
+}
+
+.flashcard-actions.action-right {
+  border-bottom-right-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+
+.flashcard.is-flipped .flashcard-inner {
+  transform: rotateX(180deg);
+}
+
+.front,
+.back {
+  backface-visibility: hidden;
+  border-radius: 2rem;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.front {
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0);
+  color: black;
+}
+
+.back {
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  transform: rotateX(180deg);
+  color: white;
+}
