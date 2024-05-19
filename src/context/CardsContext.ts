@@ -27,7 +27,9 @@ export const defaultCardsState: TDefaultCardsState = {
 
 export const defaultContext = {
   state: defaultCardsState,
-  handleSaveSettings: (values: Partial<TDefaultCardsState>) => {},
+  handleSaveSettings: (_: Partial<TDefaultCardsState>) => {},
+  handlePreviousCard: (_: any) => {},
+  handleNextCard: (_: any) => {},
 };
 
 export const CardsContext = createContext(defaultContext);

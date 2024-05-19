@@ -17,7 +17,7 @@ export const CardSetMeta = (props: HTMLAttributes<HTMLDivElement>) => {
 
   const currentIndex = state.currentCardIndex;
   const totalCards = currentSetOfCards.length;
-  const isShufflingOn = state.isSufflingOn;
+  const isShufflingOn = state.isShufflingOn;
   const setName = state.cardSetName;
 
   const shuffleLabel = isShufflingOn ? "Shuffle on" : "Shuffle off";

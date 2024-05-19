@@ -5,9 +5,9 @@ export enum EGuessedCorrectly {
 }
 
 export type TCard = {
-  front: string;
   guess: EGuessedCorrectly;
-  back: string;
+  front: string; // the term to be guessed
+  back: string; // the answer
   hint: string;
   id: number;
 };

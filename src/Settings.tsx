@@ -7,17 +7,22 @@ import "./Settings.scss";
 
 export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
   const ctx = useCardsContext();
+  const { handleSaveSettings, state } = ctx;
+
+  const isShufflingOn = state.isShufflingOn;
+  const startIndex = state.startIndex;
+  const endIndex = state.endIndex;
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const { className = "", ...restOfProps } = props;
 
   const [formData, setFormData] = useState<Partial<TDefaultCardsState>>({
-    isShufflingOn: false,
-    startIndex: 0,
-    endIndex: 0,
+    isShufflingOn,
+    startIndex,
+    endIndex,
   });
-  const { handleSaveSettings, state } = ctx;
+
   const totalCards = state.totalCards;
 
   function handleChange(targetName: string, value: number | boolean) {

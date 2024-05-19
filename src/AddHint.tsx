@@ -24,9 +24,9 @@ export const AddHint = (props: HTMLAttributes<HTMLDivElement>) => {
 
           <Input
             placeholder='Enter hint...'
+            className='mb-4'
             maxRows={4}
             multiline
-            className='mb-4'
           />
 
           {/* actions */}

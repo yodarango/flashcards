@@ -18,23 +18,51 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
 
   function handleSaveSettings(values: Partial<TDefaultCardsState>) {
     const updateTarget = {
-      isSettingsOpen: { $set: false },
       $merge: values,
     };
 
     setState(update(state, updateTarget));
   }
 
+  // render the next card. The next card cannot be greater than the end index
+  function handleNextCard(e: any) {
+    e.stopPropagation();
+
+    if (state.currentCardIndex === state.endIndex) return;
+
+    setState(
+      update(state, { currentCardIndex: { $set: state.currentCardIndex + 1 } })
+    );
+  }
+
+  // render the previous card. The card cannot travel further back than the start index
+  function handlePreviousCard(e: any) {
+    e.stopPropagation();
+
+    if (state.currentCardIndex === state.startIndex) return;
+
+    setState(
+      update(state, { currentCardIndex: { $set: state.currentCardIndex - 1 } })
+    );
+  }
+
   useEffect(() => {
+    const allCards = getCardSet();
+    console.log(allCards);
+
     const updateTarget = {
-      allCards: { $set: getCardSet() },
+      endIndex: { $set: allCards.length - 1 },
+      allCards: { $set: allCards },
+      startIndex: { $set: 0 },
     };
 
     setState(update(state, updateTarget));
   }, []);
 
   return (
-    <CardsContext.Provider value={{ state, handleSaveSettings }}>
+    <CardsContext.Provider
+      value={{ state, handleSaveSettings, handleNextCard, handlePreviousCard }}
+    >
       {children}
     </CardsContext.Provider>
   );
