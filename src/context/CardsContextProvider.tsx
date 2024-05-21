@@ -18,7 +18,13 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
 
   // global settings for the flash cards
   function handleSaveSettings(settings: Partial<TDefaultCardsState>) {
-    console.log(settings);
+    // the start index and end index cannot be the same. The start index cannot be greater than the end index.
+    if (
+      settings.startIndex === settings.endIndex ||
+      settings.startIndex! > settings.endIndex!
+    )
+      return;
+
     const setWithAppliedSettings = applySettingsToSet(
       settings.isShufflingOn!,
       settings.startIndex!,
@@ -29,8 +35,8 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
     const updateTarget = {
       $merge: {
         ...settings,
-        selectedRangeOfCards: setWithAppliedSettings,
-        currentCardIndex: 0,
+        selectedRangeOfCards: setWithAppliedSettings, // update the selected range of cards
+        currentCardIndex: 0, // reset the current card index
       },
     };
 
@@ -52,7 +58,7 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
   function handlePreviousCard(e: any) {
     e.stopPropagation();
 
-    if (state.currentCardIndex === state.startIndex) return;
+    if (state.currentCardIndex === 0) return;
 
     setState(
       update(state, { currentCardIndex: { $set: state.currentCardIndex - 1 } })

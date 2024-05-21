@@ -1,5 +1,5 @@
 import { TDefaultCardsState, useCardsContext } from "@context";
-import { Button, Input, Modal, Switch } from "./@ds";
+import { Button, Input, Modal, Portal, Snackbar, Switch, Toast } from "@ds";
 import { HTMLAttributes, useState } from "react";
 
 // styles
@@ -22,20 +22,52 @@ export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
     startIndex,
     endIndex,
   });
+  const [toast, setToast] = useState<Record<string, any> | null>(null);
 
   const totalCards = state.totalCards;
 
-  function handleChange(targetName: string, value: number | boolean) {
+  function handleChange(targetName: string, value: number | string | boolean) {
     setFormData((prev) => ({ ...prev, [targetName]: value }));
   }
 
   function saveSettings() {
+    // the start index and end index cannot be the same. The start index cannot be greater than the end index.
+    if (
+      formData.startIndex === formData.endIndex ||
+      formData.startIndex! > formData.endIndex!
+    ) {
+      setToast({
+        type: "danger",
+        messsage: "The start index cannot be greater or equal to the end index",
+      });
+      return;
+    }
+
+    if (isNaN(formData.startIndex!) || isNaN(formData.endIndex!)) {
+      setToast({
+        type: "danger",
+        messsage: "Only numbers are allowed for the start and end index.",
+      });
+      return;
+    }
+
     handleSaveSettings(formData);
     setIsModalOpen(false);
   }
 
   return (
     <section className={`settings-00oo ${className}`} {...restOfProps}>
+      <Portal>
+        <Snackbar onClose={() => setToast(null)} open={!!toast}>
+          <Toast
+            type={toast?.type}
+            onClose={() => setToast(null)}
+            style={{ zIndex: 15 }}
+          >
+            <p>{toast?.messsage}</p>
+          </Toast>
+        </Snackbar>
+      </Portal>
       <Modal
         onClose={() => setIsModalOpen(false)}
         open={isModalOpen}
@@ -50,22 +82,20 @@ export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
             <label className='opacity-60'>Start at:</label>
             <Input
               onChange={({ target: { value } }) =>
-                handleChange("startIndex", Number(value))
+                handleChange("startIndex", value)
               }
               value={formData.startIndex}
               placeholder='Card number'
-              type='number'
             />
           </div>
           <div className='mb-4'>
             <label className='opacity-60'>End at:</label>
             <Input
               onChange={({ target: { value } }) =>
-                handleChange("endIndex", Number(value))
+                handleChange("endIndex", value)
               }
               value={formData.endIndex}
               placeholder='Card number'
-              type='number'
             />
           </div>
 
