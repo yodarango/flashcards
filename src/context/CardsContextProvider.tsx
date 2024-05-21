@@ -1,11 +1,11 @@
 import update from "immutability-helper";
 import {
   TDefaultCardsState,
-  defaultCardsState,
+  defaultContext,
   CardsContext,
+  applySettingsToSet,
 } from "./CardsContext";
-import { useContext, useEffect, useState } from "react";
-import { getCardSet } from "@utils";
+import { useContext, useState } from "react";
 
 type TCardsContextProvider = {
   children: React.ReactNode;
@@ -14,11 +14,24 @@ type TCardsContextProvider = {
 export const CardsContextProvider = (props: TCardsContextProvider) => {
   const { children } = props;
 
-  const [state, setState] = useState<TDefaultCardsState>(defaultCardsState);
+  const [state, setState] = useState<TDefaultCardsState>(defaultContext.state);
 
-  function handleSaveSettings(values: Partial<TDefaultCardsState>) {
+  // global settings for the flash cards
+  function handleSaveSettings(settings: Partial<TDefaultCardsState>) {
+    console.log(settings);
+    const setWithAppliedSettings = applySettingsToSet(
+      settings.isShufflingOn!,
+      settings.startIndex!,
+      settings.endIndex!,
+      state.allCards
+    );
+
     const updateTarget = {
-      $merge: values,
+      $merge: {
+        ...settings,
+        selectedRangeOfCards: setWithAppliedSettings,
+        currentCardIndex: 0,
+      },
     };
 
     setState(update(state, updateTarget));
@@ -28,7 +41,7 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
   function handleNextCard(e: any) {
     e.stopPropagation();
 
-    if (state.currentCardIndex === state.endIndex) return;
+    if (state.currentCardIndex === state.endIndex - state.startIndex) return;
 
     setState(
       update(state, { currentCardIndex: { $set: state.currentCardIndex + 1 } })
@@ -45,19 +58,6 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
       update(state, { currentCardIndex: { $set: state.currentCardIndex - 1 } })
     );
   }
-
-  useEffect(() => {
-    const allCards = getCardSet();
-    console.log(allCards);
-
-    const updateTarget = {
-      endIndex: { $set: allCards.length - 1 },
-      allCards: { $set: allCards },
-      startIndex: { $set: 0 },
-    };
-
-    setState(update(state, updateTarget));
-  }, []);
 
   return (
     <CardsContext.Provider

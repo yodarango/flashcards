@@ -15,8 +15,8 @@ export const CardSetMeta = (props: HTMLAttributes<HTMLDivElement>) => {
     state.endIndex
   );
 
-  const currentIndex = state.currentCardIndex;
-  const totalCards = currentSetOfCards.length;
+  const currentIndex = state.currentCardIndex + 1;
+  const totalCards = currentSetOfCards.length + 1;
   const isShufflingOn = state.isShufflingOn;
   const setName = state.cardSetName;
 

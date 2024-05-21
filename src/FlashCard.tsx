@@ -1,7 +1,5 @@
-import { HTMLAttributes, useMemo, useRef, useState } from "react";
 import { useCardsContext } from "./context/CardsContextProvider";
-import { EGuessedCorrectly, TCard } from "./types/card";
-import { shuffle } from "./utils/shuffle";
+import { HTMLAttributes, useRef, useState } from "react";
 
 // styles
 import "./FlashCard.scss";
@@ -12,25 +10,14 @@ export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
   const ctx = useCardsContext();
   const { handlePreviousCard, handleNextCard, state } = ctx;
 
-  const [isFlipped, setIsFlipped] = useState<boolean>(false);
-
+  const selectedRangeOfCards = state.selectedRangeOfCards;
   const currentCardIndex = state.currentCardIndex;
-  const isShufflingOn = state.isShufflingOn;
-  const startIndex = state.startIndex;
-  const endIndex = state.endIndex;
-  const allCards = state.allCards;
 
-  const currentCardRange = allCards.slice(startIndex, endIndex); // the range of cards to be quizzed
+  const currentCardFront = selectedRangeOfCards[currentCardIndex]?.front;
+  const currentCardBack = selectedRangeOfCards[currentCardIndex]?.back;
+  const currentCardId = selectedRangeOfCards[currentCardIndex]?.id;
 
-  // memoized version of the current array to be tested
-  const flashCardsUnquizzedInCurrentArray = useMemo(
-    () => getFlashCards(isShufflingOn, currentCardRange),
-    [startIndex, endIndex]
-  );
-
-  const currentCard = flashCardsUnquizzedInCurrentArray[currentCardIndex]; // the current card being displayed
-  const currentCardFront = currentCard?.front;
-  const currentCardBack = currentCard?.back;
+  const [isFlipped, setIsFlipped] = useState<boolean>(false);
 
   const flashCardContentFront = useRef<any>(undefined);
   const flashCardContentBack = useRef<any>(undefined);
@@ -98,7 +85,11 @@ export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
           >
             <span className='icon icon-chevron-back-outline color-alpha' />
           </button>
-          <div className='flashcard-content' ref={flashCardContentFront}>
+          <div
+            className='flashcard-content d-flex align-items-center justify-content-start flex-column p-6'
+            ref={flashCardContentFront}
+          >
+            <p className='color-alpha opacity-60 fs-3'># {currentCardId}</p>
             <h2>{currentCardFront}</h2>
           </div>
           <button
@@ -118,7 +109,8 @@ export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
           >
             <span className='icon icon-chevron-back-outline color-alpha' />
           </button>
-          <div className='flashcard-content' ref={flashCardContentBack}>
+          <div className='flashcard-content p-6' ref={flashCardContentBack}>
+            <p className='color-alpha fs-3 opacity-60'># {currentCardId}</p>
             <h2>{currentCardBack}</h2>
           </div>
           <button
@@ -131,14 +123,4 @@ export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
       </div>
     </section>
   );
-}
-
-// gets only the unquizzed cards in the current array range. It accounts for shuffling
-// in hte array.
-function getFlashCards(isShufflingOn: boolean, cardsRange: TCard[]) {
-  let cards = cardsRange;
-
-  if (isShufflingOn) cards = shuffle(cardsRange);
-
-  return cards.filter((card) => card.guess === EGuessedCorrectly.UNQUIZZED);
 }
