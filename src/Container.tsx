@@ -6,8 +6,21 @@ import { AddHint } from "./AddHint";
 
 // styles
 import "./Container.scss";
+import { useCardsContext } from "./context/CardsContextProvider";
+import { Finish } from "./Finish";
 
 export const Container = () => {
+  const ctx = useCardsContext();
+  const { isFinished } = ctx.state;
+
+  if (isFinished) {
+    return (
+      <div className='container-52tr'>
+        <Finish />
+      </div>
+    );
+  }
+
   return (
     <div className='container-52tr'>
       <Progress className='container-52tr__progress' />

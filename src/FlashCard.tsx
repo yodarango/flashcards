@@ -1,5 +1,5 @@
 import { useCardsContext } from "./context/CardsContextProvider";
-import { HTMLAttributes, useRef, useState } from "react";
+import { HTMLAttributes, useRef } from "react";
 
 // styles
 import "./FlashCard.scss";
@@ -8,7 +8,8 @@ export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
   const { className, ...restOfProps } = props;
 
   const ctx = useCardsContext();
-  const { handlePreviousCard, handleNextCard, state } = ctx;
+
+  const { handlePreviousCard, handleNextCard, handleFlipCard, state } = ctx;
 
   const selectedRangeOfCards = state.selectedRangeOfCards;
   const currentCardIndex = state.currentCardIndex;
@@ -16,44 +17,10 @@ export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
   const currentCardFront = selectedRangeOfCards[currentCardIndex]?.front;
   const currentCardBack = selectedRangeOfCards[currentCardIndex]?.back;
   const currentCardId = selectedRangeOfCards[currentCardIndex]?.id;
-
-  const [isFlipped, setIsFlipped] = useState<boolean>(false);
+  const isCardFlipped = state.isCardFlipped;
 
   const flashCardContentFront = useRef<any>(undefined);
   const flashCardContentBack = useRef<any>(undefined);
-
-  // If the cards is flipped and the user decided to skip to the next/ previous card,
-  // the answer fof the next term is visible for a short time frame. I need to
-  // hide the content until the card is back to the front face.
-
-  function toggleCardDisplay() {
-    if (!flashCardContentFront.current || !flashCardContentBack.current) return;
-
-    if (isFlipped) {
-      flashCardContentBack.current.style.display = "none";
-      flashCardContentFront.current.style.display = "none";
-    }
-
-    setTimeout(() => {
-      if (!flashCardContentFront.current || !flashCardContentBack.current)
-        return;
-
-      flashCardContentBack.current.style.display = "";
-      flashCardContentFront.current.style.display = "";
-    }, 500);
-  }
-
-  const handleNextCardAndFlip = (e: any) => {
-    toggleCardDisplay();
-    setIsFlipped(false);
-    handleNextCard(e);
-  };
-
-  const handlePreviousCardAndFlip = (e: any) => {
-    toggleCardDisplay();
-    setIsFlipped(false);
-    handlePreviousCard(e);
-  };
 
   const onShowHint = () => {
     // setHint(true);
@@ -63,16 +30,12 @@ export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
     // setRevealHint(true);
   };
 
-  const handleFlip = () => {
-    setIsFlipped(!isFlipped);
-  };
-
-  const isFlippedClass = isFlipped ? "is-flipped" : "";
+  const isFlippedClass = isCardFlipped ? "is-flipped" : "is-not-flipped";
 
   return (
     <section
       className={`${className} flashcard d-flex align-items-center justify-content-center m-auto ${isFlippedClass}`}
-      onClick={handleFlip}
+      onClick={handleFlipCard}
       {...restOfProps}
     >
       <div className={`flashcard-inner`}>
@@ -81,7 +44,7 @@ export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
           {/* actions */}
           <button
             className='flashcard-actions action-left d-flex align-items-center justify-content-center'
-            onClick={handlePreviousCardAndFlip}
+            onClick={handlePreviousCard}
           >
             <span className='icon icon-chevron-back-outline color-alpha' />
           </button>
@@ -94,7 +57,7 @@ export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
           </div>
           <button
             className='flashcard-actions action-right d-flex align-items-center justify-content-center'
-            onClick={handleNextCardAndFlip}
+            onClick={handleNextCard}
           >
             <span className='icon icon-chevron-forward-outline color-alpha' />
           </button>
@@ -105,7 +68,7 @@ export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
           {/* actions */}
           <button
             className='flashcard-actions action-left d-flex align-items-center justify-content-center'
-            onClick={handlePreviousCardAndFlip}
+            onClick={handleFlipCard}
           >
             <span className='icon icon-chevron-back-outline color-alpha' />
           </button>
@@ -115,7 +78,7 @@ export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
           </div>
           <button
             className='flashcard-actions action-right d-flex align-items-center justify-content-center'
-            onClick={handleNextCardAndFlip}
+            onClick={handleFlipCard}
           >
             <span className='icon icon-chevron-forward-outline color-alpha' />
           </button>

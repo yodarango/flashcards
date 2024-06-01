@@ -3,6 +3,7 @@ import { If } from "../../utils";
 import "./Modal.scss";
 
 type TModal = {
+  contentContainerStyle: Record<string, any>;
   showCloseButton?: boolean;
   bodyMaxHeight?: string;
   onClose: () => void;
@@ -13,8 +14,10 @@ type TModal = {
   title: string;
   top?: number;
 } & PortalProps;
+
 export const Modal = (props: TModal) => {
   const {
+    contentContainerStyle = {},
     showCloseButton = true,
     bodyMaxHeight = "",
     showWaves = true,
@@ -35,8 +38,11 @@ export const Modal = (props: TModal) => {
     <Portal {...rest}>
       <If condition={open}>
         <div
+          style={{
+            top: `${top}vh`,
+            zIndex: zIndex + 1,
+          }}
           className='shrood-modal-0elj'
-          style={{ top: `${top}vh`, zIndex: zIndex + 1 }}
         >
           <div
             className='shrood-modal-0elj__content p-6'
@@ -53,7 +59,12 @@ export const Modal = (props: TModal) => {
               />
             </If>
             <h4 className='mb-2 text-center mb-6 px-4'>{title}</h4>
-            <div className='shrood-modal-0elj-content__content'>{children}</div>
+            <div
+              className='shrood-modal-0elj-content__content'
+              style={{ ...contentContainerStyle }}
+            >
+              {children}
+            </div>
           </div>
           <div
             className='shrood-modal-0elj__backdrop'

@@ -1,5 +1,5 @@
-import { TDefaultCardsState, useCardsContext } from "@context";
 import { Button, Input, Modal, Portal, Snackbar, Switch, Toast } from "@ds";
+import { TDefaultCardsState, useCardsContext } from "@context";
 import { HTMLAttributes, useState } from "react";
 
 // styles
@@ -7,8 +7,10 @@ import "./Settings.scss";
 
 export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
   const ctx = useCardsContext();
-  const { handleSaveSettings, state } = ctx;
+  const { handleToggleRandomQuizzing, handleSaveSettings, state } = ctx;
 
+  const randomNumberOfCards = state.randomNumberOfCards;
+  const isRandomQuizzingOn = state.isRandomQuizzingOn;
   const isShufflingOn = state.isShufflingOn;
   const startIndex = state.startIndex;
   const endIndex = state.endIndex;
@@ -18,13 +20,14 @@ export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
   const { className = "", ...restOfProps } = props;
 
   const [formData, setFormData] = useState<Partial<TDefaultCardsState>>({
+    randomNumberOfCards,
     isShufflingOn,
     startIndex,
     endIndex,
   });
   const [toast, setToast] = useState<Record<string, any> | null>(null);
 
-  const totalCards = state.totalCards;
+  const totalCards = state.selectedRangeOfCards;
 
   function handleChange(targetName: string, value: number | string | boolean) {
     setFormData((prev) => ({ ...prev, [targetName]: value }));
@@ -51,6 +54,15 @@ export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
       return;
     }
 
+    if (formData.randomNumberOfCards! > totalCards.length) {
+      setToast({
+        type: "danger",
+        messsage:
+          "The number of random cards cannot be greater than the total number of cards in this set.",
+      });
+      return;
+    }
+
     handleSaveSettings(formData);
     setIsModalOpen(false);
   }
@@ -64,51 +76,92 @@ export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
             onClose={() => setToast(null)}
             style={{ zIndex: 15 }}
           >
-            <p>{toast?.messsage}</p>
+            {toast?.messsage}
           </Toast>
         </Snackbar>
       </Portal>
       <Modal
+        contentContainerStyle={{ overflowY: "scroll" }}
         onClose={() => setIsModalOpen(false)}
         open={isModalOpen}
         title='Settings'
       >
         <section className={`settings-00oo__content`}>
-          <p>Enter the range you want to be quizzed in</p>
-          <p className='mb-4 color-lambda'>
-            Total cards in this set: {totalCards}
-          </p>
-          <div className='mb-4 '>
-            <label className='opacity-60'>Start at:</label>
-            <Input
-              onChange={({ target: { value } }) =>
-                handleChange("startIndex", value)
-              }
-              value={formData.startIndex}
-              placeholder='Card number'
+          <div
+            className={
+              isRandomQuizzingOn ? "content__section--deactivated" : ""
+            }
+          >
+            <h4 className='mt-0 mb-4'>Sequential Quizzing</h4>
+            <p>Enter the range you want to be quizzed in</p>
+            <p className='mb-4 color-lambda'>
+              Total cards in this set: {totalCards.length}
+            </p>
+            <div className='mb-4 '>
+              <label className='opacity-60'>Start at:</label>
+              <Input
+                onChange={({ target: { value } }) =>
+                  handleChange("startIndex", value)
+                }
+                value={formData.startIndex}
+                placeholder='Card number'
+              />
+            </div>
+            <div className='mb-4'>
+              <label className='opacity-60'>End at:</label>
+              <Input
+                onChange={({ target: { value } }) =>
+                  handleChange("endIndex", value)
+                }
+                value={formData.endIndex}
+                placeholder='Card number'
+              />
+            </div>
+
+            {/* shuffle */}
+            <div className='d-flex align-items-center justify-between gap-4 mb-4'>
+              <label className='opacity-60'>Shuffle:</label>
+              <Switch
+                onChange={({ target: { checked } }) =>
+                  setFormData((prev) => ({ ...prev, isShufflingOn: checked }))
+                }
+                checked={formData.isShufflingOn}
+              />
+            </div>
+          </div>
+
+          <hr className='mb-4' />
+
+          {/* random quizzing */}
+
+          <div className='d-flex align-items-center justify-between gap-4 mb-4'>
+            <label className='opacity-60'>Random quizzing instead:</label>
+            <Switch
+              onChange={handleToggleRandomQuizzing}
+              checked={isRandomQuizzingOn}
             />
           </div>
-          <div className='mb-4'>
-            <label className='opacity-60'>End at:</label>
+          <div
+            className={
+              !isRandomQuizzingOn ? "content__section--deactivated" : ""
+            }
+          >
+            <h4 className='mt-0 mb-4'>Random Quizzing</h4>
+            <p className='mb-2 mt- mx-0'>
+              Enter the amount of randomly selected cards you would like to test
+              in:
+            </p>
             <Input
+              placeholder='Enter number of random cards'
               onChange={({ target: { value } }) =>
-                handleChange("endIndex", value)
+                handleChange("randomNumberOfCards", value)
               }
-              value={formData.endIndex}
-              placeholder='Card number'
+              value={formData.randomNumberOfCards}
+              className='mb-4'
             />
           </div>
 
-          {/* shuffle */}
-          <div className='d-flex align-items-center justify-between gap-4 mb-4'>
-            <label className='opacity-60'>Shuffle:</label>
-            <Switch
-              onChange={({ target: { checked } }) =>
-                setFormData((prev) => ({ ...prev, isShufflingOn: checked }))
-              }
-              checked={formData.isShufflingOn}
-            />
-          </div>
+          <hr className='mb-4' />
 
           {/* actions */}
           <div className='settings-00oo__actions d-flex align-items-center justify-center-center gap-4'>

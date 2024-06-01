@@ -9,7 +9,7 @@ export function Progress(props: HTMLAttributes<HTMLSelectElement>) {
 
   const { className, ...restOfProps } = props;
 
-  const totalCards = ctx.state.totalCards;
+  const totalCards = ctx.state.allCards;
   const totalCorrect = ctx.state.totalCorrect;
   const totalWrong = ctx.state.totalWrong;
 
@@ -18,14 +18,10 @@ export function Progress(props: HTMLAttributes<HTMLSelectElement>) {
   const [allCorrect, setAllCorrect] = useState(false);
   const [allWrong, setAllWrong] = useState(false);
 
-  useEffect(() => {
+  function updatePercentage() {
     const totalCardsGuessed = totalWrong + totalCorrect;
 
-    if (
-      totalCards > 0 &&
-      totalCardsGuessed > 0 &&
-      (totalCorrect > 0 || totalWrong > 0)
-    ) {
+    if (totalCards.length > 0 && totalCardsGuessed > 0) {
       setCorrectBarPercentage((totalCorrect / totalCardsGuessed) * 100);
       setWrongBarPercentage((totalWrong / totalCardsGuessed) * 100);
       setAllCorrect(totalWrong === 0 && totalCorrect > 0);
@@ -34,7 +30,9 @@ export function Progress(props: HTMLAttributes<HTMLSelectElement>) {
       setWrongBarPercentage(50);
       setCorrectBarPercentage(50);
     }
-  }, [totalCards, totalWrong, totalCorrect]);
+  }
+
+  useEffect(updatePercentage, [totalCards, totalWrong, totalCorrect]);
 
   return (
     <section className={`${className} progress-72lh`} {...restOfProps}>
@@ -48,6 +46,7 @@ export function Progress(props: HTMLAttributes<HTMLSelectElement>) {
         >
           <b>{totalWrong}</b>
         </div>
+
         {/* settings */}
         <Settings />
 

@@ -5,15 +5,19 @@ import { commonPhrases } from "@seed";
 
 export type TDefaultCardsState = {
   selectedRangeOfCards: TCard[]; // the range of cards to be quizzed based on the start and end index
+  randomNumberOfCards: number; // number of randomly selected cards including from 0 to the total number of cards
+  isRandomQuizzingOn: boolean; // the user is testing themselves on a random set of cards
   currentCardIndex: number; // The index of the current card being displayed
   isShufflingOn: boolean; // shuffles the slice of cards encapsulated by the startIndex and endIndex
   totalCorrect: number; // the total number of correct card guesses
   cardSetName: string; // this is not being used right now. In the future I might allow users to save different card sets
+  isFinished: boolean; // the user has finished the quiz
   totalCards: number; // the total number of cards available
   totalWrong: number; // the total number of wrong card guesses
   startIndex: number; // the start index of the slice of cards to be quizzed
   allCards: TCard[]; // all the cards available
   endIndex: number; // the end index of the slice of cards to be quizzed
+  isCardFlipped: boolean; // the current card being displayed is flipped or not?
 };
 
 //
@@ -21,8 +25,12 @@ export type TDefaultCardsState = {
 export const defaultContext = {
   state: getStateFromLocalStorage(),
   handleSaveSettings: (_: Partial<TDefaultCardsState>) => {},
+  handleToggleRandomQuizzing: () => {},
   handlePreviousCard: (_: any) => {},
+  handleCorrectGuess: (_: any) => {},
+  handleWrongGuess: (_: any) => {},
   handleNextCard: (_: any) => {},
+  handleFlipCard: () => {},
 };
 
 export const CardsContext = createContext(defaultContext);
@@ -39,9 +47,13 @@ export function getStateFromLocalStorage() {
   const initialData = {
     selectedRangeOfCards: allCards,
     endIndex: allCards.length - 1,
+    isRandomQuizzingOn: false,
+    randomNumberOfCards: 0,
     isShufflingOn: false,
-    allCards: allCards,
+    isCardFlipped: false,
     currentCardIndex: 0,
+    allCards: allCards,
+    isFinished: false,
     totalCorrect: 0,
     cardSetName: "",
     totalCards: 0,

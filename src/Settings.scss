@@ -1,8 +1,14 @@
 .settings-00oo__content {
   container-type: inline-size;
+
   .settings-00oo__actions {
     @container (max-width: 40rem) {
       flex-wrap: wrap-reverse;
     }
+  }
+
+  .content__section--deactivated {
+    pointer-events: none;
+    opacity: 0.5;
   }
 }
