@@ -137,6 +137,7 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
     );
   }
 
+  // adds a a hint to the specific card
   function handleAddHint(hint: string, id: number) {
     const findIndex = state.allCards.findIndex((card) => card.id === id);
 
@@ -207,6 +208,37 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
     setState(update(state, updateTarget));
   }
 
+  function handleRedoWrongGuessesOnly() {
+    const wrongGuesses = state.selectedRangeOfCards.filter(
+      (card) => card.guess === EGuessedCorrectly.INCORRECT
+    );
+
+    if (wrongGuesses.length === 0) return;
+
+    const updateTarget = {
+      $merge: {
+        selectedRangeOfCards: wrongGuesses,
+        endIndex: wrongGuesses.length - 1,
+        currentPage: EPage.QUIZ,
+        isFinished: false,
+        currentCardIndex: 0,
+        totalCorrect: 0,
+        totalWrong: 0,
+        startIndex: 0,
+      },
+    };
+
+    setState(update(state, updateTarget));
+  }
+
+  function resetStateAndStartOver() {
+    const updateTarget = {
+      $merge: initialData,
+    };
+
+    setState(update(state, updateTarget));
+  }
+
   // update local storage every time state changes
   useEffect(() => {
     localStorage.setItem("shrood__flashcards", JSON.stringify(state));
@@ -216,7 +248,9 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
     <CardsContext.Provider
       value={{
         state,
+        handleRedoWrongGuessesOnly,
         handleToggleRandomQuizzing,
+        resetStateAndStartOver,
         handleSelectCardSet,
         handleSaveSettings,
         handlePreviousCard,

@@ -164,7 +164,7 @@ export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
           <hr className='mb-4' />
 
           {/* actions */}
-          <div className='settings-00oo__actions d-flex align-items-center justify-center-center gap-4'>
+          <div className='settings-00oo__actions d-flex align-items-center justify-center-center gap-4 mb-4'>
             <Button
               onClick={() => setIsModalOpen(false)}
               className='w-100'
@@ -176,6 +176,19 @@ export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
               Save
             </Button>
           </div>
+
+          {/*  delete all data  */}
+
+          <Button
+            onClick={() => {
+              localStorage.removeItem("shrood__flashcards");
+              window.location.reload();
+            }}
+            className='w-100'
+            danger
+          >
+            Clear all data
+          </Button>
         </section>
       </Modal>
       <button

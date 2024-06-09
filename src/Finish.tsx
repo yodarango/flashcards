@@ -1,16 +1,17 @@
 import { useCardsContext } from "./context/CardsContextProvider";
-import { Button } from "@ds";
+import { Button, If } from "@ds";
 
 import "./Finish.scss";
 
 export const Finish = () => {
   const ctx = useCardsContext();
 
+  const { handleRedoWrongGuessesOnly, resetStateAndStartOver } = ctx;
+
   const totalCorrect = ctx.state.totalCorrect;
   const totalWrong = ctx.state.totalWrong;
 
   const totalCardsGuessed = totalWrong + totalCorrect;
-  console.log(totalCorrect, totalCardsGuessed);
 
   let correctPercentage = (totalCorrect / totalCardsGuessed || 0) * 100;
   let wrongPercentage = (totalWrong / totalCardsGuessed || 0) * 100;
@@ -22,6 +23,10 @@ export const Finish = () => {
 
   correctPercentage = Math.round(correctPercentage);
   wrongPercentage = Math.round(wrongPercentage);
+
+  const allRightOrWrong =
+    totalCorrect === totalCardsGuessed || totalWrong === totalCardsGuessed;
+  const allRightOrWrongClass = allRightOrWrong ? "all-right-or-wrong" : "";
 
   return (
     <section className='finish-55th mt-8'>
@@ -48,25 +53,35 @@ export const Finish = () => {
       <article className='finish-55th__results p-4 rounded bg-gamma m-auto'>
         <h4 className='text-center mb-4'>Your results</h4>
         <div className='results__percentages d-flex align-items-center justify-content-center mb-4'>
-          <div
-            className='results__positive w-50 text-center p-4 bg-danger fw-8 color-beta'
-            style={{ width: `${correctPercentage}%` }}
-          >
-            {correctPercentage}%
-          </div>
-          <div
-            className='results__negative w-50 text-center p-4 bg-success fw-8 color-beta'
-            style={{ width: `${wrongPercentage}%` }}
-          >
-            {wrongPercentage}%
-          </div>
+          <If condition={correctPercentage > 0}>
+            <div
+              className={`results__positive w-50 text-center p-4 bg-success fw-8 color-beta ${allRightOrWrongClass}`}
+              style={{ width: `${correctPercentage}%` }}
+            >
+              {correctPercentage}%
+            </div>
+          </If>
+          <If condition={wrongPercentage > 0}>
+            <div
+              className={`results__negative w-50 text-center p-4 bg-danger fw-8 color-beta ${allRightOrWrongClass}`}
+              style={{ width: `${wrongPercentage}%` }}
+            >
+              {wrongPercentage}%
+            </div>
+          </If>
         </div>
-        <Button primary className='w-100 mb-2'>
+        <Button primary className='w-100 mb-2' onClick={resetStateAndStartOver}>
           Start over
         </Button>
-        <Button secondary className='w-100'>
-          Quiz on wrong answers only
-        </Button>
+        <If condition={totalWrong > 0}>
+          <Button
+            onClick={handleRedoWrongGuessesOnly}
+            className='w-100'
+            secondary
+          >
+            Quiz on wrong answers only
+          </Button>
+        </If>
       </article>
     </section>
   );
