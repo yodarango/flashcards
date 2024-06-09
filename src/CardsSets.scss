@@ -1,0 +1,12 @@
+.card-sets-67th {
+  .card-set-67th__set {
+    width: minmax(40rem, 100%);
+
+    &:hover {
+      box-shadow: 0 0 1rem var(--dr-delta);
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+      scale: 1.01;
+    }
+  }
+}

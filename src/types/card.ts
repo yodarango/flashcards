@@ -1,7 +1,7 @@
 export enum EGuessedCorrectly {
   CORRECT = "correct",
   INCORRECT = "incorrect",
-  UNQUIZZED = "unQuizzed",
+  UNQUIZZED = "unquizzed",
 }
 
 export type TCard = {

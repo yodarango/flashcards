@@ -3,7 +3,7 @@ import { If } from "../../utils";
 import "./Modal.scss";
 
 type TModal = {
-  contentContainerStyle: Record<string, any>;
+  contentContainerStyle?: Record<string, any>;
   showCloseButton?: boolean;
   bodyMaxHeight?: string;
   onClose: () => void;

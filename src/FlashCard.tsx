@@ -22,6 +22,8 @@ export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
   const flashCardContentFront = useRef<any>(undefined);
   const flashCardContentBack = useRef<any>(undefined);
 
+  console.log("state", currentCardBack, currentCardFront, currentCardId);
+
   const onShowHint = () => {
     // setHint(true);
   };

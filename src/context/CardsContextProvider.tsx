@@ -4,8 +4,10 @@ import {
   applySettingsToSet,
   defaultContext,
   CardsContext,
+  initialData,
+  EPage,
 } from "./CardsContext";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { EGuessedCorrectly, TCard } from "../types/card";
 
 type TCardsContextProvider = {
@@ -16,6 +18,35 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
   const { children } = props;
 
   const [state, setState] = useState<TDefaultCardsState>(defaultContext.state);
+
+  // this is the only available function at the beginning fo the app. Users must first select
+  // a card set before they can start quizzing themselves
+  function handleSelectCardSet(id: string) {
+    const cardSet = state.allCardSets.find((cardSet) => cardSet.id === id);
+
+    if (!cardSet) return;
+
+    const selectedRangeOfCards = applySettingsToSet(
+      false,
+      0,
+      cardSet.cards.length - 1,
+      cardSet.cards
+    );
+
+    const updateTarget = {
+      $set: {
+        ...initialData,
+        selectedRangeOfCards,
+        endIndex: cardSet.cards.length - 1,
+        totalCards: cardSet.cards.length,
+        cardSetName: cardSet.title,
+        allCards: cardSet.cards,
+        currentPage: EPage.QUIZ,
+      },
+    };
+
+    setState(update(state, updateTarget));
+  }
 
   // global settings for the flash cards
   function handleSaveSettings(settings: Partial<TDefaultCardsState>) {
@@ -62,6 +93,8 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
         ...settings,
         selectedRangeOfCards: setWithAppliedSettings, // update the selected range of cards
         currentCardIndex: 0, // reset the current card index
+        totalCorrect: 0, // reset the total correct guesses
+        totalWrong: 0, // reset the total wrong guesses
       },
     };
 
@@ -104,6 +137,20 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
     );
   }
 
+  function handleAddHint(hint: string, id: number) {
+    const findIndex = state.allCards.findIndex((card) => card.id === id);
+
+    const updateTarget = {
+      allCards: {
+        [findIndex]: {
+          hint: { $set: hint },
+        },
+      },
+    };
+
+    setState((prevState) => update(prevState, updateTarget));
+  }
+
   // toggles the guess property of the card to incorrect or correct based on the
   // parameter passed to the function
   function handleGuess(guess: TCard["guess"]) {
@@ -113,6 +160,7 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
 
     // user has reviewed the last card, show the results
     if (state.currentCardIndex >= state.selectedRangeOfCards.length - 1) {
+      updateTarget.currentPage = { $set: EPage.FINISHED };
       updateTarget.isFinished = { $set: true };
 
       setState((prevState) => update(prevState, updateTarget));
@@ -159,17 +207,24 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
     setState(update(state, updateTarget));
   }
 
+  // update local storage every time state changes
+  useEffect(() => {
+    localStorage.setItem("shrood__flashcards", JSON.stringify(state));
+  }, [state]);
+
   return (
     <CardsContext.Provider
       value={{
         state,
         handleToggleRandomQuizzing,
+        handleSelectCardSet,
         handleSaveSettings,
         handlePreviousCard,
         handleCorrectGuess,
         handleWrongGuess,
         handleFlipCard,
         handleNextCard,
+        handleAddHint,
       }}
     >
       {children}

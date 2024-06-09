@@ -101,7 +101,7 @@ export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
               <label className='opacity-60'>Start at:</label>
               <Input
                 onChange={({ target: { value } }) =>
-                  handleChange("startIndex", value)
+                  handleChange("startIndex", Number(value))
                 }
                 value={formData.startIndex}
                 placeholder='Card number'
@@ -111,7 +111,7 @@ export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
               <label className='opacity-60'>End at:</label>
               <Input
                 onChange={({ target: { value } }) =>
-                  handleChange("endIndex", value)
+                  handleChange("endIndex", Number(value))
                 }
                 value={formData.endIndex}
                 placeholder='Card number'

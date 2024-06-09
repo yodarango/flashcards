@@ -27,8 +27,8 @@ export const CardSetMeta = (props: HTMLAttributes<HTMLDivElement>) => {
 
   return (
     <div className={`cards-metta-20pt ${restOfProps}`} {...restOfProps}>
-      <h3>{setName}</h3>
-      <div className='d-flex align-items-center justify-content-between gap-4 bg-gamma px-4 py-2'>
+      <h3 className='text-center mb-4'>{setName}</h3>
+      <div className='cards-metta-20pt__score d-flex align-items-center justify-content-between gap-4 bg-gamma px-4 py-2'>
         <h5>
           {currentIndex} of {totalCards}
         </h5>

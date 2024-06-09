@@ -1,7 +1,9 @@
 .cards-metta-20pt {
-  width: calc(90vw - 1.5rem);
-  border-radius: 3rem;
-  overflow: hidden;
-  max-width: 50rem;
-  margin: auto;
+  .cards-metta-20pt__score {
+    width: calc(90vw - 1.5rem);
+    border-radius: 3rem;
+    overflow: hidden;
+    max-width: 50rem;
+    margin: auto;
+  }
 }

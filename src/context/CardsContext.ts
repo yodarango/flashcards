@@ -1,7 +1,21 @@
+declare var flashCardsSets: any;
+
 import { EGuessedCorrectly, TCard } from "@types";
 import { shuffle } from "../utils/shuffle";
 import { createContext } from "react";
-import { commonPhrases } from "@seed";
+
+export enum EPage {
+  FINISHED = "finished",
+  HOME = "home",
+  QUIZ = "quiz",
+}
+
+export type TCardSet = {
+  thumbnail: string;
+  cards: TCard[];
+  title: string;
+  id: string;
+};
 
 export type TDefaultCardsState = {
   selectedRangeOfCards: TCard[]; // the range of cards to be quizzed based on the start and end index
@@ -9,22 +23,43 @@ export type TDefaultCardsState = {
   isRandomQuizzingOn: boolean; // the user is testing themselves on a random set of cards
   currentCardIndex: number; // The index of the current card being displayed
   isShufflingOn: boolean; // shuffles the slice of cards encapsulated by the startIndex and endIndex
+  isCardFlipped: boolean; // the current card being displayed is flipped or not?
+  allCardSets: TCardSet[]; // All the available card sets
   totalCorrect: number; // the total number of correct card guesses
   cardSetName: string; // this is not being used right now. In the future I might allow users to save different card sets
   isFinished: boolean; // the user has finished the quiz
+  currentPage: EPage; // Keep the application lightweight, don't use a router, save the current page in the state
   totalCards: number; // the total number of cards available
   totalWrong: number; // the total number of wrong card guesses
   startIndex: number; // the start index of the slice of cards to be quizzed
   allCards: TCard[]; // all the cards available
   endIndex: number; // the end index of the slice of cards to be quizzed
-  isCardFlipped: boolean; // the current card being displayed is flipped or not?
 };
 
-//
+export const initialData: TDefaultCardsState = {
+  allCardSets: flashCardsSets,
+  isRandomQuizzingOn: false,
+  selectedRangeOfCards: [],
+  currentPage: EPage.HOME,
+  randomNumberOfCards: 0,
+  isShufflingOn: false,
+  isCardFlipped: false,
+  currentCardIndex: 0,
+  isFinished: false,
+  totalCorrect: 0,
+  cardSetName: "",
+  totalCards: 0,
+  totalWrong: 0,
+  startIndex: 0,
+  allCards: [],
+  endIndex: 0,
+};
 
 export const defaultContext = {
   state: getStateFromLocalStorage(),
   handleSaveSettings: (_: Partial<TDefaultCardsState>) => {},
+  handleAddHint: (_: string, __: number) => {},
+  handleSelectCardSet: (_: string) => {},
   handleToggleRandomQuizzing: () => {},
   handlePreviousCard: (_: any) => {},
   handleCorrectGuess: (_: any) => {},
@@ -35,47 +70,17 @@ export const defaultContext = {
 
 export const CardsContext = createContext(defaultContext);
 
-// get the card set from the seed file or the local storage
-// if the user has saved a card set
-export function getCardSet() {
-  return commonPhrases;
-}
-
-export function getStateFromLocalStorage() {
-  const allCards = getCardSet();
-
-  const initialData = {
-    selectedRangeOfCards: allCards,
-    endIndex: allCards.length - 1,
-    isRandomQuizzingOn: false,
-    randomNumberOfCards: 0,
-    isShufflingOn: false,
-    isCardFlipped: false,
-    currentCardIndex: 0,
-    allCards: allCards,
-    isFinished: false,
-    totalCorrect: 0,
-    cardSetName: "",
-    totalCards: 0,
-    totalWrong: 0,
-    startIndex: 0,
-  };
+// get the state from the local storage if it exists
+export function getStateFromLocalStorage(): TDefaultCardsState {
+  // get the card state from the seed file or the local storage
+  // if the user has saved a card set
 
   const data = localStorage.getItem("shrood__flashcards");
   const parsedData = data ? JSON.parse(data) : null;
 
-  if (!parsedData) return initialData;
+  if (!!parsedData) return parsedData;
 
-  return {
-    ...initialData,
-    ...parsedData,
-    selectedRangeOfCards: applySettingsToSet(
-      parsedData.isShufflingOn,
-      parsedData.startIndex,
-      parsedData.endIndex,
-      parsedData.allCards
-    ),
-  };
+  return initialData;
 }
 
 // gets only the unquizzed cards in the current array range. It accounts for shuffling
