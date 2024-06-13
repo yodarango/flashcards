@@ -28,7 +28,7 @@ export const CardsSets = () => {
 
   return (
     <div
-      className='card-sets-67th d-flex align-items-center justify-content-center pt-8'
+      className='card-sets-67th d-flex align-items-center justify-content-center flex-wrap gap-4 pt-8'
       onLoad={handleImageLoad}
     >
       {allCardSets.map((cardSet) => (
@@ -40,9 +40,9 @@ export const CardsSets = () => {
         >
           <Thumbnail
             alt='thumbnail for a set of flash cards'
+            className='mb-4 rounded'
             src={cardSet.thumbnail}
             height={imgHeight}
-            className='mb-4 rounded'
             width='100%'
           />
           <h3>{cardSet.title}</h3>
