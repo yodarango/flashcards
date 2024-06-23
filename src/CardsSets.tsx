@@ -38,13 +38,7 @@ export const CardsSets = () => {
           ref={cardContent}
           key={cardSet.id}
         >
-          <Thumbnail
-            alt='thumbnail for a set of flash cards'
-            className='mb-4 rounded'
-            src={cardSet.thumbnail}
-            height={imgHeight}
-            width='100%'
-          />
+          <div className='card-set-67th__thumbnail' />
           <h3>{cardSet.title}</h3>
         </div>
       ))}

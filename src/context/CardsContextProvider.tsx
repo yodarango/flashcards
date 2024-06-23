@@ -239,6 +239,18 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
     setState(update(state, updateTarget));
   }
 
+  function handleReset() {
+    localStorage.setItem("shrood__flashcards", JSON.stringify(initialData));
+
+    const updateTarget = {
+      $merge: {
+        ...initialData,
+      },
+    };
+
+    setState(update(state, updateTarget));
+  }
+
   // update local storage every time state changes
   useEffect(() => {
     localStorage.setItem("shrood__flashcards", JSON.stringify(state));
@@ -259,6 +271,7 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
         handleFlipCard,
         handleNextCard,
         handleAddHint,
+        handleReset,
       }}
     >
       {children}

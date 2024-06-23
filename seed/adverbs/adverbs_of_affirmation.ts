@@ -1,0 +1,1 @@
+export const adverbsOfAffirmation = '[\n    \'absolutely\',\n    \'indeed\',\n    \'certainly\',\n    \'definitely\',\n    \'doubtlessly\',\n    \'positively\',\n    \'surely\',\n    \'undoubtedly\',\n    \'verily\',\n    \'yes\',\n    \'undeniably\'\n]';

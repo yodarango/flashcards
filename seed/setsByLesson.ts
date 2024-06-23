@@ -1,10 +1,4 @@
-const EGuessedCorrectly = {
-  UNQUIZZED: "unquizzed",
-  CORRECT: "correct",
-  INCORRECT: "incorrect",
-};
-
-var flashCardsSets = [
+export const setsByLesson = [
   {
     id: "K79EOUInQE",
     title: "Unit 1",
@@ -191,12 +185,6 @@ var flashCardsSets = [
         hint: "",
         id: "mQwMflB0sX",
       },
-    ],
-  },
-  {
-    id: "tPoO8EsfT9",
-    title: "Unit 1",
-    cards: [
       {
         front: "adiós",
         back: "goodbye",
@@ -1687,12 +1675,6 @@ var flashCardsSets = [
         hint: "",
         id: "Tjtyk5WpY0",
       },
-    ],
-  },
-  {
-    id: "5bS1Eegtmk",
-    title: "Unit 9",
-    cards: [
       {
         front: "ayuda",
         back: "help",
@@ -2293,12 +2275,6 @@ var flashCardsSets = [
         hint: "",
         id: "hbocKMneEZ",
       },
-    ],
-  },
-  {
-    id: "sFOtockKS7",
-    title: "Unit 11",
-    cards: [
       {
         front: "amiga",
         back: "friend",
@@ -2494,40 +2470,6 @@ var flashCardsSets = [
         guess: "unquizzed",
         hint: "",
         id: "9TX3350T5o",
-      },
-    ],
-  },
-  {
-    id: "vBbLF0UYY9",
-    title: "Unit 12",
-    cards: [
-      {
-        front: "agreement1",
-        back: "agreement1",
-        guess: "unquizzed",
-        hint: "",
-        id: "80JsBSndeC",
-      },
-      {
-        front: "agreement2",
-        back: "agreement2",
-        guess: "unquizzed",
-        hint: "",
-        id: "Jm3YLchtMd",
-      },
-      {
-        front: "agreement3",
-        back: "agreement3",
-        guess: "unquizzed",
-        hint: "",
-        id: "a5ngAk2PFa",
-      },
-      {
-        front: "agreement",
-        back: "agreement",
-        guess: "unquizzed",
-        hint: "",
-        id: "7kqRCVucqp",
       },
     ],
   },
@@ -2731,12 +2673,6 @@ var flashCardsSets = [
         hint: "",
         id: "SfAHZDhvQd",
       },
-    ],
-  },
-  {
-    id: "umkL3r1HSY",
-    title: "Unit 13",
-    cards: [
       {
         front: "abuela",
         back: "Grandma",
@@ -3254,12 +3190,6 @@ var flashCardsSets = [
         hint: "",
         id: "knX8C45RYP",
       },
-    ],
-  },
-  {
-    id: "rtIMyakK5O",
-    title: "Unit 14",
-    cards: [
       {
         front: "a veces",
         back: "sometimes",
@@ -3964,12 +3894,6 @@ var flashCardsSets = [
         hint: "",
         id: "Ciro7zUE7C",
       },
-    ],
-  },
-  {
-    id: "XM0BwOQYol",
-    title: "Unit 16",
-    cards: [
       {
         front: "prestense21",
         back: "borrow21",
@@ -4549,12 +4473,6 @@ var flashCardsSets = [
         hint: "",
         id: "FLjbYZXUTj",
       },
-    ],
-  },
-  {
-    id: "a37mgXe7nZ",
-    title: "Unit 18",
-    cards: [
       {
         front: "abren",
         back: "open",
@@ -5120,12 +5038,6 @@ var flashCardsSets = [
         hint: "",
         id: "PJtRDniEkE",
       },
-    ],
-  },
-  {
-    id: "pT2RvHorcY",
-    title: "Unit 19",
-    cards: [
       {
         front: "a menudo",
         back: "often",
@@ -6048,12 +5960,6 @@ var flashCardsSets = [
         hint: "",
         id: "FH8ncnpxlJ",
       },
-    ],
-  },
-  {
-    id: "tL7bSi7k3J",
-    title: "Unit 21",
-    cards: [
       {
         front: "abuelas",
         back: "grandmothers",
@@ -7074,12 +6980,6 @@ var flashCardsSets = [
         hint: "",
         id: "hSSHkbbN8Q",
       },
-    ],
-  },
-  {
-    id: "jHbSzQ4GDz",
-    title: "Unit 23",
-    cards: [
       {
         front: "tobe1",
         back: "tobe1",
@@ -7826,12 +7726,6 @@ var flashCardsSets = [
         hint: "",
         id: "KjZQkK7oKQ",
       },
-    ],
-  },
-  {
-    id: "cCyYBvYpzq",
-    title: "Unit 25",
-    cards: [
       {
         front: "abrigo",
         back: "coat",
@@ -9336,12 +9230,6 @@ var flashCardsSets = [
         hint: "",
         id: "2nHBOtHvyx",
       },
-    ],
-  },
-  {
-    id: "yyAdopbLsC",
-    title: "Unit 30",
-    cards: [
       {
         front: "arte",
         back: "art",
@@ -10268,12 +10156,6 @@ var flashCardsSets = [
         hint: "",
         id: "qGGVO7jGMG",
       },
-    ],
-  },
-  {
-    id: "misnFKvnmZ",
-    title: "Unit 32",
-    cards: [
       {
         front: "bajas",
         back: "low",
@@ -10755,12 +10637,6 @@ var flashCardsSets = [
         hint: "",
         id: "W7xbNY2jxu",
       },
-    ],
-  },
-  {
-    id: "b3uvyr1Nyp",
-    title: "Unit 34",
-    cards: [
       {
         front: "bolsa",
         back: "bag",
@@ -11507,12 +11383,6 @@ var flashCardsSets = [
         hint: "",
         id: "2eOGaHoYLz",
       },
-    ],
-  },
-  {
-    id: "qLmDRhsAFP",
-    title: "Unit 36",
-    cards: [
       {
         front: "cara",
         back: "expensive",
@@ -11792,12 +11662,6 @@ var flashCardsSets = [
         hint: "",
         id: "2fLHrMAKF6",
       },
-    ],
-  },
-  {
-    id: "eNkIRvtAif",
-    title: "Unit 36",
-    cards: [
       {
         front: "cambiamos",
         back: "we changed",
@@ -12566,12 +12430,6 @@ var flashCardsSets = [
         hint: "",
         id: "HoPv155TIs",
       },
-    ],
-  },
-  {
-    id: "33vk3umlhr",
-    title: "Unit 38",
-    cards: [
       {
         front: "almuerza",
         back: "lunch",
@@ -13116,12 +12974,6 @@ var flashCardsSets = [
         hint: "",
         id: "GlWFUpg29Z",
       },
-    ],
-  },
-  {
-    id: "b0zAdgcAcF",
-    title: "Unit 40",
-    cards: [
       {
         front: "aprendiste",
         back: "you learned",
@@ -13750,12 +13602,6 @@ var flashCardsSets = [
         hint: "",
         id: "FZQxu0Rx7z",
       },
-    ],
-  },
-  {
-    id: "YcRmrESNuR",
-    title: "Unit 42",
-    cards: [
       {
         front: "anoche",
         back: "last night",
@@ -14439,12 +14285,6 @@ var flashCardsSets = [
         hint: "",
         id: "G3sC2wAUzp",
       },
-    ],
-  },
-  {
-    id: "7D5O2x3uyI",
-    title: "Unit 44",
-    cards: [
       {
         front: "pasttense11",
         back: "pasttense11",
@@ -14766,12 +14606,6 @@ var flashCardsSets = [
         hint: "",
         id: "l7UH7XboNg",
       },
-    ],
-  },
-  {
-    id: "jWQkJraTOW",
-    title: "Unit 45",
-    cards: [
       {
         front: "algo de",
         back: "some",
@@ -16134,12 +15968,6 @@ var flashCardsSets = [
         hint: "",
         id: "zjnTDquf2e",
       },
-    ],
-  },
-  {
-    id: "bNR7BaGoqx",
-    title: "Unit 48",
-    cards: [
       {
         front: "ayudamos",
         back: "we help",
@@ -16753,12 +16581,6 @@ var flashCardsSets = [
         hint: "",
         id: "kpRr9FHT23",
       },
-    ],
-  },
-  {
-    id: "ndrqsfKXyz",
-    title: "Unit 50",
-    cards: [
       {
         front: "ayuda",
         back: "help",
@@ -17639,12 +17461,6 @@ var flashCardsSets = [
         hint: "",
         id: "uY9v3qHSDO",
       },
-    ],
-  },
-  {
-    id: "5AAysqVwLH",
-    title: "Unit 52",
-    cards: [
       {
         front: "aceite",
         back: "oil",
@@ -17988,12 +17804,6 @@ var flashCardsSets = [
         hint: "",
         id: "nlZ1ZLXGp2",
       },
-    ],
-  },
-  {
-    id: "5VylbE9sDS",
-    title: "Unit 52",
-    cards: [
       {
         front: "acompañar",
         back: "accompany",
@@ -19020,12 +18830,6 @@ var flashCardsSets = [
         hint: "",
         id: "sJ1NebGQ6F",
       },
-    ],
-  },
-  {
-    id: "hSqDWRtNWB",
-    title: "Unit 54",
-    cards: [
       {
         front: "actividad",
         back: "exercise",
@@ -19640,12 +19444,6 @@ var flashCardsSets = [
         hint: "",
         id: "Ht9juPvimX",
       },
-    ],
-  },
-  {
-    id: "KAdECrDIAH",
-    title: "Unit 56",
-    cards: [
       {
         front: "agricultor",
         back: "farmer",
@@ -20735,12 +20533,6 @@ var flashCardsSets = [
         hint: "",
         id: "WctXqKfc5Z",
       },
-    ],
-  },
-  {
-    id: "xrPlDvKIVQ",
-    title: "Unit 58",
-    cards: [
       {
         front: "acompañaba",
         back: "accompanied",
@@ -21929,12 +21721,6 @@ var flashCardsSets = [
         hint: "",
         id: "aSteABy7lL",
       },
-    ],
-  },
-  {
-    id: "pRBHjhtHVR",
-    title: "Unit 60",
-    cards: [
       {
         front: "cajones",
         back: "drawers",
@@ -22717,12 +22503,6 @@ var flashCardsSets = [
         hint: "",
         id: "druw6TeVPI",
       },
-    ],
-  },
-  {
-    id: "PTStsENdZ1",
-    title: "Unit 62",
-    cards: [
       {
         front: "amaban",
         back: "they loved",
@@ -23728,12 +23508,6 @@ var flashCardsSets = [
         hint: "",
         id: "Py5WwhgYJB",
       },
-    ],
-  },
-  {
-    id: "aJyll2yob9",
-    title: "Unit 64",
-    cards: [
       {
         front: "almorcé",
         back: "I lunched",
@@ -24703,12 +24477,6 @@ var flashCardsSets = [
         hint: "",
         id: "eMvGCToatB",
       },
-    ],
-  },
-  {
-    id: "iLSWg0jx5c",
-    title: "Unit 67",
-    cards: [
       {
         front: "a lo largo de",
         back: "throughout",
@@ -25267,12 +25035,6 @@ var flashCardsSets = [
         hint: "",
         id: "lAjxprC9Ra",
       },
-    ],
-  },
-  {
-    id: "myxk2fNhTT",
-    title: "Unit 68",
-    cards: [
       {
         front: "actriz",
         back: "actress",
@@ -25930,12 +25692,6 @@ var flashCardsSets = [
         hint: "",
         id: "nde1kcTwJW",
       },
-    ],
-  },
-  {
-    id: "G6TD05o9B0",
-    title: "Unit 69",
-    cards: [
       {
         front: "ama de casa",
         back: "Housewife",
@@ -26739,12 +26495,6 @@ var flashCardsSets = [
         hint: "",
         id: "8brxdBtTmp",
       },
-    ],
-  },
-  {
-    id: "u12q6zbbQE",
-    title: "Unit 71",
-    cards: [
       {
         front: "asunto",
         back: "affair",
@@ -27309,12 +27059,6 @@ var flashCardsSets = [
         hint: "",
         id: "UBQCEsMrfK",
       },
-    ],
-  },
-  {
-    id: "VO53ln0lXA",
-    title: "Unit 73",
-    cards: [
       {
         front: "abuelita",
         back: "granny",
@@ -28341,12 +28085,6 @@ var flashCardsSets = [
         hint: "",
         id: "ykeGT1GTCN",
       },
-    ],
-  },
-  {
-    id: "el7kqpzJ1o",
-    title: "Unit 75",
-    cards: [
       {
         front: "adivinaremos",
         back: "we will guess",
@@ -29394,12 +29132,6 @@ var flashCardsSets = [
         hint: "",
         id: "BxYGqZVkfL",
       },
-    ],
-  },
-  {
-    id: "VKq7QkAWXA",
-    title: "Unit 77",
-    cards: [
       {
         front: "almohadas",
         back: "pillows",
@@ -30545,12 +30277,6 @@ var flashCardsSets = [
         hint: "",
         id: "Vd7njvb1oL",
       },
-    ],
-  },
-  {
-    id: "jARJkBm9xN",
-    title: "Unit 79",
-    cards: [
       {
         front: "acamparemos",
         back: "we will camp",
@@ -31683,12 +31409,6 @@ var flashCardsSets = [
         hint: "",
         id: "ZgbfFooxeo",
       },
-    ],
-  },
-  {
-    id: "ZwI2nuM01k",
-    title: "Unit 81",
-    cards: [
       {
         front: "abajo",
         back: "below",
@@ -32366,12 +32086,6 @@ var flashCardsSets = [
         hint: "",
         id: "l6ZbWj85VR",
       },
-    ],
-  },
-  {
-    id: "ARBMLKea6K",
-    title: "Unit 83",
-    cards: [
       {
         front: "aguacate",
         back: "avocado",
@@ -32971,12 +32685,6 @@ var flashCardsSets = [
         hint: "",
         id: "jT9q6GbGUJ",
       },
-    ],
-  },
-  {
-    id: "nMFLRhUGhw",
-    title: "Unit 84",
-    cards: [
       {
         front: "amar",
         back: "to love",
@@ -36611,12 +36319,6 @@ var flashCardsSets = [
         hint: "",
         id: "SRmU22pJK0",
       },
-    ],
-  },
-  {
-    id: "N0cyJEVC68",
-    title: "Unit 96",
-    cards: [
       {
         front: "agencia",
         back: "agency",
@@ -39565,12 +39267,6 @@ var flashCardsSets = [
         hint: "",
         id: "pfYYUy45uu",
       },
-    ],
-  },
-  {
-    id: "tcfjmJElke",
-    title: "Unit 110",
-    cards: [
       {
         front: "cabaña",
         back: "cabin",
@@ -39641,12 +39337,6 @@ var flashCardsSets = [
         hint: "",
         id: "tPeFAoPzwc",
       },
-    ],
-  },
-  {
-    id: "PfQ5ZDeksc",
-    title: "Unit 110",
-    cards: [
       {
         front: "ayúdame",
         back: "Help me",
@@ -39875,12 +39565,6 @@ var flashCardsSets = [
         hint: "",
         id: "rTC5gqQ4TV",
       },
-    ],
-  },
-  {
-    id: "SLtTUZzxoz",
-    title: "Unit 112",
-    cards: [
       {
         front: "buscar",
         back: "seek",
@@ -40061,12 +39745,6 @@ var flashCardsSets = [
         hint: "",
         id: "VUBwAiYvJr",
       },
-    ],
-  },
-  {
-    id: "nlByampyRH",
-    title: "Unit 114",
-    cards: [
       {
         front: "aspirina",
         back: "aspirin",
@@ -40213,12 +39891,6 @@ var flashCardsSets = [
         hint: "",
         id: "ryp7IoG6VW",
       },
-    ],
-  },
-  {
-    id: "b3B5WlYZpq",
-    title: "Unit 115",
-    cards: [
       {
         front: "alojamiento",
         back: "accommodation",
@@ -40371,12 +40043,6 @@ var flashCardsSets = [
         hint: "",
         id: "s180S5W9O5",
       },
-    ],
-  },
-  {
-    id: "0R3excleKi",
-    title: "Unit 116",
-    cards: [
       {
         front: "arrogante",
         back: "arrogant",
@@ -40605,12 +40271,6 @@ var flashCardsSets = [
         hint: "",
         id: "de0wjHHwCO",
       },
-    ],
-  },
-  {
-    id: "Ktp1umneI4",
-    title: "Unit 118",
-    cards: [
       {
         front: "elegí",
         back: "I chose",
@@ -40791,12 +40451,6 @@ var flashCardsSets = [
         hint: "",
         id: "Fh41hZXYYI",
       },
-    ],
-  },
-  {
-    id: "CAY6jKbIjU",
-    title: "Unit 120",
-    cards: [
       {
         front: "campeonato",
         back: "championship",
@@ -41019,12 +40673,6 @@ var flashCardsSets = [
         hint: "",
         id: "qcSCdBGIRl",
       },
-    ],
-  },
-  {
-    id: "z1agdSg3xz",
-    title: "Unit 122",
-    cards: [
       {
         front: "campeonas",
         back: "champions",
@@ -41303,12 +40951,6 @@ var flashCardsSets = [
         hint: "",
         id: "3mRY6gwPj8",
       },
-    ],
-  },
-  {
-    id: "R3mFSvAJAj",
-    title: "Unit 124",
-    cards: [
       {
         front: "subj21",
         back: "subj21",
@@ -41413,12 +41055,6 @@ var flashCardsSets = [
         hint: "",
         id: "nEWVspO14X",
       },
-    ],
-  },
-  {
-    id: "leNA1nJC4W",
-    title: "Unit 125",
-    cards: [
       {
         front: "abrazar",
         back: "hug",
@@ -41757,12 +41393,6 @@ var flashCardsSets = [
         hint: "",
         id: "S5JYweTH8h",
       },
-    ],
-  },
-  {
-    id: "YGqeIREmlb",
-    title: "Unit 129",
-    cards: [
       {
         front: "aro",
         back: "ring",
@@ -41909,12 +41539,6 @@ var flashCardsSets = [
         hint: "",
         id: "xrdkZHmEaL",
       },
-    ],
-  },
-  {
-    id: "LKsDGeAUBh",
-    title: "Unit 130",
-    cards: [
       {
         front: "colonia",
         back: "Suburb",
@@ -42061,12 +41685,6 @@ var flashCardsSets = [
         hint: "",
         id: "3K7hIvilNz",
       },
-    ],
-  },
-  {
-    id: "c7rTyqb3B0",
-    title: "Unit 131",
-    cards: [
       {
         front: "atención",
         back: "attention",
@@ -42289,12 +41907,6 @@ var flashCardsSets = [
         hint: "",
         id: "Tymppo2BPZ",
       },
-    ],
-  },
-  {
-    id: "IGwy8T8d4I",
-    title: "Unit 133",
-    cards: [
       {
         front: "subj31",
         back: "subj31",
@@ -42475,12 +42087,6 @@ var flashCardsSets = [
         hint: "",
         id: "Ur2d6Wj6Dv",
       },
-    ],
-  },
-  {
-    id: "Pj8VHtIwxH",
-    title: "Unit 135",
-    cards: [
       {
         front: "amanecer",
         back: "dawn",
@@ -42715,12 +42321,6 @@ var flashCardsSets = [
         hint: "",
         id: "noZpEwzwcY",
       },
-    ],
-  },
-  {
-    id: "sGDBXVA99S",
-    title: "Unit 137",
-    cards: [
       {
         front: "a dónde",
         back: "where",
@@ -42901,12 +42501,6 @@ var flashCardsSets = [
         hint: "",
         id: "fyWyViCZjN",
       },
-    ],
-  },
-  {
-    id: "Elo10M9tDG",
-    title: "Unit 139",
-    cards: [
       {
         front: "dentro de",
         back: "within",
@@ -43141,12 +42735,6 @@ var flashCardsSets = [
         hint: "",
         id: "iXedNwPuyL",
       },
-    ],
-  },
-  {
-    id: "ubXSEkue3Q",
-    title: "Unit 141",
-    cards: [
       {
         front: "apurarse",
         back: "hurry",
@@ -43685,12 +43273,6 @@ var flashCardsSets = [
         hint: "",
         id: "SWM3GCig7U",
       },
-    ],
-  },
-  {
-    id: "aozO1uDumt",
-    title: "Unit 147",
-    cards: [
       {
         front: "ambiente",
         back: "ambient",
@@ -43871,12 +43453,6 @@ var flashCardsSets = [
         hint: "",
         id: "zAXa3HVK5p",
       },
-    ],
-  },
-  {
-    id: "WY3HJYDbQT",
-    title: "Unit 149",
-    cards: [
       {
         front: "adjuntar",
         back: "to attach",
@@ -44099,12 +43675,6 @@ var flashCardsSets = [
         hint: "",
         id: "Nju29nIGrA",
       },
-    ],
-  },
-  {
-    id: "UhqU7Z3Cp8",
-    title: "Unit 151",
-    cards: [
       {
         front: "bandeja",
         back: "tray",
@@ -44327,12 +43897,6 @@ var flashCardsSets = [
         hint: "",
         id: "SnTnVBPRxD",
       },
-    ],
-  },
-  {
-    id: "1Y6aE2LKK5",
-    title: "Unit 153",
-    cards: [
       {
         front: "a continuación",
         back: "then",
@@ -44519,12 +44083,6 @@ var flashCardsSets = [
         hint: "",
         id: "tvRt0FBOXV",
       },
-    ],
-  },
-  {
-    id: "8nnG9ytgSA",
-    title: "Unit 155",
-    cards: [
       {
         front: "arruinar",
         back: "spoil",
@@ -44747,12 +44305,6 @@ var flashCardsSets = [
         hint: "",
         id: "wDJKtu1qQO",
       },
-    ],
-  },
-  {
-    id: "sPbcakuAIp",
-    title: "Unit 157",
-    cards: [
       {
         front: "batiendo",
         back: "beating",
@@ -44823,12 +44375,6 @@ var flashCardsSets = [
         hint: "",
         id: "lfYIYK92Ky",
       },
-    ],
-  },
-  {
-    id: "f5TralGh0r",
-    title: "Unit 157",
-    cards: [
       {
         front: "administración",
         back: "administration",
@@ -45057,12 +44603,6 @@ var flashCardsSets = [
         hint: "",
         id: "Nu0E0ndocg",
       },
-    ],
-  },
-  {
-    id: "hRuc6wwhTn",
-    title: "Unit 159",
-    cards: [
       {
         front: "subj61",
         back: "subj61",
@@ -45243,12 +44783,6 @@ var flashCardsSets = [
         hint: "",
         id: "4LwrL3WR5q",
       },
-    ],
-  },
-  {
-    id: "7ULXaK05sr",
-    title: "Unit 161",
-    cards: [
       {
         front: "calzoncillos",
         back: "underpants",
@@ -45635,12 +45169,6 @@ var flashCardsSets = [
         hint: "",
         id: "MxMR5pI6CG",
       },
-    ],
-  },
-  {
-    id: "kC4XqstZFk",
-    title: "Unit 165",
-    cards: [
       {
         front: "acercarse",
         back: "getting closer",
@@ -45815,12 +45343,6 @@ var flashCardsSets = [
         hint: "",
         id: "aLfTfLsZF0",
       },
-    ],
-  },
-  {
-    id: "q416IiclYC",
-    title: "Unit 166",
-    cards: [
       {
         front: "a principios de",
         back: "at the beginning of",
@@ -45985,12 +45507,6 @@ var flashCardsSets = [
         hint: "",
         id: "AmRvL6pzTf",
       },
-    ],
-  },
-  {
-    id: "7x6T1rPUl7",
-    title: "Unit 167",
-    cards: [
       {
         front: "atrasado",
         back: "late",
@@ -46143,12 +45659,6 @@ var flashCardsSets = [
         hint: "",
         id: "trDY2NOWGO",
       },
-    ],
-  },
-  {
-    id: "y4pLZhYcHO",
-    title: "Unit 168",
-    cards: [
       {
         front: "analgésico",
         back: "analgesic",
@@ -46295,12 +45805,6 @@ var flashCardsSets = [
         hint: "",
         id: "kWNJB0kIgz",
       },
-    ],
-  },
-  {
-    id: "i93qaT8sYM",
-    title: "Unit 169",
-    cards: [
       {
         front: "abrelatas",
         back: "can opener",
@@ -46447,12 +45951,6 @@ var flashCardsSets = [
         hint: "",
         id: "qyyXMnhpqt",
       },
-    ],
-  },
-  {
-    id: "fpu2vghTEv",
-    title: "Unit 170",
-    cards: [
       {
         front: "acuerdo",
         back: "agreement",
@@ -46605,12 +46103,6 @@ var flashCardsSets = [
         hint: "",
         id: "ZNj3nQoENL",
       },
-    ],
-  },
-  {
-    id: "iWHwB2faOz",
-    title: "Unit 171",
-    cards: [
       {
         front: "animarse",
         back: "Buck up",
@@ -46763,12 +46255,6 @@ var flashCardsSets = [
         hint: "",
         id: "bPMkcbNEyR",
       },
-    ],
-  },
-  {
-    id: "VM4zpwQRW7",
-    title: "Unit 172",
-    cards: [
       {
         front: "castigar",
         back: "punish",
@@ -46915,12 +46401,6 @@ var flashCardsSets = [
         hint: "",
         id: "m76uIM1CYN",
       },
-    ],
-  },
-  {
-    id: "lU1I9N6fcv",
-    title: "Unit 173",
-    cards: [
       {
         front: "casamiento",
         back: "marriage",
@@ -47067,12 +46547,6 @@ var flashCardsSets = [
         hint: "",
         id: "pZtUMLDLtC",
       },
-    ],
-  },
-  {
-    id: "OYXDp7nbcq",
-    title: "Unit 174",
-    cards: [
       {
         front: "atento",
         back: "attentive",
@@ -47219,12 +46693,6 @@ var flashCardsSets = [
         hint: "",
         id: "DycsU6eTiI",
       },
-    ],
-  },
-  {
-    id: "Jz4N7xxE1y",
-    title: "Unit 175",
-    cards: [
       {
         front: "adaptarse",
         back: "adapt",
@@ -47371,12 +46839,6 @@ var flashCardsSets = [
         hint: "",
         id: "CVHkMdAOo6",
       },
-    ],
-  },
-  {
-    id: "cwG9fskVVE",
-    title: "Unit 176",
-    cards: [
       {
         front: "calentamiento",
         back: "heating",
@@ -47529,12 +46991,6 @@ var flashCardsSets = [
         hint: "",
         id: "6sxIU6F5h2",
       },
-    ],
-  },
-  {
-    id: "H7KVQcw0g7",
-    title: "Unit 177",
-    cards: [
       {
         front: "aún no",
         back: "not yet",

@@ -16,7 +16,6 @@ export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
 
   const currentCardFront = selectedRangeOfCards[currentCardIndex]?.front;
   const currentCardBack = selectedRangeOfCards[currentCardIndex]?.back;
-  const currentCardId = selectedRangeOfCards[currentCardIndex]?.id;
   const isCardFlipped = state.isCardFlipped;
 
   const flashCardContentFront = useRef<any>(undefined);
@@ -52,7 +51,7 @@ export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
             className='flashcard-content d-flex align-items-center justify-content-start flex-column p-6'
             ref={flashCardContentFront}
           >
-            <p className='color-alpha opacity-60 fs-3'># {currentCardId}</p>
+            <p className='color-alpha opacity-60 fs-3'># {currentCardIndex}</p>
             <h2>{currentCardFront}</h2>
           </div>
           <button
@@ -73,7 +72,7 @@ export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
             <span className='icon icon-chevron-back-outline color-alpha' />
           </button>
           <div className='flashcard-content p-6' ref={flashCardContentBack}>
-            <p className='color-alpha fs-3 opacity-60'># {currentCardId}</p>
+            <p className='color-alpha fs-3 opacity-60'># {currentCardIndex}</p>
             <h2>{currentCardBack}</h2>
           </div>
           <button

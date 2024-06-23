@@ -1,0 +1,1 @@
+export const remembering = '[\n  \'remember\',\n  \'recall\',\n  \'recollect\',\n  \'forget\',\n  \'memorize\',\n  \'reminisce\',\n  \'retain\',\n  \'remind\',\n  \'distract\',\n  \'misremember\',\n  \'think\'\n]';

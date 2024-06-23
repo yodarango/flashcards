@@ -21,7 +21,7 @@ export const RightOrWrong = (props: HTMLAttributes<HTMLSelectElement>) => {
       </Button>
       <Button onClick={handleCorrectGuess} className='color-beta w-100' success>
         <span className='icon icon-checkmark-outline color-beta' />
-        <span>Right</span>
+        <span>Correct</span>
       </Button>
     </section>
   );

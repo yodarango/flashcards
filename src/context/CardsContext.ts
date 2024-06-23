@@ -68,6 +68,7 @@ export const defaultContext = {
   handleWrongGuess: (_: any) => {},
   handleNextCard: (_: any) => {},
   handleFlipCard: () => {},
+  handleReset: () => {},
 };
 
 export const CardsContext = createContext(defaultContext);

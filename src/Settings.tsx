@@ -7,7 +7,8 @@ import "./Settings.scss";
 
 export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
   const ctx = useCardsContext();
-  const { handleToggleRandomQuizzing, handleSaveSettings, state } = ctx;
+  const { handleToggleRandomQuizzing, handleSaveSettings, handleReset, state } =
+    ctx;
 
   const randomNumberOfCards = state.randomNumberOfCards;
   const isRandomQuizzingOn = state.isRandomQuizzingOn;
@@ -179,14 +180,7 @@ export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
 
           {/*  delete all data  */}
 
-          <Button
-            onClick={() => {
-              localStorage.removeItem("shrood__flashcards");
-              window.location.reload();
-            }}
-            className='w-100'
-            danger
-          >
+          <Button onClick={handleReset} className='w-100' danger>
             Clear all data
           </Button>
         </section>
