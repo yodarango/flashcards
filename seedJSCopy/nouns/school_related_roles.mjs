@@ -1,0 +1,18 @@
+export const schoolRelatedRoles = [
+  "student",
+  "teacher",
+  "principal",
+  "headmaster",
+  "headmistress",
+  "professor",
+  "instructor",
+  "lecturer",
+  "tutor",
+  "counselor",
+  "librarian",
+  "administrator",
+  "dean",
+  "supervisor",
+  "coach",
+  "educator",
+];

@@ -1,0 +1,18 @@
+export const MedicalProfessions = [
+  { spanish: "calificado", english: "qualified" },
+  { spanish: "experimentado", english: "experienced" },
+  { spanish: "calificado", english: "skilled" },
+  { spanish: "certificado", english: "certified" },
+  { spanish: "informado", english: "knowledgeable" },
+  { spanish: "competente", english: "competent" },
+  { spanish: "comprometido", english: "dedicated" },
+  { spanish: "compasivo", english: "compassionate" },
+  { spanish: "profesional", english: "professional" },
+  { spanish: "confiable", english: "reliable" },
+  { spanish: "de confianza", english: "trustworthy" },
+  { spanish: "eficiente", english: "efficient" },
+  { spanish: "excelente", english: "excellent" },
+  { spanish: "experto", english: "expert" },
+  { spanish: "entrenado", english: "trained" },
+  { spanish: "especializado", english: "specialized" },
+];
