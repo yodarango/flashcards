@@ -1,5 +1,3 @@
-import { termsByPhrase } from "../../data/termsByPhrase/index";
-import { termsByCategory } from "../../data/termsByCategory";
 import { EGuessedCorrectly, TCard } from "@types";
 import { shuffle } from "../utils/shuffle";
 import { createContext } from "react";
@@ -10,33 +8,10 @@ export enum EPage {
   QUIZ = "quiz",
 }
 
-export type TCardSet = {
-  sets: TCardSet[] | TCard[];
-  thumbnail: string;
-  title: string;
-  id: string;
-};
-
-const allCardSets: TCardSet[] = [
-  {
-    title: "By common phrases",
-    id: "by-common-phrases",
-    sets: termsByPhrase,
-    thumbnail: "",
-  },
-  {
-    title: "By category",
-    id: "by-category",
-    sets: termsByCategory,
-    thumbnail: "",
-  },
-];
-
 export type TDefaultCardsState = {
   selectedRangeOfCards: TCard[]; // the range of cards to be quizzed based on the start and end index
   randomNumberOfCards: number; // number of randomly selected cards including from 0 to the total number of cards
   isRandomQuizzingOn: boolean; // the user is testing themselves on a random set of cards
-  allCardSets: TCardSet[]; // All the available card sets
   currentCardIndex: number; // The index of the current card being displayed
   isShufflingOn: boolean; // shuffles the slice of cards encapsulated by the startIndex and endIndex
   isCardFlipped: boolean; // the current card being displayed is flipped or not?
@@ -52,7 +27,6 @@ export type TDefaultCardsState = {
 };
 
 export const initialData: TDefaultCardsState = {
-  allCardSets,
   isRandomQuizzingOn: false,
   selectedRangeOfCards: [],
   currentPage: EPage.HOME,

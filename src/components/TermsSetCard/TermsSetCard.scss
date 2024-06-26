@@ -1,0 +1,16 @@
+.terms-set-card-11gt {
+  width: 100%;
+
+  &:hover {
+    box-shadow: 0 0 1rem var(--dr-delta);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    scale: 1.01;
+  }
+
+  .terms-set-card-11gt__raw-thumbnail {
+    overflow: hidden;
+    height: 15rem;
+    width: 100%;
+  }
+}

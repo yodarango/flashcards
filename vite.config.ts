@@ -8,11 +8,15 @@ export default defineConfig({
   // aiases
   resolve: {
     alias: {
+      "@components": path.resolve(__dirname, "./src/components"),
+      "@constants": path.resolve(__dirname, "./src/constants"),
       "@context": path.resolve(__dirname, "./src/context"),
+      "@views": path.resolve(__dirname, "./src/views"),
       "@types": path.resolve(__dirname, "./src/types"),
       "@utils": path.resolve(__dirname, "./src/utils"),
       "@ds": path.resolve(__dirname, "./src/@ds"),
       "@seed": path.resolve(__dirname, "./seed"),
+      "@data": path.resolve(__dirname, "./data"),
     },
   },
 });

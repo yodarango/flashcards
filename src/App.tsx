@@ -1,5 +1,6 @@
+import { ROUTE_HOME, ROUTE_WORDS_BY_COMMON_PHRASES } from "@constants";
+import { ViewIndex, ViewWordsByCommonPhrases } from "@views";
 import { CardsContextProvider } from "@context";
-import { Container } from "./Container";
 
 import {
   createRoutesFromElements,
@@ -12,7 +13,11 @@ import {
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='' element={<Outlet />} errorElement={<></>}>
-      <Route path='/' element={<Container />} />
+      <Route path={ROUTE_HOME} element={<ViewIndex />} />
+      <Route
+        path={ROUTE_WORDS_BY_COMMON_PHRASES}
+        element={<ViewWordsByCommonPhrases />}
+      />
     </Route>
   )
 );

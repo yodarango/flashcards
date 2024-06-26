@@ -20,11 +20,14 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
+      "@components": ["./src/components"],
+      "@constants": ["./src/constants"],
       "@context": ["./src/context"],
       "@utils": ["./src/utils"],
+      "@views": ["./src/views"],
       "@types": ["./src/types"],
       "@ds": ["./src/@ds"],
-      "@seed": ["./seed"]
+      "@data": ["./data"]
     }
   },
   "include": ["src"],
