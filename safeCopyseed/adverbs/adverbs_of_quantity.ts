@@ -1,1 +1,0 @@
-export const adverbsOfQuantity = '[\n  \'almost\',\n  \'barely\',\n  \'completely\',\n  \'entirely\',\n  \'exactly\',\n  \'fully\',\n  \'hardly\',\n  \'nearly\',\n  \'partly\',\n  \'plenty\',\n  \'scarcely\',\n  \'virtually\',\n  \'notably\',\n  \'somewhat\',\n  \'just\',\n  \'rather\'\n]';

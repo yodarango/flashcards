@@ -1,1 +1,0 @@
-export const existence = '[\n  \'be\',\n  \'exist\',\n  \'live\',\n  \'survive\',\n  \'subsist\',\n  \'remain\',\n  \'abide\',\n  \'persist\',\n  \'dwell\',\n  \'occupy\',\n  \'prevail\',\n  \'endure\',\n  \'stand\',\n  \'loiter\',\n  \'reside\',\n  \'inhabit\',\n  \'persist\',\n  \'continue\',\n  \'persist\',\n  \'coexist\',\n  \'inhere\',\n  \'obtain\',\n  \'occur\'\n]';

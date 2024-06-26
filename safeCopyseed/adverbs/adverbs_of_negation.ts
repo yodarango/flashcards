@@ -1,1 +1,0 @@
-export const adverbsOfNegation = '[\'no\', \'not\', \'never\', \'hardly\', \'scarcely\', \'barely\', \'seldom\', \'rarely\', \'neither\', \'nowhere\', \'nowhere\', \'noway\', \'nowise\', \'none\', \'nor\']';
