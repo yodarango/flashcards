@@ -1,9 +1,9 @@
-import { useCardsContext } from "./context/CardsContextProvider";
+import { useCardsContext } from "../../../context/CardsContextProvider";
 import { useRef, useState } from "react";
 import { Thumbnail } from "@ds";
 
 // styles
-import "./CardsSets.scss";
+import "./Layout.scss";
 
 export const CardsSets = () => {
   const ctx = useCardsContext();

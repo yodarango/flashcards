@@ -2,7 +2,7 @@ export const setsByLesson = [
   {
     id: "K79EOUInQE",
     title: "Unit 1",
-    cards: [
+    sets: [
       {
         front: "agua",
         back: "Water",
@@ -309,7 +309,7 @@ export const setsByLesson = [
   {
     id: "0KydqJ18J8",
     title: "Unit 2",
-    cards: [
+    sets: [
       {
         front: "a",
         back: "a",
@@ -511,7 +511,7 @@ export const setsByLesson = [
   {
     id: "qPSglPhSX2",
     title: "Unit 3",
-    cards: [
+    sets: [
       {
         front: "azúcar",
         back: "sugar",
@@ -713,7 +713,7 @@ export const setsByLesson = [
   {
     id: "RY0n6dvUYw",
     title: "Unit 4",
-    cards: [
+    sets: [
       {
         front: "abuela",
         back: "Grandma",
@@ -915,7 +915,7 @@ export const setsByLesson = [
   {
     id: "3F7LrMI9eP",
     title: "Unit 5",
-    cards: [
+    sets: [
       {
         front: "abrigo",
         back: "coat",
@@ -1117,7 +1117,7 @@ export const setsByLesson = [
   {
     id: "M76OLKR543",
     title: "Unit 6",
-    cards: [
+    sets: [
       {
         front: "prestense11",
         back: "borrow11",
@@ -1151,7 +1151,7 @@ export const setsByLesson = [
   {
     id: "9hJMqSVrTE",
     title: "Unit 7",
-    cards: [
+    sets: [
       {
         front: "bolígrafo",
         back: "ballpoint",
@@ -1353,7 +1353,7 @@ export const setsByLesson = [
   {
     id: "mi1WjZz87N",
     title: "Unit 8",
-    cards: [
+    sets: [
       {
         front: "China",
         back: "China",
@@ -1520,7 +1520,7 @@ export const setsByLesson = [
   {
     id: "0ZKRHeLaWN",
     title: "Unit 9",
-    cards: [
+    sets: [
       {
         front: "bien",
         back: "good",
@@ -1876,7 +1876,7 @@ export const setsByLesson = [
   {
     id: "0LD4BZP39o",
     title: "Unit 10",
-    cards: [
+    sets: [
       {
         front: "baile",
         back: "dance",
@@ -2078,7 +2078,7 @@ export const setsByLesson = [
   {
     id: "eM9BOfq16M",
     title: "Unit 11",
-    cards: [
+    sets: [
       {
         front: "beber",
         back: "to drink",
@@ -2476,7 +2476,7 @@ export const setsByLesson = [
   {
     id: "Oa820Tq0MO",
     title: "Unit 13",
-    cards: [
+    sets: [
       {
         front: "aprende",
         back: "learn",
@@ -2923,7 +2923,7 @@ export const setsByLesson = [
   {
     id: "q3cpbhk0pz",
     title: "Unit 14",
-    cards: [
+    sets: [
       {
         front: "ahora",
         back: "now",
@@ -3432,7 +3432,7 @@ export const setsByLesson = [
   {
     id: "HhLUIleNaS",
     title: "Unit 15",
-    cards: [
+    sets: [
       {
         front: "amigos",
         back: "friends",
@@ -3655,7 +3655,7 @@ export const setsByLesson = [
   {
     id: "oaYH4SY9t7",
     title: "Unit 16",
-    cards: [
+    sets: [
       {
         front: "bonitas",
         back: "pretty",
@@ -3927,7 +3927,7 @@ export const setsByLesson = [
   {
     id: "4kyYe9RtLv",
     title: "Unit 17",
-    cards: [
+    sets: [
       {
         front: "a",
         back: "a",
@@ -4199,7 +4199,7 @@ export const setsByLesson = [
   {
     id: "6AnemBBUsd",
     title: "Unit 18",
-    cards: [
+    sets: [
       {
         front: "abrir",
         back: "open",
@@ -4730,7 +4730,7 @@ export const setsByLesson = [
   {
     id: "aakPNup1SD",
     title: "Unit 19",
-    cards: [
+    sets: [
       {
         front: "algo",
         back: "something",
@@ -5267,7 +5267,7 @@ export const setsByLesson = [
   {
     id: "V59VXgo4oT",
     title: "Unit 20",
-    cards: [
+    sets: [
       {
         front: "azul",
         back: "blue",
@@ -5651,7 +5651,7 @@ export const setsByLesson = [
   {
     id: "BoU6Wi6B6m",
     title: "Unit 21",
-    cards: [
+    sets: [
       {
         front: "blanca",
         back: "white",
@@ -6238,7 +6238,7 @@ export const setsByLesson = [
   {
     id: "6eMvcR09pd",
     title: "Unit 22",
-    cards: [
+    sets: [
       {
         front: "abre",
         back: "opens",
@@ -6531,7 +6531,7 @@ export const setsByLesson = [
   {
     id: "pMgfVLPmO7",
     title: "Unit 23",
-    cards: [
+    sets: [
       {
         front: "abierta",
         back: "open",
@@ -7013,7 +7013,7 @@ export const setsByLesson = [
   {
     id: "0PrmryTuaU",
     title: "Unit 24",
-    cards: [
+    sets: [
       {
         front: "a mí",
         back: "to me",
@@ -7333,7 +7333,7 @@ export const setsByLesson = [
   {
     id: "7ZALc6yINd",
     title: "Unit 25",
-    cards: [
+    sets: [
       {
         front: "Alemania",
         back: "Germany",
@@ -8004,7 +8004,7 @@ export const setsByLesson = [
   {
     id: "ZESC1yaZAE",
     title: "Unit 26",
-    cards: [
+    sets: [
       {
         front: "cursos",
         back: "courses",
@@ -8211,7 +8211,7 @@ export const setsByLesson = [
   {
     id: "VJuGdJngwn",
     title: "Unit 27",
-    cards: [
+    sets: [
       {
         front: "almuerzo",
         back: "lunch",
@@ -8469,7 +8469,7 @@ export const setsByLesson = [
   {
     id: "U5fLeyu70u",
     title: "Unit 28",
-    cards: [
+    sets: [
       {
         front: "almorzamos",
         back: "we have lunch",
@@ -8615,7 +8615,7 @@ export const setsByLesson = [
   {
     id: "l1QDO2Ys0y",
     title: "Unit 29",
-    cards: [
+    sets: [
       {
         front: "abril",
         back: "April",
@@ -8852,7 +8852,7 @@ export const setsByLesson = [
   {
     id: "WwsMXFNqDh",
     title: "Unit 30",
-    cards: [
+    sets: [
       {
         front: "canciones",
         back: "songs",
@@ -9548,7 +9548,7 @@ export const setsByLesson = [
   {
     id: "bdTeh83yPQ",
     title: "Unit 31",
-    cards: [
+    sets: [
       {
         front: "adónde",
         back: "where to",
@@ -9812,7 +9812,7 @@ export const setsByLesson = [
   {
     id: "ejHtlxXhL1",
     title: "Unit 32",
-    cards: [
+    sets: [
       {
         front: "ambas",
         back: "both",
@@ -10406,7 +10406,7 @@ export const setsByLesson = [
   {
     id: "a0ydMdtO9O",
     title: "Unit 33",
-    cards: [
+    sets: [
       {
         front: "abre",
         back: "opens",
@@ -10608,7 +10608,7 @@ export const setsByLesson = [
   {
     id: "ZalEdcZBkG",
     title: "Unit 34",
-    cards: [
+    sets: [
       {
         front: "tolike1",
         back: "tolike1",
@@ -10950,7 +10950,7 @@ export const setsByLesson = [
   {
     id: "4IPtqiTvsE",
     title: "Unit 35",
-    cards: [
+    sets: [
       {
         front: "abriendo",
         back: "opening",
@@ -11158,7 +11158,7 @@ export const setsByLesson = [
   {
     id: "rZMzQ4rDxp",
     title: "Unit 36",
-    cards: [
+    sets: [
       {
         front: "abro",
         back: "I open",
@@ -11947,7 +11947,7 @@ export const setsByLesson = [
   {
     id: "HyrjZYt2S3",
     title: "Unit 37",
-    cards: [
+    sets: [
       {
         front: "aprendiendo a",
         back: "learning to",
@@ -12149,7 +12149,7 @@ export const setsByLesson = [
   {
     id: "ok11RSBK0o",
     title: "Unit 38",
-    cards: [
+    sets: [
       {
         front: "abres la",
         back: "you open the",
@@ -12715,7 +12715,7 @@ export const setsByLesson = [
   {
     id: "kwQ4VY69De",
     title: "Unit 39",
-    cards: [
+    sets: [
       {
         front: "objects1",
         back: "objects1",
@@ -12749,7 +12749,7 @@ export const setsByLesson = [
   {
     id: "zkBdcncCZF",
     title: "Unit 40",
-    cards: [
+    sets: [
       {
         front: "abajo",
         back: "below",
@@ -13203,7 +13203,7 @@ export const setsByLesson = [
   {
     id: "9GxwDRWBWv",
     title: "Unit 41",
-    cards: [
+    sets: [
       {
         front: "abrieron",
         back: "they opened",
@@ -13412,7 +13412,7 @@ export const setsByLesson = [
   {
     id: "YNcd0Rkdxz",
     title: "Unit 42",
-    cards: [
+    sets: [
       {
         front: "abriste",
         back: "you opened",
@@ -13796,7 +13796,7 @@ export const setsByLesson = [
   {
     id: "AFMtYO1DmX",
     title: "Unit 43",
-    cards: [
+    sets: [
       {
         front: "alguno",
         back: "some",
@@ -14039,7 +14039,7 @@ export const setsByLesson = [
   {
     id: "C2cE7CfVZ9",
     title: "Unit 44",
-    cards: [
+    sets: [
       {
         front: "ahí",
         back: "there",
@@ -14318,7 +14318,7 @@ export const setsByLesson = [
   {
     id: "0YBGxPFsgr",
     title: "Unit 45",
-    cards: [
+    sets: [
       {
         front: "calurosa",
         back: "hot",
@@ -14814,7 +14814,7 @@ export const setsByLesson = [
   {
     id: "tHIeT6YgYn",
     title: "Unit 46",
-    cards: [
+    sets: [
       {
         front: "canté",
         back: "sing",
@@ -15289,7 +15289,7 @@ export const setsByLesson = [
   {
     id: "0fGRPdLqZa",
     title: "Unit 47",
-    cards: [
+    sets: [
       {
         front: "acabar",
         back: "finish",
@@ -15694,7 +15694,7 @@ export const setsByLesson = [
   {
     id: "EFxq7G7Fth",
     title: "Unit 48",
-    cards: [
+    sets: [
       {
         front: "acostar+prpers",
         back: "lay down+prpers",
@@ -16337,7 +16337,7 @@ export const setsByLesson = [
   {
     id: "6EfF0TCv7U",
     title: "Unit 49",
-    cards: [
+    sets: [
       {
         front: "alumnos",
         back: "students",
@@ -16552,7 +16552,7 @@ export const setsByLesson = [
   {
     id: "N08DFFkwBv",
     title: "Unit 50",
-    cards: [
+    sets: [
       {
         front: "pasttense21",
         back: "pasttense21",
@@ -16775,7 +16775,7 @@ export const setsByLesson = [
   {
     id: "7fez6Hs1B1",
     title: "Unit 51",
-    cards: [
+    sets: [
       {
         front: "a lo mejor",
         back: "maybe",
@@ -17250,7 +17250,7 @@ export const setsByLesson = [
   {
     id: "aHdNYgdFJN",
     title: "Unit 52",
-    cards: [
+    sets: [
       {
         front: "año nuevo",
         back: "new Year",
@@ -18116,7 +18116,7 @@ export const setsByLesson = [
   {
     id: "QJWHj3Xho6",
     title: "Unit 53",
-    cards: [
+    sets: [
       {
         front: "abuelito",
         back: "Grandpa",
@@ -18451,7 +18451,7 @@ export const setsByLesson = [
   {
     id: "K8iA1whrFr",
     title: "Unit 54",
-    cards: [
+    sets: [
       {
         front: "alfombras",
         back: "carpets",
@@ -19150,7 +19150,7 @@ export const setsByLesson = [
   {
     id: "3F1SB6AK5U",
     title: "Unit 55",
-    cards: [
+    sets: [
       {
         front: "anuncio",
         back: "advertisement",
@@ -19415,7 +19415,7 @@ export const setsByLesson = [
   {
     id: "jiyvaJvZu5",
     title: "Unit 56",
-    cards: [
+    sets: [
       {
         front: "pasttense31",
         back: "pasttense31",
@@ -19679,7 +19679,7 @@ export const setsByLesson = [
   {
     id: "LbdYR0eQ82",
     title: "Unit 57",
-    cards: [
+    sets: [
       {
         front: "almorzar",
         back: "to have lunch",
@@ -20056,7 +20056,7 @@ export const setsByLesson = [
   {
     id: "igpMJHJEkP",
     title: "Unit 58",
-    cards: [
+    sets: [
       {
         front: "artista",
         back: "artist",
@@ -21014,7 +21014,7 @@ export const setsByLesson = [
   {
     id: "UPROZsJwl4",
     title: "Unit 59",
-    cards: [
+    sets: [
       {
         front: "agradables",
         back: "nice",
@@ -21356,7 +21356,7 @@ export const setsByLesson = [
   {
     id: "8La4E1nMR6",
     title: "Unit 60",
-    cards: [
+    sets: [
       {
         front: "asaba",
         back: "roasted",
@@ -22132,7 +22132,7 @@ export const setsByLesson = [
   {
     id: "rjDkMIT9JE",
     title: "Unit 61",
-    cards: [
+    sets: [
       {
         front: "adentro",
         back: "inside",
@@ -22474,7 +22474,7 @@ export const setsByLesson = [
   {
     id: "G83xsZFwtk",
     title: "Unit 62",
-    cards: [
+    sets: [
       {
         front: "pasttense41",
         back: "pasttense41",
@@ -22879,7 +22879,7 @@ export const setsByLesson = [
   {
     id: "u1tzGHAab9",
     title: "Unit 63",
-    cards: [
+    sets: [
       {
         front: "colinas",
         back: "hills",
@@ -23151,7 +23151,7 @@ export const setsByLesson = [
   {
     id: "PAecxA34Rp",
     title: "Unit 64",
-    cards: [
+    sets: [
       {
         front: "abrirla",
         back: "open it",
@@ -23981,7 +23981,7 @@ export const setsByLesson = [
   {
     id: "VKUj8Fkc3P",
     title: "Unit 65",
-    cards: [
+    sets: [
       {
         front: "avanzada",
         back: "advanced",
@@ -24267,7 +24267,7 @@ export const setsByLesson = [
   {
     id: "oQrwY3VJjv",
     title: "Unit 66",
-    cards: [
+    sets: [
       {
         front: "objects21",
         back: "objects21",
@@ -24301,7 +24301,7 @@ export const setsByLesson = [
   {
     id: "KH91v1PGMi",
     title: "Unit 67",
-    cards: [
+    sets: [
       {
         front: "antes",
         back: "before",
@@ -24741,7 +24741,7 @@ export const setsByLesson = [
   {
     id: "CGowKgqat4",
     title: "Unit 68",
-    cards: [
+    sets: [
       {
         front: "abran",
         back: "open",
@@ -25327,7 +25327,7 @@ export const setsByLesson = [
   {
     id: "28Yvmyknh8",
     title: "Unit 69",
-    cards: [
+    sets: [
       {
         front: "alejada",
         back: "far away",
@@ -25949,7 +25949,7 @@ export const setsByLesson = [
   {
     id: "VpHG93owxO",
     title: "Unit 70",
-    cards: [
+    sets: [
       {
         front: "ahorrar",
         back: "save",
@@ -26151,7 +26151,7 @@ export const setsByLesson = [
   {
     id: "bs3euKRD0e",
     title: "Unit 71",
-    cards: [
+    sets: [
       {
         front: "acaba de",
         back: "just",
@@ -26814,7 +26814,7 @@ export const setsByLesson = [
   {
     id: "SldZ3B0PB3",
     title: "Unit 72",
-    cards: [
+    sets: [
       {
         front: "past tense 51",
         back: "past tense 51",
@@ -26848,7 +26848,7 @@ export const setsByLesson = [
   {
     id: "cbSQfQ9HFO",
     title: "Unit 73",
-    cards: [
+    sets: [
       {
         front: "biología",
         back: "biology",
@@ -27469,7 +27469,7 @@ export const setsByLesson = [
   {
     id: "ff8Ns8K8sg",
     title: "Unit 74",
-    cards: [
+    sets: [
       {
         front: "anchas",
         back: "wide",
@@ -27776,7 +27776,7 @@ export const setsByLesson = [
   {
     id: "LdkWmPjkzF",
     title: "Unit 75",
-    cards: [
+    sets: [
       {
         front: "basurero",
         back: "garbage collector",
@@ -28566,7 +28566,7 @@ export const setsByLesson = [
   {
     id: "r60WiUm0mV",
     title: "Unit 76",
-    cards: [
+    sets: [
       {
         front: "anillo",
         back: "ring",
@@ -29103,7 +29103,7 @@ export const setsByLesson = [
   {
     id: "fKNZI8tCOs",
     title: "Unit 77",
-    cards: [
+    sets: [
       {
         front: "commands1",
         back: "commands1",
@@ -29487,7 +29487,7 @@ export const setsByLesson = [
   {
     id: "dF0bqvAWgd",
     title: "Unit 78",
-    cards: [
+    sets: [
       {
         front: "agradecer",
         back: "to thank",
@@ -29857,7 +29857,7 @@ export const setsByLesson = [
   {
     id: "gEUHVX8j9p",
     title: "Unit 79",
-    cards: [
+    sets: [
       {
         front: "ajo",
         back: "Garlic",
@@ -30639,7 +30639,7 @@ export const setsByLesson = [
   {
     id: "g35Sk0yYrS",
     title: "Unit 80",
-    cards: [
+    sets: [
       {
         front: "a la venta",
         back: "for sale",
@@ -30932,7 +30932,7 @@ export const setsByLesson = [
   {
     id: "IPV4xNfiT4",
     title: "Unit 81",
-    cards: [
+    sets: [
       {
         front: "acompañaremos",
         back: "we will accompany",
@@ -31778,7 +31778,7 @@ export const setsByLesson = [
   {
     id: "0QYVund7N5",
     title: "Unit 82",
-    cards: [
+    sets: [
       {
         front: "futuretense1",
         back: "futuretense1",
@@ -31812,7 +31812,7 @@ export const setsByLesson = [
   {
     id: "GbBPkZyOAN",
     title: "Unit 83",
-    cards: [
+    sets: [
       {
         front: "contra",
         back: "against",
@@ -32349,7 +32349,7 @@ export const setsByLesson = [
   {
     id: "iNiRUbGjwi",
     title: "Unit 84",
-    cards: [
+    sets: [
       {
         front: "a ella le",
         back: "she",
@@ -33194,7 +33194,7 @@ export const setsByLesson = [
   {
     id: "6QyNwqlP4I",
     title: "Unit 85",
-    cards: [
+    sets: [
       {
         front: "a través de",
         back: "via",
@@ -33396,7 +33396,7 @@ export const setsByLesson = [
   {
     id: "eSRwfyOqJ9",
     title: "Unit 86",
-    cards: [
+    sets: [
       {
         front: "a pie",
         back: "walking",
@@ -33619,7 +33619,7 @@ export const setsByLesson = [
   {
     id: "Xssu5mSkfy",
     title: "Unit 87",
-    cards: [
+    sets: [
       {
         front: "amor",
         back: "love",
@@ -34045,7 +34045,7 @@ export const setsByLesson = [
   {
     id: "k6ddHxx2S4",
     title: "Unit 88",
-    cards: [
+    sets: [
       {
         front: "anteayer",
         back: "the day before yesterday",
@@ -34519,7 +34519,7 @@ export const setsByLesson = [
   {
     id: "E8iR4p9iLI",
     title: "Unit 89",
-    cards: [
+    sets: [
       {
         front: "abrazo",
         back: "hug",
@@ -34791,7 +34791,7 @@ export const setsByLesson = [
   {
     id: "1z89Pj9Dje",
     title: "Unit 90",
-    cards: [
+    sets: [
       {
         front: "actual",
         back: "current",
@@ -35049,7 +35049,7 @@ export const setsByLesson = [
   {
     id: "FfPbqRyvuh",
     title: "Unit 91",
-    cards: [
+    sets: [
       {
         front: "antibiótico",
         back: "antibiotic",
@@ -35328,7 +35328,7 @@ export const setsByLesson = [
   {
     id: "mJ8tnWtZ3i",
     title: "Unit 92",
-    cards: [
+    sets: [
       {
         front: "decisiones",
         back: "decisions",
@@ -35565,7 +35565,7 @@ export const setsByLesson = [
   {
     id: "x0JnWSPuOT",
     title: "Unit 93",
-    cards: [
+    sets: [
       {
         front: "algodón",
         back: "cotton",
@@ -35858,7 +35858,7 @@ export const setsByLesson = [
   {
     id: "tUUZt2pUKR",
     title: "Unit 94",
-    cards: [
+    sets: [
       {
         front: "commands21",
         back: "commands21",
@@ -35892,7 +35892,7 @@ export const setsByLesson = [
   {
     id: "eRczddc22n",
     title: "Unit 95",
-    cards: [
+    sets: [
       {
         front: "abras",
         back: "open",
@@ -36080,7 +36080,7 @@ export const setsByLesson = [
   {
     id: "71ZCpSoGwB",
     title: "Unit 96",
-    cards: [
+    sets: [
       {
         front: "caer",
         back: "fall out",
@@ -36569,7 +36569,7 @@ export const setsByLesson = [
   {
     id: "XPaVK21Sjp",
     title: "Unit 97",
-    cards: [
+    sets: [
       {
         front: "adicional",
         back: "additional",
@@ -36827,7 +36827,7 @@ export const setsByLesson = [
   {
     id: "Jz5U2xocjj",
     title: "Unit 98",
-    cards: [
+    sets: [
       {
         front: "a",
         back: "a",
@@ -37113,7 +37113,7 @@ export const setsByLesson = [
   {
     id: "tcDiv3sAWG",
     title: "Unit 99",
-    cards: [
+    sets: [
       {
         front: "commands31",
         back: "commands31",
@@ -37147,7 +37147,7 @@ export const setsByLesson = [
   {
     id: "y5srn7crMQ",
     title: "Unit 100",
-    cards: [
+    sets: [
       {
         front: "abogada",
         back: "a lawyer",
@@ -37454,7 +37454,7 @@ export const setsByLesson = [
   {
     id: "4XTe5MdRX3",
     title: "Unit 101",
-    cards: [
+    sets: [
       {
         front: "acuerdo",
         back: "agreement",
@@ -38139,7 +38139,7 @@ export const setsByLesson = [
   {
     id: "wuinen4FSR",
     title: "Unit 103",
-    cards: [
+    sets: [
       {
         front: "academia",
         back: "academy",
@@ -38362,7 +38362,7 @@ export const setsByLesson = [
   {
     id: "wctmvcYRuV",
     title: "Unit 104",
-    cards: [
+    sets: [
       {
         front: "alguien",
         back: "someone",
@@ -38704,7 +38704,7 @@ export const setsByLesson = [
   {
     id: "ATqq3oDjUQ",
     title: "Unit 105",
-    cards: [
+    sets: [
       {
         front: "ayuntamiento",
         back: "town hall",
@@ -38934,7 +38934,7 @@ export const setsByLesson = [
   {
     id: "fmuatlAVDx",
     title: "Unit 106",
-    cards: [
+    sets: [
       {
         front: "atletas",
         back: "athletes",
@@ -39010,7 +39010,7 @@ export const setsByLesson = [
   {
     id: "ikCvPh1Daw",
     title: "Unit 107",
-    cards: [
+    sets: [
       {
         front: "aspiradora",
         back: "Vacuum cleaner",
@@ -39086,7 +39086,7 @@ export const setsByLesson = [
   {
     id: "wpxJDRM7dA",
     title: "Unit 108",
-    cards: [
+    sets: [
       {
         front: "arena",
         back: "sand",
@@ -39162,7 +39162,7 @@ export const setsByLesson = [
   {
     id: "uwzR41VcaD",
     title: "Unit 109",
-    cards: [
+    sets: [
       {
         front: "pronouns1",
         back: "pronouns1",
@@ -39196,7 +39196,7 @@ export const setsByLesson = [
   {
     id: "RoPaqSC4dy",
     title: "Unit 110",
-    cards: [
+    sets: [
       {
         front: "contestar",
         back: "answer",
@@ -39412,7 +39412,7 @@ export const setsByLesson = [
   {
     id: "0xe1x85iPI",
     title: "Unit 111",
-    cards: [
+    sets: [
       {
         front: "costumbre",
         back: "custom",
@@ -39494,7 +39494,7 @@ export const setsByLesson = [
   {
     id: "dolhmgVEZF",
     title: "Unit 112",
-    cards: [
+    sets: [
       {
         front: "asesino",
         back: "killer",
@@ -39640,7 +39640,7 @@ export const setsByLesson = [
   {
     id: "B2H2c7dnc3",
     title: "Unit 113",
-    cards: [
+    sets: [
       {
         front: "pasttense71",
         back: "pasttense71",
@@ -39674,7 +39674,7 @@ export const setsByLesson = [
   {
     id: "bYowo1yedL",
     title: "Unit 114",
-    cards: [
+    sets: [
       {
         front: "auto",
         back: "auto",
@@ -39820,7 +39820,7 @@ export const setsByLesson = [
   {
     id: "WHWiSgZirW",
     title: "Unit 115",
-    cards: [
+    sets: [
       {
         front: "aprenda",
         back: "learn",
@@ -39966,7 +39966,7 @@ export const setsByLesson = [
   {
     id: "GBnrb18rTi",
     title: "Unit 116",
-    cards: [
+    sets: [
       {
         front: "aire acondicionado",
         back: "air conditioner",
@@ -40124,7 +40124,7 @@ export const setsByLesson = [
   {
     id: "u2b3vM9gq4",
     title: "Unit 117",
-    cards: [
+    sets: [
       {
         front: "a",
         back: "a",
@@ -40200,7 +40200,7 @@ export const setsByLesson = [
   {
     id: "6SnRtBLjAR",
     title: "Unit 118",
-    cards: [
+    sets: [
       {
         front: "aprendan",
         back: "learn",
@@ -40346,7 +40346,7 @@ export const setsByLesson = [
   {
     id: "thIpNzqqfC",
     title: "Unit 119",
-    cards: [
+    sets: [
       {
         front: "subj11",
         back: "subj11",
@@ -40380,7 +40380,7 @@ export const setsByLesson = [
   {
     id: "JM6VX2C4G9",
     title: "Unit 120",
-    cards: [
+    sets: [
       {
         front: "a",
         back: "a",
@@ -40526,7 +40526,7 @@ export const setsByLesson = [
   {
     id: "LGbwD7W5Oz",
     title: "Unit 121",
-    cards: [
+    sets: [
       {
         front: "conseguir",
         back: "get",
@@ -40602,7 +40602,7 @@ export const setsByLesson = [
   {
     id: "f9QXS5Zi6D",
     title: "Unit 122",
-    cards: [
+    sets: [
       {
         front: "aburrirse",
         back: "get bored",
@@ -40804,7 +40804,7 @@ export const setsByLesson = [
   {
     id: "3pCScVsZO6",
     title: "Unit 123",
-    cards: [
+    sets: [
       {
         front: "ayúdala",
         back: "help her",
@@ -40880,7 +40880,7 @@ export const setsByLesson = [
   {
     id: "xB6uwe2vO9",
     title: "Unit 124",
-    cards: [
+    sets: [
       {
         front: "despejado",
         back: "clear",
@@ -40984,7 +40984,7 @@ export const setsByLesson = [
   {
     id: "HSunLUUCnW",
     title: "Unit 125",
-    cards: [
+    sets: [
       {
         front: "bueno",
         back: "well",
@@ -41130,7 +41130,7 @@ export const setsByLesson = [
   {
     id: "Cr6rTlInsR",
     title: "Unit 126",
-    cards: [
+    sets: [
       {
         front: "conferencia",
         back: "conference",
@@ -41206,7 +41206,7 @@ export const setsByLesson = [
   {
     id: "LKxmkbE9gV",
     title: "Unit 127",
-    cards: [
+    sets: [
       {
         front: "echar",
         back: "throw",
@@ -41282,7 +41282,7 @@ export const setsByLesson = [
   {
     id: "BeWdkUB5Ca",
     title: "Unit 128",
-    cards: [
+    sets: [
       {
         front: "pasttense81",
         back: "pasttense81",
@@ -41316,7 +41316,7 @@ export const setsByLesson = [
   {
     id: "hHayO81oA2",
     title: "Unit 129",
-    cards: [
+    sets: [
       {
         front: "afeitador",
         back: "shaver",
@@ -41468,7 +41468,7 @@ export const setsByLesson = [
   {
     id: "7LZOnz2Y5Q",
     title: "Unit 130",
-    cards: [
+    sets: [
       {
         front: "apenas",
         back: "barely",
@@ -41614,7 +41614,7 @@ export const setsByLesson = [
   {
     id: "ZHdDBHqJMf",
     title: "Unit 131",
-    cards: [
+    sets: [
       {
         front: "cubierto",
         back: "covered",
@@ -41760,7 +41760,7 @@ export const setsByLesson = [
   {
     id: "xrQx7ClEjb",
     title: "Unit 132",
-    cards: [
+    sets: [
       {
         front: "aceptable",
         back: "acceptable",
@@ -41836,7 +41836,7 @@ export const setsByLesson = [
   {
     id: "ft6STL9VLo",
     title: "Unit 133",
-    cards: [
+    sets: [
       {
         front: "ciudad natal",
         back: "native city",
@@ -41940,7 +41940,7 @@ export const setsByLesson = [
   {
     id: "tiaR4KL50K",
     title: "Unit 134",
-    cards: [
+    sets: [
       {
         front: "arroyo",
         back: "stream",
@@ -42016,7 +42016,7 @@ export const setsByLesson = [
   {
     id: "2Teu0qyub4",
     title: "Unit 135",
-    cards: [
+    sets: [
       {
         front: "anterior",
         back: "former",
@@ -42162,7 +42162,7 @@ export const setsByLesson = [
   {
     id: "cmLIVIGLvk",
     title: "Unit 136",
-    cards: [
+    sets: [
       {
         front: "admitir",
         back: "to admit",
@@ -42238,7 +42238,7 @@ export const setsByLesson = [
   {
     id: "7ZOemsK1GK",
     title: "Unit 137",
-    cards: [
+    sets: [
       {
         front: "cariñoso",
         back: "affectionate",
@@ -42396,7 +42396,7 @@ export const setsByLesson = [
   {
     id: "xOHTJceAwM",
     title: "Unit 138",
-    cards: [
+    sets: [
       {
         front: "algún día",
         back: "someday",
@@ -42472,7 +42472,7 @@ export const setsByLesson = [
   {
     id: "F32pZSC43b",
     title: "Unit 139",
-    cards: [
+    sets: [
       {
         front: "pronouns21",
         back: "pronouns21",
@@ -42576,7 +42576,7 @@ export const setsByLesson = [
   {
     id: "8eDwSWutFh",
     title: "Unit 140",
-    cards: [
+    sets: [
       {
         front: "comenzado",
         back: "started",
@@ -42658,7 +42658,7 @@ export const setsByLesson = [
   {
     id: "wD9i5sEPTT",
     title: "Unit 141",
-    cards: [
+    sets: [
       {
         front: "dar las gracias",
         back: "give the thanks",
@@ -42810,7 +42810,7 @@ export const setsByLesson = [
   {
     id: "Bv1jXhRF3a",
     title: "Unit 142",
-    cards: [
+    sets: [
       {
         front: "concentrarse",
         back: "concentrate",
@@ -42886,7 +42886,7 @@ export const setsByLesson = [
   {
     id: "4gh5JBOq66",
     title: "Unit 143",
-    cards: [
+    sets: [
       {
         front: "algunos de",
         back: "some of",
@@ -42962,7 +42962,7 @@ export const setsByLesson = [
   {
     id: "vJYwpGbFAZ",
     title: "Unit 144",
-    cards: [
+    sets: [
       {
         front: "avena",
         back: "oatmeal",
@@ -43038,7 +43038,7 @@ export const setsByLesson = [
   {
     id: "jY1hd0Ykbz",
     title: "Unit 145",
-    cards: [
+    sets: [
       {
         front: "bucear",
         back: "Diving",
@@ -43114,7 +43114,7 @@ export const setsByLesson = [
   {
     id: "cXevSnOayH",
     title: "Unit 146",
-    cards: [
+    sets: [
       {
         front: "al revés",
         back: "upside down",
@@ -43202,7 +43202,7 @@ export const setsByLesson = [
   {
     id: "2XuBteIpzR",
     title: "Unit 147",
-    cards: [
+    sets: [
       {
         front: "al aire libre",
         back: "outdoor",
@@ -43348,7 +43348,7 @@ export const setsByLesson = [
   {
     id: "jhIiLrTJE1",
     title: "Unit 148",
-    cards: [
+    sets: [
       {
         front: "calabacín",
         back: "zucchini",
@@ -43424,7 +43424,7 @@ export const setsByLesson = [
   {
     id: "NPdfD4vF2F",
     title: "Unit 149",
-    cards: [
+    sets: [
       {
         front: "subj51",
         back: "subj51",
@@ -43528,7 +43528,7 @@ export const setsByLesson = [
   {
     id: "8AK8GNTvpT",
     title: "Unit 150",
-    cards: [
+    sets: [
       {
         front: "antes de que",
         back: "before",
@@ -43604,7 +43604,7 @@ export const setsByLesson = [
   {
     id: "l2zvdoQgKT",
     title: "Unit 151",
-    cards: [
+    sets: [
       {
         front: "atención médica",
         back: "medical care",
@@ -43750,7 +43750,7 @@ export const setsByLesson = [
   {
     id: "Y654RjCySr",
     title: "Unit 152",
-    cards: [
+    sets: [
       {
         front: "atraer",
         back: "Attract",
@@ -43826,7 +43826,7 @@ export const setsByLesson = [
   {
     id: "84q2Zcm7VS",
     title: "Unit 153",
-    cards: [
+    sets: [
       {
         front: "británica",
         back: "british",
@@ -43978,7 +43978,7 @@ export const setsByLesson = [
   {
     id: "EBkUMUyTnd",
     title: "Unit 154",
-    cards: [
+    sets: [
       {
         front: "ahorra",
         back: "save",
@@ -44054,7 +44054,7 @@ export const setsByLesson = [
   {
     id: "opKnB6DNTZ",
     title: "Unit 155",
-    cards: [
+    sets: [
       {
         front: "passive1",
         back: "passive1",
@@ -44158,7 +44158,7 @@ export const setsByLesson = [
   {
     id: "SZDdWKeTu9",
     title: "Unit 156",
-    cards: [
+    sets: [
       {
         front: "democracias",
         back: "democracies",
@@ -44234,7 +44234,7 @@ export const setsByLesson = [
   {
     id: "NLmlWZiUUk",
     title: "Unit 157",
-    cards: [
+    sets: [
       {
         front: "armar",
         back: "to assemble",
@@ -44456,7 +44456,7 @@ export const setsByLesson = [
   {
     id: "C1ZNmIF33b",
     title: "Unit 158",
-    cards: [
+    sets: [
       {
         front: "bigote",
         back: "mustache",
@@ -44532,7 +44532,7 @@ export const setsByLesson = [
   {
     id: "PJgfT4xADl",
     title: "Unit 159",
-    cards: [
+    sets: [
       {
         front: "adolescencia",
         back: "adolescence",
@@ -44636,7 +44636,7 @@ export const setsByLesson = [
   {
     id: "dg52hQpCTJ",
     title: "Unit 160",
-    cards: [
+    sets: [
       {
         front: "acostado",
         back: "lying down",
@@ -44712,7 +44712,7 @@ export const setsByLesson = [
   {
     id: "kg2gfeZkc4",
     title: "Unit 161",
-    cards: [
+    sets: [
       {
         front: "esconder",
         back: "hide",
@@ -44864,7 +44864,7 @@ export const setsByLesson = [
   {
     id: "HglQJLyUuA",
     title: "Unit 162",
-    cards: [
+    sets: [
       {
         front: "cartón",
         back: "paperboard",
@@ -44940,7 +44940,7 @@ export const setsByLesson = [
   {
     id: "Hxib5iYRSo",
     title: "Unit 163",
-    cards: [
+    sets: [
       {
         front: "asiático",
         back: "Asian",
@@ -45016,7 +45016,7 @@ export const setsByLesson = [
   {
     id: "8WKnUhaCmE",
     title: "Unit 164",
-    cards: [
+    sets: [
       {
         front: "cambiarse de",
         back: "change from",
@@ -45098,7 +45098,7 @@ export const setsByLesson = [
   {
     id: "a3YQecinAz",
     title: "Unit 165",
-    cards: [
+    sets: [
       {
         front: "absurdo",
         back: "absurd",
@@ -45272,7 +45272,7 @@ export const setsByLesson = [
   {
     id: "quk7J9KZSs",
     title: "Unit 166",
-    cards: [
+    sets: [
       {
         front: "avergonzado",
         back: "ashamed",
@@ -45424,7 +45424,7 @@ export const setsByLesson = [
   {
     id: "V21tDpUmyx",
     title: "Unit 167",
-    cards: [
+    sets: [
       {
         front: "a distancia",
         back: "from distance",
@@ -45582,7 +45582,7 @@ export const setsByLesson = [
   {
     id: "jpHSLzCiYG",
     title: "Unit 168",
-    cards: [
+    sets: [
       {
         front: "angustiado",
         back: "distressed",
@@ -45734,7 +45734,7 @@ export const setsByLesson = [
   {
     id: "Zf1US7rwIB",
     title: "Unit 169",
-    cards: [
+    sets: [
       {
         front: "cada",
         back: "each",
@@ -45880,7 +45880,7 @@ export const setsByLesson = [
   {
     id: "25966iRANs",
     title: "Unit 170",
-    cards: [
+    sets: [
       {
         front: "albergue",
         back: "hostel",
@@ -46032,7 +46032,7 @@ export const setsByLesson = [
   {
     id: "spcMVQFwOv",
     title: "Unit 171",
-    cards: [
+    sets: [
       {
         front: "afortunado",
         back: "lucky",
@@ -46178,7 +46178,7 @@ export const setsByLesson = [
   {
     id: "8rQLkbNcog",
     title: "Unit 172",
-    cards: [
+    sets: [
       {
         front: "adelanto",
         back: "advancement",
@@ -46330,7 +46330,7 @@ export const setsByLesson = [
   {
     id: "YK7eG49okJ",
     title: "Unit 173",
-    cards: [
+    sets: [
       {
         front: "bautismo",
         back: "baptism",
@@ -46476,7 +46476,7 @@ export const setsByLesson = [
   {
     id: "4XE3FNhw60",
     title: "Unit 174",
-    cards: [
+    sets: [
       {
         front: "asesoramiento",
         back: "advice",
@@ -46622,7 +46622,7 @@ export const setsByLesson = [
   {
     id: "9SOi3NSvk9",
     title: "Unit 175",
-    cards: [
+    sets: [
       {
         front: "bronce",
         back: "bronze",
@@ -46768,7 +46768,7 @@ export const setsByLesson = [
   {
     id: "j7uEkTVfh0",
     title: "Unit 176",
-    cards: [
+    sets: [
       {
         front: "confesar",
         back: "to confess",
@@ -46920,7 +46920,7 @@ export const setsByLesson = [
   {
     id: "fjdPktJKoc",
     title: "Unit 177",
-    cards: [
+    sets: [
       {
         front: "aquí tiene",
         back: "here you go",

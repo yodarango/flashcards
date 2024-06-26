@@ -4,7 +4,7 @@ import { ArtForms as adjectivesArtForms } from "./adjectives/ArtForms";
 import { ArtMaterials as adjectivesArtMaterials } from "./adjectives/ArtMaterials";
 import { BasicColors as adjectivesBasicColors } from "./adjectives/BasicColors";
 import { BasicEmotions as adjectivesBasicEmotions } from "./adjectives/BasicEmotions";
-import { BasicNumbers as adjectivesBasicNumbers } from "./adjectives/basicNumbers";
+import { BasicNumbers as adjectivesBasicNumbers } from "./adjectives/BasicNumbers";
 import { BasicShapes as adjectivesBasicShapes } from "./adjectives/BasicShapes";
 import { Beverages as adjectivesBeverages } from "./adjectives/Beverages";
 import { BuildingsAndStructures as adjectivesBuildingsAndStructures } from "./adjectives/BuildingsAndStructures";
@@ -56,31 +56,31 @@ import { PartsOfVehicles as adjectivesPartsOfVehicles } from "./adjectives/Parts
 import { Pets as adjectivesPets } from "./adjectives/Pets";
 import { PhysicalSensations as adjectivesPhysicalSensations } from "./adjectives/PhysicalSensations";
 import { PlacesOfWorship as adjectivesPlacesOfWorship } from "./adjectives/PlacesOfWorship";
-import { PlantsAndFlowers as adjectivesPlantsAndFlowers } from "./adjectives/PlantsAndflowers";
+import { PlantsAndFlowers as adjectivesPlantsAndFlowers } from "./adjectives/PlantsAndFlowers";
 import { PoliticalConcepts as adjectivesPoliticalConcepts } from "./adjectives/PoliticalConcepts";
-import { ProfessionsAndOccupations as adjectivesProfessionsAndOccupations } from "./adjectives/ProfessionsAndoccupations";
-import { QuantitiesAndAmounts as adjectivesQuantitiesAndAmounts } from "./adjectives/QuantitiesAndamounts";
-import { ReligiousBeliefsAndPractices as adjectivesReligiousBeliefsAndPractices } from "./adjectives/ReligiousBeliefsAndpractices";
-import { ReligiousFiguresAndLeaders as adjectivesReligiousFiguresAndLeaders } from "./adjectives/ReligiousFiguresAndleaders";
-import { ReligiousTextsAndSymbols as adjectivesReligiousTextsAndSymbols } from "./adjectives/ReligiousTextsAndsymbols";
-import { RoomsAndAreas as adjectivesRoomsAndAreas } from "./adjectives/RoomsAndareas";
+import { ProfessionsAndOccupations as adjectivesProfessionsAndOccupations } from "./adjectives/ProfessionsAndOccupations";
+import { QuantitiesAndAmounts as adjectivesQuantitiesAndAmounts } from "./adjectives/QuantitiesAndAmounts";
+import { ReligiousBeliefsAndPractices as adjectivesReligiousBeliefsAndPractices } from "./adjectives/ReligiousBeliefsAndPractices";
+import { ReligiousFiguresAndLeaders as adjectivesReligiousFiguresAndLeaders } from "./adjectives/ReligiousFiguresAndLeaders";
+import { ReligiousTextsAndSymbols as adjectivesReligiousTextsAndSymbols } from "./adjectives/ReligiousTextsAndSymbols";
+import { RoomsAndAreas as adjectivesRoomsAndAreas } from "./adjectives/RoomsAndAreas";
 import { SchoolRelatedRoles as adjectivesSchoolRelatedRoles } from "./adjectives/SchoolRelatedRoles";
 import { SchoolSubjects as adjectivesSchoolSubjects } from "./adjectives/SchoolSubjects";
 import { ScientificConcepts as adjectivesScientificConcepts } from "./adjectives/ScientificConcepts";
 import { ScientificDisciplines as adjectivesScientificDisciplines } from "./adjectives/ScientificDisciplines";
 import { SeasonalTerms as adjectivesSeasonalTerms } from "./adjectives/SeasonalTerms";
-import { SensesAndFeelings as adjectivesSensesAndFeelings } from "./adjectives/SensesAndfeelings";
-import { ShadesAndTints as adjectivesShadesAndTints } from "./adjectives/ShadesAndtints";
-import { SportsAndActivities as adjectivesSportsAndActivities } from "./adjectives/SportsAndactivities";
+import { SensesAndFeelings as adjectivesSensesAndFeelings } from "./adjectives/SensesAndFeelings";
+import { ShadesAndTints as adjectivesShadesAndTints } from "./adjectives/ShadesAndTints";
+import { SportsAndActivities as adjectivesSportsAndActivities } from "./adjectives/SportsAndActivities";
 import { TechnicalTerms as adjectivesTechnicalTerms } from "./adjectives/TechnicalTerms";
 import { TimeRelatedConcepts as adjectivesTimeRelatedConcepts } from "./adjectives/TimeRelatedConcepts";
-import { TitlesAndRoles as adjectivesTitlesAndRoles } from "./adjectives/TitlesAndroles";
-import { ToolsAndEquipment as adjectivesToolsAndEquipment } from "./adjectives/ToolsAndequipment";
+import { TitlesAndRoles as adjectivesTitlesAndRoles } from "./adjectives/TitlesAndRoles";
+import { ToolsAndEquipment as adjectivesToolsAndEquipment } from "./adjectives/ToolsAndEquipment";
 import { ToolsForMeasuring as adjectivesToolsForMeasuring } from "./adjectives/ToolsForMeasuring";
 import { TouristAttractions as adjectivesTouristAttractions } from "./adjectives/TouristAttractions";
 import { TransportationInfrastructure as adjectivesTransportationInfrastructure } from "./adjectives/TransportationInfrastructure";
 import { TravelRelatedTerms as adjectivesTravelRelatedTerms } from "./adjectives/TravelRelatedTerms";
-import { TravelModesAndServices as adjectivesTravelModesAndServices } from "./adjectives/TravelModesAndservices";
+import { TravelModesAndServices as adjectivesTravelModesAndServices } from "./adjectives/TravelModesAndServices";
 import { TypesOfClothing as adjectivesTypesOfClothing } from "./adjectives/TypesOfClothing";
 import { TypesOfFood as adjectivesTypesOfFood } from "./adjectives/TypesOfFood";
 import { UnitsOfMeasurement as adjectivesUnitsOfMeasurement } from "./adjectives/UnitsOfMeasurement";
@@ -104,86 +104,86 @@ import { BasicEmotions as nounsBasicEmotions } from "./nouns/BasicEmotions";
 import { BasicNumbers as nounsBasicNumbers } from "./nouns/BasicNumbers";
 import { BasicShapes as nounsBasicShapes } from "./nouns/BasicShapes";
 import { Beverages as nounsBeverages } from "./nouns/Beverages";
-import { BuildingsAndStructures as nounsBuildingsAndStructures } from "./nouns/BuildingsAndstructures";
+import { BuildingsAndStructures as nounsBuildingsAndStructures } from "./nouns/BuildingsAndStructures";
 import { BusinessTerms as nounsBusinessTerms } from "./nouns/BusinessTerms";
-import { CelebritiesAndPerformers as nounsCelebritiesAndPerformers } from "./nouns/CelebritiesAndperformers";
+import { CelebritiesAndPerformers as nounsCelebritiesAndPerformers } from "./nouns/CelebritiesAndPerformers";
 import { ClassroomObjects as nounsClassroomObjects } from "./nouns/ClassroomObjects";
 import { ClimateConcepts as nounsClimateConcepts } from "./nouns/ClimateConcepts";
 import { Clothing as nounsClothing } from "./nouns/Clothing";
 import { ComplexFeelings as nounsComplexFeelings } from "./nouns/ComplexFeelings";
 import { DairyProducts as nounsDairyProducts } from "./nouns/DairyProducts";
 import { WeekDays as nounsWeekDays } from "./nouns/WeekDays";
-import { DimensionsAndSizes as nounsDimensionsAndSizes } from "./nouns/DimensionsAndsizes";
+import { DimensionsAndSizes as nounsDimensionsAndSizes } from "./nouns/DimensionsAndSizes";
 import { Drinks as nounsDrinks } from "./nouns/Drinks";
 import { EconomicConcepts as nounsEconomicConcepts } from "./nouns/EconomicConcepts";
 import { ElectronicDevices as nounsElectronicDevices } from "./nouns/ElectronicDevices";
 import { EmotionalExpressions as nounsEmotionalExpressions } from "./nouns/EmotionalExpressions";
-import { EntertainmentAndMedia as nounsEntertainmentAndMedia } from "./nouns/EntertainmentAndmedia";
+import { EntertainmentAndMedia as nounsEntertainmentAndMedia } from "./nouns/EntertainmentAndMedia";
 import { EverydayItems as nounsEverydayItems } from "./nouns/EverydayItems";
 import { FamilyMembers as nounsFamilyMembers } from "./nouns/FamilyMembers";
-import { FamousWorksAndAuthors as nounsFamousWorksAndAuthors } from "./nouns/FamousWorksAndauthors";
+import { FamousWorksAndAuthors as nounsFamousWorksAndAuthors } from "./nouns/FamousWorksAndAuthors";
 import { FarmAnimals as nounsFarmAnimals } from "./nouns/FarmAnimals";
 import { FinancialInstruments as nounsFinancialInstruments } from "./nouns/FinancialInstruments";
 import { FitnessActivities as nounsFitnessActivities } from "./nouns/FitnessActivities";
 import { Foods as nounsFoods } from "./nouns/Foods";
 import { Footwear as nounsFootwear } from "./nouns/Footwear";
 import { FormsOfEntertainment as nounsFormsOfEntertainment } from "./nouns/FormsOfEntertainment";
-import { FractionsAndPercentages as nounsFractionsAndPercentages } from "./nouns/FractionsAndpercentages";
+import { FractionsAndPercentages as nounsFractionsAndPercentages } from "./nouns/FractionsAndPercentages";
 import { Fruits as nounsFruits } from "./nouns/Fruits";
 import { Countries as nounsCountries } from "./nouns/Countries";
 import { GeometricTerms as nounsGeometricTerms } from "./nouns/GeometricTerms";
-import { GovernmentPositionsAndBodies as nounsGovernmentPositionsAndBodies } from "./nouns/GovernmentPositionsAndbodies";
-import { HealthAndMedicalTerms as nounsHealthAndMedicalTerms } from "./nouns/HealthAndmedicalTerms";
+import { GovernmentPositionsAndBodies as nounsGovernmentPositionsAndBodies } from "./nouns/GovernmentPositionsAndBodies";
+import { HealthAndMedicalTerms as nounsHealthAndMedicalTerms } from "./nouns/HealthAndMedicalTerms";
 import { HealthConditions as nounsHealthConditions } from "./nouns/HealthConditions";
-import { HobbiesAndInterests as nounsHobbiesAndInterests } from "./nouns/HobbiesAndinterests";
+import { HobbiesAndInterests as nounsHobbiesAndInterests } from "./nouns/HobbiesAndInterests";
 import { HouseholdObjects as nounsHouseholdObjects } from "./nouns/HouseholdObjects";
 import { InternationalRelations as nounsInternationalRelations } from "./nouns/InternationalRelations";
 import { InternetAndCommunication as nounsInternetAndCommunication } from "./nouns/InternetAndCommunication";
-import { JobTItlesAndRoles as nounsJobTItlesAndRoles } from "./nouns/JobTitlesAndroles";
+import { JobTitlesAndRoles as nounsJobTitlesAndRoles } from "./nouns/JobTitlesAndRoles";
 import { LegalTerms as nounsLegalTerms } from "./nouns/LegalTerms";
-import { LegumesAndNuts as nounsLegumesAndNuts } from "./nouns/LegumesAndnuts";
+import { LegumesAndNuts as nounsLegumesAndNuts } from "./nouns/LegumesAndNuts";
 import { LiteraryTerms as nounsLiteraryTerms } from "./nouns/LiteraryTerms";
 import { MathematicalOperations as nounsMathematicalOperations } from "./nouns/MathematicalOperations";
-import { MealsAndDining as nounsMealsAndDining } from "./nouns/MealsAnddining";
+import { MealsAndDining as nounsMealsAndDining } from "./nouns/MealsAndDining";
 import { MeasuringUnits as nounsMeasuringUnits } from "./nouns/MeasuringUnits";
 import { MediaTypes as nounsMediaTypes } from "./nouns/MediaTypes";
 import { MedicalProfessions as nounsMedicalProfessions } from "./nouns/MedicalProfessions";
 import { MeteorologicalPhenomena as nounsMeteorologicalPhenomena } from "./nouns/MeteorologicalPhenomena";
 import { ModesOfTransport as nounsModesOfTransport } from "./nouns/ModesOfTransport";
 import { MonthsOfTheYear as nounsMonthsOfTheYear } from "./nouns/MonthsOfTheYear";
-import { MusicAndInstruments as nounsMusicAndInstruments } from "./nouns/MusicAndinstruments";
+import { MusicAndInstruments as nounsMusicAndInstruments } from "./nouns/MusicAndInstruments";
 import { NaturalElements as nounsNaturalElements } from "./nouns/NaturalElements";
-import { NutritionAndDiet as nounsNutritionAndDiet } from "./nouns/NutritionAnddiet";
+import { NutritionAndDiet as nounsNutritionAndDiet } from "./nouns/NutritionAndDiet";
 import { OrdinalNumbers as nounsOrdinalNumbers } from "./nouns/OrdinalNumbers";
 import { PartsOfTheBody as nounsPartsOfTheBody } from "./nouns/PartsOfTheBody";
 import { PartsOfVehicles as nounsPartsOfVehicles } from "./nouns/PartsOfVehicles";
 import { Pets as nounsPets } from "./nouns/Pets";
 import { PhysicalSensations as nounsPhysicalSensations } from "./nouns/PhysicalSensations";
 import { PlacesOfWorship as nounsPlacesOfWorship } from "./nouns/PlacesOfWorship";
-import { PlantsAndFlowers as nounsPlantsAndFlowers } from "./nouns/PlantsAndflowers";
+import { PlantsAndFlowers as nounsPlantsAndFlowers } from "./nouns/PlantsAndFlowers";
 import { PoliticalConcepts as nounsPoliticalConcepts } from "./nouns/PoliticalConcepts";
 import { Produce as nounsProduce } from "./nouns/Produce";
-import { ProfessionsAndOccupations as nounsProfessionsAndOccupations } from "./nouns/ProfessionsAndoccupations";
-import { QuantitiesAndAmounts as nounsQuantitiesAndAmounts } from "./nouns/QuantitiesAndamounts";
-import { ReligiousBeliefsAndPractices as nounsReligiousBeliefsAndPractices } from "./nouns/ReligiousBeliefsAndpractices";
-import { ReligiousFiguresAndLeaders as nounsReligiousFiguresAndLeaders } from "./nouns/ReligiousFiguresAndleaders";
-import { ReligiousTextsAndSymbols as nounsReligiousTextsAndSymbols } from "./nouns/ReligiousTextsAndsymbols";
-import { RoomsAndAreas as nounsRoomsAndAreas } from "./nouns/RoomsAndareas";
+import { ProfessionsAndOccupations as nounsProfessionsAndOccupations } from "./nouns/ProfessionsAndOccupations";
+import { QuantitiesAndAmounts as nounsQuantitiesAndAmounts } from "./nouns/QuantitiesAndAmounts";
+import { ReligiousBeliefsAndPractices as nounsReligiousBeliefsAndPractices } from "./nouns/ReligiousBeliefsAndPractices";
+import { ReligiousFiguresAndLeaders as nounsReligiousFiguresAndLeaders } from "./nouns/ReligiousFiguresAndLeaders";
+import { ReligiousTextsAndSymbols as nounsReligiousTextsAndSymbols } from "./nouns/ReligiousTextsAndSymbols";
+import { RoomsAndAreas as nounsRoomsAndAreas } from "./nouns/RoomsAndAreas";
 import { SchoolRelatedRoles as nounsSchoolRelatedRoles } from "./nouns/SchoolRelatedRoles";
 import { SchoolSubjects as nounsSchoolSubjects } from "./nouns/SchoolSubjects";
 import { ScientificConcepts as nounsScientificConcepts } from "./nouns/ScientificConcepts";
 import { ScientificDisciplines as nounsScientificDisciplines } from "./nouns/ScientificDisciplines";
 import { SeasonalTerms as nounsSeasonalTerms } from "./nouns/SeasonalTerms";
-import { SensesAndFeelings as nounsSensesAndFeelings } from "./nouns/SensesAndfeelings";
-import { ShadesAndTints as nounsShadesAndTints } from "./nouns/ShadesAndtints";
-import { SportsAndActivities as nounsSportsAndActivities } from "./nouns/SportsAndactivities";
+import { SensesAndFeelings as nounsSensesAndFeelings } from "./nouns/SensesAndFeelings";
+import { ShadesAndTints as nounsShadesAndTints } from "./nouns/ShadesAndTints";
+import { SportsAndActivities as nounsSportsAndActivities } from "./nouns/SportsAndActivities";
 import { TechnicalTerms as nounsTechnicalTerms } from "./nouns/TechnicalTerms";
 import { TimeRelatedConcepts as nounsTimeRelatedConcepts } from "./nouns/TimeRelatedConcepts";
-import { TitlesAndRoles as nounsTitlesAndRoles } from "./nouns/TitlesAndroles";
-import { ToolsAndEquipment as nounsToolsAndEquipment } from "./nouns/ToolsAndequipment";
+import { TitlesAndRoles as nounsTitlesAndRoles } from "./nouns/TitlesAndRoles";
+import { ToolsAndEquipment as nounsToolsAndEquipment } from "./nouns/ToolsAndEquipment";
 import { TouristAttractions as nounsTouristAttractions } from "./nouns/TouristAttractions";
 import { TransportationInfrastructure as nounsTransportationInfrastructure } from "./nouns/TransportationInfrastructure";
-import { TravelModesAndServices as nounsTravelModesAndServices } from "./nouns/TravelModesAndservices";
+import { TravelModesAndServices as nounsTravelModesAndServices } from "./nouns/TravelModesAndServices";
 import { TravelRelatedTerms as nounsTravelRelatedTerms } from "./nouns/TravelRelatedTerms";
 import { Weather as nounsWeather } from "./nouns/Weather";
 import { WeatherConditions as nounsWeatherConditions } from "./nouns/WeatherConditions";
@@ -198,10 +198,10 @@ import { Conflicts as verbsConflicts } from "./verbs/Conflicts";
 import { Controlling as verbsControlling } from "./verbs/Controlling";
 import { Cooperation as verbsCooperation } from "./verbs/Cooperation";
 import { DailyActivities as verbsDailyActivities } from "./verbs/DailyActivities";
-import { DecayingAndDeclining as verbsDecayingAndDeclining } from "./verbs/DecayingAnddeclining";
+import { DecayingAndDeclining as verbsDecayingAndDeclining } from "./verbs/DecayingAndDeclining";
 import { Deciding as verbsDeciding } from "./verbs/Deciding";
 import { Existence as verbsExistence } from "./verbs/Existence";
-import { GrowthAndDevelopment as verbsGrowthAndDevelopment } from "./verbs/GrowthAnddevelopment";
+import { GrowthAndDevelopment as verbsGrowthAndDevelopment } from "./verbs/GrowthAndDevelopment";
 import { Handling as verbsHandling } from "./verbs/Handling";
 import { Health as verbsHealth } from "./verbs/Health";
 import { Hearing as verbsHearing } from "./verbs/Hearing";
@@ -220,7 +220,7 @@ import { PositiveEmotions as verbsPositiveEmotions } from "./verbs/PositiveEmoti
 import { Relationships as verbsRelationships } from "./verbs/Relationships";
 import { Remembering as verbsRemembering } from "./verbs/Remembering";
 import { Seeing as verbsSeeing } from "./verbs/Seeing";
-import { SportsAndExercise as verbsSportsAndExercise } from "./verbs/SportsAndexercise";
+import { SportsAndExercise as verbsSportsAndExercise } from "./verbs/SportsAndExercise";
 import { Thinking as verbsThinking } from "./verbs/Thinking";
 import { Touching as verbsTouching } from "./verbs/Touching";
 import { Transformations as verbsTransformations } from "./verbs/Transformations";
@@ -234,7 +234,7 @@ export const termsByCategory = [
   {
     title: "Adjectives",
     id: "G3HJ10",
-    cards: [
+    sets: [
       adjectivesAccessories,
       adjectivesAccommodations,
       adjectivesArtForms,
@@ -329,7 +329,7 @@ export const termsByCategory = [
   {
     title: "Adverbs",
     id: "3HJ10",
-    cards: [
+    sets: [
       adverbsAdverbsOfAffirmation,
       adverbsAdverbsOfDoubt,
       adverbsAdverbsOfMode,
@@ -339,11 +339,11 @@ export const termsByCategory = [
       adverbsAdverbsOfTime,
     ],
   },
-  { title: "Conjunctions", id: "WMT597", cards: [Conjunctions] },
+  { title: "Conjunctions", id: "WMT597", sets: [Conjunctions] },
   {
     title: "Nouns",
     id: "46MA7T",
-    cards: [
+    sets: [
       nounsAccessories,
       nounsAccommodations,
       nounsArtForms,
@@ -388,7 +388,7 @@ export const termsByCategory = [
       nounsHouseholdObjects,
       nounsInternationalRelations,
       nounsInternetAndCommunication,
-      nounsJobTItlesAndRoles,
+      nounsJobTitlesAndRoles,
       nounsLegalTerms,
       nounsLegumesAndNuts,
       nounsLiteraryTerms,
@@ -439,12 +439,12 @@ export const termsByCategory = [
       nounsWildAnimals,
     ],
   },
-  { title: "Prepositions", id: "92S5PL", cards: [Prepositions] },
-  { title: "Pronouns", id: "3HJ10", cards: [Pronouns] },
+  { title: "Prepositions", id: "92S5PL", sets: [Prepositions] },
+  { title: "Pronouns", id: "3HJ10", sets: [Pronouns] },
   {
     title: "Verbs",
     id: "4HJX10",
-    cards: [
+    sets: [
       verbsAcquiring,
       verbsAnalyzing,
       verbsArtisticCreation,

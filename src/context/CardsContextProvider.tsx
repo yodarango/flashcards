@@ -138,7 +138,7 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
   }
 
   // adds a a hint to the specific card
-  function handleAddHint(hint: string, id: number) {
+  function handleAddHint(hint: string, id: string) {
     const findIndex = state.allCards.findIndex((card) => card.id === id);
 
     const updateTarget = {

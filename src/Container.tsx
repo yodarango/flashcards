@@ -2,7 +2,7 @@ import { useCardsContext } from "./context/CardsContextProvider";
 import { EPage } from "./context/CardsContext";
 import { RightOrWrong } from "./RightOrWrong";
 import { CardSetMeta } from "./CardSetMeta";
-import { CardsSets } from "./CardsSets";
+import { CardsSets } from "./views/index/Layout/Layout";
 import { FlashCard } from "./FlashCard";
 import { Progress } from "./Progress";
 import { AddHint } from "./AddHint";

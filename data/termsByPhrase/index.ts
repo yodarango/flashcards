@@ -2,7 +2,7 @@ export const termsByPhrase = [
   {
     id: "K79EOUInQE",
     title: "Unit 1",
-    cards: [
+    sets: [
       {
         spa: "agua",
         eng: "Water",
@@ -266,7 +266,7 @@ export const termsByPhrase = [
   {
     id: "0KydqJ18J8",
     title: "Unit 2",
-    cards: [
+    sets: [
       {
         spa: "a",
         eng: "a",
@@ -440,7 +440,7 @@ export const termsByPhrase = [
   {
     id: "qPSglPhSX2",
     title: "Unit 3",
-    cards: [
+    sets: [
       {
         spa: "azúcar",
         eng: "sugar",
@@ -614,7 +614,7 @@ export const termsByPhrase = [
   {
     id: "RY0n6dvUYw",
     title: "Unit 4",
-    cards: [
+    sets: [
       {
         spa: "abuela",
         eng: "Grandma",
@@ -788,7 +788,7 @@ export const termsByPhrase = [
   {
     id: "3F7LrMI9eP",
     title: "Unit 5",
-    cards: [
+    sets: [
       {
         spa: "abrigo",
         eng: "coat",
@@ -962,7 +962,7 @@ export const termsByPhrase = [
   {
     id: "M76OLKR543",
     title: "Unit 6",
-    cards: [
+    sets: [
       {
         spa: "prestense11",
         eng: "borrow11",
@@ -992,7 +992,7 @@ export const termsByPhrase = [
   {
     id: "9hJMqSVrTE",
     title: "Unit 7",
-    cards: [
+    sets: [
       {
         spa: "bolígrafo",
         eng: "ballpoint",
@@ -1166,7 +1166,7 @@ export const termsByPhrase = [
   {
     id: "mi1WjZz87N",
     title: "Unit 8",
-    cards: [
+    sets: [
       {
         spa: "China",
         eng: "China",
@@ -1310,7 +1310,7 @@ export const termsByPhrase = [
   {
     id: "0ZKRHeLaWN",
     title: "Unit 9",
-    cards: [
+    sets: [
       {
         spa: "bien",
         eng: "good",
@@ -1616,7 +1616,7 @@ export const termsByPhrase = [
   {
     id: "0LD4BZP39o",
     title: "Unit 10",
-    cards: [
+    sets: [
       {
         spa: "baile",
         eng: "dance",
@@ -1790,7 +1790,7 @@ export const termsByPhrase = [
   {
     id: "eM9BOfq16M",
     title: "Unit 11",
-    cards: [
+    sets: [
       {
         spa: "beber",
         eng: "to drink",
@@ -2132,7 +2132,7 @@ export const termsByPhrase = [
   {
     id: "vBbLF0UYY9",
     title: "Unit 12",
-    cards: [
+    sets: [
       {
         spa: "agreement1",
         eng: "agreement1",
@@ -2162,7 +2162,7 @@ export const termsByPhrase = [
   {
     id: "Oa820Tq0MO",
     title: "Unit 13",
-    cards: [
+    sets: [
       {
         spa: "aprende",
         eng: "learn",
@@ -2546,7 +2546,7 @@ export const termsByPhrase = [
   {
     id: "q3cpbhk0pz",
     title: "Unit 14",
-    cards: [
+    sets: [
       {
         spa: "ahora",
         eng: "now",
@@ -2983,7 +2983,7 @@ export const termsByPhrase = [
   {
     id: "HhLUIleNaS",
     title: "Unit 15",
-    cards: [
+    sets: [
       {
         spa: "amigos",
         eng: "friends",
@@ -3175,7 +3175,7 @@ export const termsByPhrase = [
   {
     id: "oaYH4SY9t7",
     title: "Unit 16",
-    cards: [
+    sets: [
       {
         spa: "bonitas",
         eng: "pretty",
@@ -3409,7 +3409,7 @@ export const termsByPhrase = [
   {
     id: "4kyYe9RtLv",
     title: "Unit 17",
-    cards: [
+    sets: [
       {
         spa: "a",
         eng: "a",
@@ -3643,7 +3643,7 @@ export const termsByPhrase = [
   {
     id: "6AnemBBUsd",
     title: "Unit 18",
-    cards: [
+    sets: [
       {
         spa: "abrir",
         eng: "open",
@@ -4099,7 +4099,7 @@ export const termsByPhrase = [
   {
     id: "aakPNup1SD",
     title: "Unit 19",
-    cards: [
+    sets: [
       {
         spa: "algo",
         eng: "something",
@@ -4560,7 +4560,7 @@ export const termsByPhrase = [
   {
     id: "V59VXgo4oT",
     title: "Unit 20",
-    cards: [
+    sets: [
       {
         spa: "azul",
         eng: "blue",
@@ -4890,7 +4890,7 @@ export const termsByPhrase = [
   {
     id: "BoU6Wi6B6m",
     title: "Unit 21",
-    cards: [
+    sets: [
       {
         spa: "blanca",
         eng: "white",
@@ -5394,7 +5394,7 @@ export const termsByPhrase = [
   {
     id: "6eMvcR09pd",
     title: "Unit 22",
-    cards: [
+    sets: [
       {
         spa: "abre",
         eng: "opens",
@@ -5646,7 +5646,7 @@ export const termsByPhrase = [
   {
     id: "pMgfVLPmO7",
     title: "Unit 23",
-    cards: [
+    sets: [
       {
         spa: "abierta",
         eng: "open",
@@ -6060,7 +6060,7 @@ export const termsByPhrase = [
   {
     id: "0PrmryTuaU",
     title: "Unit 24",
-    cards: [
+    sets: [
       {
         spa: "a mí",
         eng: "to me",
@@ -6335,7 +6335,7 @@ export const termsByPhrase = [
   {
     id: "7ZALc6yINd",
     title: "Unit 25",
-    cards: [
+    sets: [
       {
         spa: "Alemania",
         eng: "Germany",
@@ -6911,7 +6911,7 @@ export const termsByPhrase = [
   {
     id: "ZESC1yaZAE",
     title: "Unit 26",
-    cards: [
+    sets: [
       {
         spa: "cursos",
         eng: "courses",
@@ -7089,7 +7089,7 @@ export const termsByPhrase = [
   {
     id: "VJuGdJngwn",
     title: "Unit 27",
-    cards: [
+    sets: [
       {
         spa: "almuerzo",
         eng: "lunch",
@@ -7311,7 +7311,7 @@ export const termsByPhrase = [
   {
     id: "U5fLeyu70u",
     title: "Unit 28",
-    cards: [
+    sets: [
       {
         spa: "almorzamos",
         eng: "we have lunch",
@@ -7437,7 +7437,7 @@ export const termsByPhrase = [
   {
     id: "l1QDO2Ys0y",
     title: "Unit 29",
-    cards: [
+    sets: [
       {
         spa: "abril",
         eng: "April",
@@ -7641,7 +7641,7 @@ export const termsByPhrase = [
   {
     id: "WwsMXFNqDh",
     title: "Unit 30",
-    cards: [
+    sets: [
       {
         spa: "canciones",
         eng: "songs",
@@ -8238,7 +8238,7 @@ export const termsByPhrase = [
   {
     id: "bdTeh83yPQ",
     title: "Unit 31",
-    cards: [
+    sets: [
       {
         spa: "adónde",
         eng: "where to",
@@ -8465,7 +8465,7 @@ export const termsByPhrase = [
   {
     id: "ejHtlxXhL1",
     title: "Unit 32",
-    cards: [
+    sets: [
       {
         spa: "ambas",
         eng: "both",
@@ -8975,7 +8975,7 @@ export const termsByPhrase = [
   {
     id: "a0ydMdtO9O",
     title: "Unit 33",
-    cards: [
+    sets: [
       {
         spa: "abre",
         eng: "opens",
@@ -9149,7 +9149,7 @@ export const termsByPhrase = [
   {
     id: "ZalEdcZBkG",
     title: "Unit 34",
-    cards: [
+    sets: [
       {
         spa: "tolike1",
         eng: "tolike1",
@@ -9443,7 +9443,7 @@ export const termsByPhrase = [
   {
     id: "4IPtqiTvsE",
     title: "Unit 35",
-    cards: [
+    sets: [
       {
         spa: "abriendo",
         eng: "opening",
@@ -9622,7 +9622,7 @@ export const termsByPhrase = [
   {
     id: "rZMzQ4rDxp",
     title: "Unit 36",
-    cards: [
+    sets: [
       {
         spa: "abro",
         eng: "I open",
@@ -10299,7 +10299,7 @@ export const termsByPhrase = [
   {
     id: "HyrjZYt2S3",
     title: "Unit 37",
-    cards: [
+    sets: [
       {
         spa: "aprendiendo a",
         eng: "learning to",
@@ -10473,7 +10473,7 @@ export const termsByPhrase = [
   {
     id: "ok11RSBK0o",
     title: "Unit 38",
-    cards: [
+    sets: [
       {
         spa: "abres la",
         eng: "you open the",
@@ -10959,7 +10959,7 @@ export const termsByPhrase = [
   {
     id: "kwQ4VY69De",
     title: "Unit 39",
-    cards: [
+    sets: [
       {
         spa: "objects1",
         eng: "objects1",
@@ -10989,7 +10989,7 @@ export const termsByPhrase = [
   {
     id: "zkBdcncCZF",
     title: "Unit 40",
-    cards: [
+    sets: [
       {
         spa: "abajo",
         eng: "below",
@@ -11379,7 +11379,7 @@ export const termsByPhrase = [
   {
     id: "9GxwDRWBWv",
     title: "Unit 41",
-    cards: [
+    sets: [
       {
         spa: "abrieron",
         eng: "they opened",
@@ -11559,7 +11559,7 @@ export const termsByPhrase = [
   {
     id: "YNcd0Rkdxz",
     title: "Unit 42",
-    cards: [
+    sets: [
       {
         spa: "abriste",
         eng: "you opened",
@@ -11889,7 +11889,7 @@ export const termsByPhrase = [
   {
     id: "AFMtYO1DmX",
     title: "Unit 43",
-    cards: [
+    sets: [
       {
         spa: "alguno",
         eng: "some",
@@ -12098,7 +12098,7 @@ export const termsByPhrase = [
   {
     id: "C2cE7CfVZ9",
     title: "Unit 44",
-    cards: [
+    sets: [
       {
         spa: "ahí",
         eng: "there",
@@ -12338,7 +12338,7 @@ export const termsByPhrase = [
   {
     id: "0YBGxPFsgr",
     title: "Unit 45",
-    cards: [
+    sets: [
       {
         spa: "calurosa",
         eng: "hot",
@@ -12764,7 +12764,7 @@ export const termsByPhrase = [
   {
     id: "tHIeT6YgYn",
     title: "Unit 46",
-    cards: [
+    sets: [
       {
         spa: "canté",
         eng: "sing",
@@ -13172,7 +13172,7 @@ export const termsByPhrase = [
   {
     id: "0fGRPdLqZa",
     title: "Unit 47",
-    cards: [
+    sets: [
       {
         spa: "acabar",
         eng: "finish",
@@ -13520,7 +13520,7 @@ export const termsByPhrase = [
   {
     id: "EFxq7G7Fth",
     title: "Unit 48",
-    cards: [
+    sets: [
       {
         spa: "acostar+prpers",
         eng: "lay down+prpers",
@@ -14072,7 +14072,7 @@ export const termsByPhrase = [
   {
     id: "6EfF0TCv7U",
     title: "Unit 49",
-    cards: [
+    sets: [
       {
         spa: "alumnos",
         eng: "students",
@@ -14257,7 +14257,7 @@ export const termsByPhrase = [
   {
     id: "N08DFFkwBv",
     title: "Unit 50",
-    cards: [
+    sets: [
       {
         spa: "pasttense21",
         eng: "pasttense21",
@@ -14449,7 +14449,7 @@ export const termsByPhrase = [
   {
     id: "7fez6Hs1B1",
     title: "Unit 51",
-    cards: [
+    sets: [
       {
         spa: "a lo mejor",
         eng: "maybe",
@@ -14857,7 +14857,7 @@ export const termsByPhrase = [
   {
     id: "aHdNYgdFJN",
     title: "Unit 52",
-    cards: [
+    sets: [
       {
         spa: "año nuevo",
         eng: "new Year",
@@ -15600,7 +15600,7 @@ export const termsByPhrase = [
   {
     id: "QJWHj3Xho6",
     title: "Unit 53",
-    cards: [
+    sets: [
       {
         spa: "abuelito",
         eng: "Grandpa",
@@ -15888,7 +15888,7 @@ export const termsByPhrase = [
   {
     id: "K8iA1whrFr",
     title: "Unit 54",
-    cards: [
+    sets: [
       {
         spa: "alfombras",
         eng: "carpets",
@@ -16488,7 +16488,7 @@ export const termsByPhrase = [
   {
     id: "3F1SB6AK5U",
     title: "Unit 55",
-    cards: [
+    sets: [
       {
         spa: "anuncio",
         eng: "advertisement",
@@ -16716,7 +16716,7 @@ export const termsByPhrase = [
   {
     id: "jiyvaJvZu5",
     title: "Unit 56",
-    cards: [
+    sets: [
       {
         spa: "pasttense31",
         eng: "pasttense31",
@@ -16943,7 +16943,7 @@ export const termsByPhrase = [
   {
     id: "LbdYR0eQ82",
     title: "Unit 57",
-    cards: [
+    sets: [
       {
         spa: "almorzar",
         eng: "to have lunch",
@@ -17267,7 +17267,7 @@ export const termsByPhrase = [
   {
     id: "igpMJHJEkP",
     title: "Unit 58",
-    cards: [
+    sets: [
       {
         spa: "artista",
         eng: "artist",
@@ -18089,7 +18089,7 @@ export const termsByPhrase = [
   {
     id: "UPROZsJwl4",
     title: "Unit 59",
-    cards: [
+    sets: [
       {
         spa: "agradables",
         eng: "nice",
@@ -18383,7 +18383,7 @@ export const termsByPhrase = [
   {
     id: "8La4E1nMR6",
     title: "Unit 60",
-    cards: [
+    sets: [
       {
         spa: "asaba",
         eng: "roasted",
@@ -19049,7 +19049,7 @@ export const termsByPhrase = [
   {
     id: "rjDkMIT9JE",
     title: "Unit 61",
-    cards: [
+    sets: [
       {
         spa: "adentro",
         eng: "inside",
@@ -19343,7 +19343,7 @@ export const termsByPhrase = [
   {
     id: "G83xsZFwtk",
     title: "Unit 62",
-    cards: [
+    sets: [
       {
         spa: "pasttense41",
         eng: "pasttense41",
@@ -19691,7 +19691,7 @@ export const termsByPhrase = [
   {
     id: "u1tzGHAab9",
     title: "Unit 63",
-    cards: [
+    sets: [
       {
         spa: "colinas",
         eng: "hills",
@@ -19925,7 +19925,7 @@ export const termsByPhrase = [
   {
     id: "PAecxA34Rp",
     title: "Unit 64",
-    cards: [
+    sets: [
       {
         spa: "abrirla",
         eng: "open it",
@@ -20637,7 +20637,7 @@ export const termsByPhrase = [
   {
     id: "VKUj8Fkc3P",
     title: "Unit 65",
-    cards: [
+    sets: [
       {
         spa: "avanzada",
         eng: "advanced",
@@ -20883,7 +20883,7 @@ export const termsByPhrase = [
   {
     id: "oQrwY3VJjv",
     title: "Unit 66",
-    cards: [
+    sets: [
       {
         spa: "objects21",
         eng: "objects21",
@@ -20913,7 +20913,7 @@ export const termsByPhrase = [
   {
     id: "KH91v1PGMi",
     title: "Unit 67",
-    cards: [
+    sets: [
       {
         spa: "antes",
         eng: "before",
@@ -21291,7 +21291,7 @@ export const termsByPhrase = [
   {
     id: "CGowKgqat4",
     title: "Unit 68",
-    cards: [
+    sets: [
       {
         spa: "abran",
         eng: "open",
@@ -21794,7 +21794,7 @@ export const termsByPhrase = [
   {
     id: "28Yvmyknh8",
     title: "Unit 69",
-    cards: [
+    sets: [
       {
         spa: "alejada",
         eng: "far away",
@@ -22328,7 +22328,7 @@ export const termsByPhrase = [
   {
     id: "VpHG93owxO",
     title: "Unit 70",
-    cards: [
+    sets: [
       {
         spa: "ahorrar",
         eng: "save",
@@ -22502,7 +22502,7 @@ export const termsByPhrase = [
   {
     id: "bs3euKRD0e",
     title: "Unit 71",
-    cards: [
+    sets: [
       {
         spa: "acaba de",
         eng: "just",
@@ -23071,7 +23071,7 @@ export const termsByPhrase = [
   {
     id: "SldZ3B0PB3",
     title: "Unit 72",
-    cards: [
+    sets: [
       {
         spa: "past tense 51",
         eng: "past tense 51",
@@ -23101,7 +23101,7 @@ export const termsByPhrase = [
   {
     id: "cbSQfQ9HFO",
     title: "Unit 73",
-    cards: [
+    sets: [
       {
         spa: "biología",
         eng: "biology",
@@ -23634,7 +23634,7 @@ export const termsByPhrase = [
   {
     id: "ff8Ns8K8sg",
     title: "Unit 74",
-    cards: [
+    sets: [
       {
         spa: "anchas",
         eng: "wide",
@@ -23898,7 +23898,7 @@ export const termsByPhrase = [
   {
     id: "LdkWmPjkzF",
     title: "Unit 75",
-    cards: [
+    sets: [
       {
         spa: "basurero",
         eng: "garbage collector",
@@ -24576,7 +24576,7 @@ export const termsByPhrase = [
   {
     id: "r60WiUm0mV",
     title: "Unit 76",
-    cards: [
+    sets: [
       {
         spa: "anillo",
         eng: "ring",
@@ -25037,7 +25037,7 @@ export const termsByPhrase = [
   {
     id: "fKNZI8tCOs",
     title: "Unit 77",
-    cards: [
+    sets: [
       {
         spa: "commands1",
         eng: "commands1",
@@ -25367,7 +25367,7 @@ export const termsByPhrase = [
   {
     id: "dF0bqvAWgd",
     title: "Unit 78",
-    cards: [
+    sets: [
       {
         spa: "agradecer",
         eng: "to thank",
@@ -25685,7 +25685,7 @@ export const termsByPhrase = [
   {
     id: "gEUHVX8j9p",
     title: "Unit 79",
-    cards: [
+    sets: [
       {
         spa: "ajo",
         eng: "Garlic",
@@ -26356,7 +26356,7 @@ export const termsByPhrase = [
   {
     id: "g35Sk0yYrS",
     title: "Unit 80",
-    cards: [
+    sets: [
       {
         spa: "a la venta",
         eng: "for sale",
@@ -26608,7 +26608,7 @@ export const termsByPhrase = [
   {
     id: "IPV4xNfiT4",
     title: "Unit 81",
-    cards: [
+    sets: [
       {
         spa: "acompañaremos",
         eng: "we will accompany",
@@ -27334,7 +27334,7 @@ export const termsByPhrase = [
   {
     id: "0QYVund7N5",
     title: "Unit 82",
-    cards: [
+    sets: [
       {
         spa: "futuretense1",
         eng: "futuretense1",
@@ -27364,7 +27364,7 @@ export const termsByPhrase = [
   {
     id: "GbBPkZyOAN",
     title: "Unit 83",
-    cards: [
+    sets: [
       {
         spa: "contra",
         eng: "against",
@@ -27825,7 +27825,7 @@ export const termsByPhrase = [
   {
     id: "iNiRUbGjwi",
     title: "Unit 84",
-    cards: [
+    sets: [
       {
         spa: "a ella le",
         eng: "she",
@@ -28550,7 +28550,7 @@ export const termsByPhrase = [
   {
     id: "6QyNwqlP4I",
     title: "Unit 85",
-    cards: [
+    sets: [
       {
         spa: "a través de",
         eng: "via",
@@ -28724,7 +28724,7 @@ export const termsByPhrase = [
   {
     id: "eSRwfyOqJ9",
     title: "Unit 86",
-    cards: [
+    sets: [
       {
         spa: "a pie",
         eng: "walking",
@@ -28916,7 +28916,7 @@ export const termsByPhrase = [
   {
     id: "Xssu5mSkfy",
     title: "Unit 87",
-    cards: [
+    sets: [
       {
         spa: "amor",
         eng: "love",
@@ -29282,7 +29282,7 @@ export const termsByPhrase = [
   {
     id: "k6ddHxx2S4",
     title: "Unit 88",
-    cards: [
+    sets: [
       {
         spa: "anteayer",
         eng: "the day before yesterday",
@@ -29689,7 +29689,7 @@ export const termsByPhrase = [
   {
     id: "E8iR4p9iLI",
     title: "Unit 89",
-    cards: [
+    sets: [
       {
         spa: "abrazo",
         eng: "hug",
@@ -29923,7 +29923,7 @@ export const termsByPhrase = [
   {
     id: "1z89Pj9Dje",
     title: "Unit 90",
-    cards: [
+    sets: [
       {
         spa: "actual",
         eng: "current",
@@ -30145,7 +30145,7 @@ export const termsByPhrase = [
   {
     id: "FfPbqRyvuh",
     title: "Unit 91",
-    cards: [
+    sets: [
       {
         spa: "antibiótico",
         eng: "antibiotic",
@@ -30385,7 +30385,7 @@ export const termsByPhrase = [
   {
     id: "mJ8tnWtZ3i",
     title: "Unit 92",
-    cards: [
+    sets: [
       {
         spa: "decisiones",
         eng: "decisions",
@@ -30589,7 +30589,7 @@ export const termsByPhrase = [
   {
     id: "x0JnWSPuOT",
     title: "Unit 93",
-    cards: [
+    sets: [
       {
         spa: "algodón",
         eng: "cotton",
@@ -30841,7 +30841,7 @@ export const termsByPhrase = [
   {
     id: "tUUZt2pUKR",
     title: "Unit 94",
-    cards: [
+    sets: [
       {
         spa: "commands21",
         eng: "commands21",
@@ -30871,7 +30871,7 @@ export const termsByPhrase = [
   {
     id: "eRczddc22n",
     title: "Unit 95",
-    cards: [
+    sets: [
       {
         spa: "abras",
         eng: "open",
@@ -31033,7 +31033,7 @@ export const termsByPhrase = [
   {
     id: "71ZCpSoGwB",
     title: "Unit 96",
-    cards: [
+    sets: [
       {
         spa: "caer",
         eng: "fall out",
@@ -31453,7 +31453,7 @@ export const termsByPhrase = [
   {
     id: "XPaVK21Sjp",
     title: "Unit 97",
-    cards: [
+    sets: [
       {
         spa: "adicional",
         eng: "additional",
@@ -31675,7 +31675,7 @@ export const termsByPhrase = [
   {
     id: "Jz5U2xocjj",
     title: "Unit 98",
-    cards: [
+    sets: [
       {
         spa: "a",
         eng: "a",
@@ -31921,7 +31921,7 @@ export const termsByPhrase = [
   {
     id: "tcDiv3sAWG",
     title: "Unit 99",
-    cards: [
+    sets: [
       {
         spa: "commands31",
         eng: "commands31",
@@ -31951,7 +31951,7 @@ export const termsByPhrase = [
   {
     id: "y5srn7crMQ",
     title: "Unit 100",
-    cards: [
+    sets: [
       {
         spa: "abogada",
         eng: "a lawyer",
@@ -32215,7 +32215,7 @@ export const termsByPhrase = [
   {
     id: "4XTe5MdRX3",
     title: "Unit 101",
-    cards: [
+    sets: [
       {
         spa: "acuerdo",
         eng: "agreement",
@@ -32803,7 +32803,7 @@ export const termsByPhrase = [
   {
     id: "wuinen4FSR",
     title: "Unit 103",
-    cards: [
+    sets: [
       {
         spa: "academia",
         eng: "academy",
@@ -32995,7 +32995,7 @@ export const termsByPhrase = [
   {
     id: "wctmvcYRuV",
     title: "Unit 104",
-    cards: [
+    sets: [
       {
         spa: "alguien",
         eng: "someone",
@@ -33289,7 +33289,7 @@ export const termsByPhrase = [
   {
     id: "ATqq3oDjUQ",
     title: "Unit 105",
-    cards: [
+    sets: [
       {
         spa: "ayuntamiento",
         eng: "town hall",
@@ -33487,7 +33487,7 @@ export const termsByPhrase = [
   {
     id: "fmuatlAVDx",
     title: "Unit 106",
-    cards: [
+    sets: [
       {
         spa: "atletas",
         eng: "athletes",
@@ -33553,7 +33553,7 @@ export const termsByPhrase = [
   {
     id: "ikCvPh1Daw",
     title: "Unit 107",
-    cards: [
+    sets: [
       {
         spa: "aspiradora",
         eng: "Vacuum cleaner",
@@ -33619,7 +33619,7 @@ export const termsByPhrase = [
   {
     id: "wpxJDRM7dA",
     title: "Unit 108",
-    cards: [
+    sets: [
       {
         spa: "arena",
         eng: "sand",
@@ -33685,7 +33685,7 @@ export const termsByPhrase = [
   {
     id: "uwzR41VcaD",
     title: "Unit 109",
-    cards: [
+    sets: [
       {
         spa: "pronouns1",
         eng: "pronouns1",
@@ -33715,7 +33715,7 @@ export const termsByPhrase = [
   {
     id: "RoPaqSC4dy",
     title: "Unit 110",
-    cards: [
+    sets: [
       {
         spa: "contestar",
         eng: "answer",
@@ -33901,7 +33901,7 @@ export const termsByPhrase = [
   {
     id: "0xe1x85iPI",
     title: "Unit 111",
-    cards: [
+    sets: [
       {
         spa: "costumbre",
         eng: "custom",
@@ -33972,7 +33972,7 @@ export const termsByPhrase = [
   {
     id: "dolhmgVEZF",
     title: "Unit 112",
-    cards: [
+    sets: [
       {
         spa: "asesino",
         eng: "killer",
@@ -34098,7 +34098,7 @@ export const termsByPhrase = [
   {
     id: "B2H2c7dnc3",
     title: "Unit 113",
-    cards: [
+    sets: [
       {
         spa: "pasttense71",
         eng: "pasttense71",
@@ -34128,7 +34128,7 @@ export const termsByPhrase = [
   {
     id: "bYowo1yedL",
     title: "Unit 114",
-    cards: [
+    sets: [
       {
         spa: "auto",
         eng: "auto",
@@ -34254,7 +34254,7 @@ export const termsByPhrase = [
   {
     id: "WHWiSgZirW",
     title: "Unit 115",
-    cards: [
+    sets: [
       {
         spa: "aprenda",
         eng: "learn",
@@ -34380,7 +34380,7 @@ export const termsByPhrase = [
   {
     id: "GBnrb18rTi",
     title: "Unit 116",
-    cards: [
+    sets: [
       {
         spa: "aire acondicionado",
         eng: "air conditioner",
@@ -34516,7 +34516,7 @@ export const termsByPhrase = [
   {
     id: "u2b3vM9gq4",
     title: "Unit 117",
-    cards: [
+    sets: [
       {
         spa: "a",
         eng: "a",
@@ -34582,7 +34582,7 @@ export const termsByPhrase = [
   {
     id: "6SnRtBLjAR",
     title: "Unit 118",
-    cards: [
+    sets: [
       {
         spa: "aprendan",
         eng: "learn",
@@ -34708,7 +34708,7 @@ export const termsByPhrase = [
   {
     id: "thIpNzqqfC",
     title: "Unit 119",
-    cards: [
+    sets: [
       {
         spa: "subj11",
         eng: "subj11",
@@ -34738,7 +34738,7 @@ export const termsByPhrase = [
   {
     id: "JM6VX2C4G9",
     title: "Unit 120",
-    cards: [
+    sets: [
       {
         spa: "a",
         eng: "a",
@@ -34864,7 +34864,7 @@ export const termsByPhrase = [
   {
     id: "LGbwD7W5Oz",
     title: "Unit 121",
-    cards: [
+    sets: [
       {
         spa: "conseguir",
         eng: "get",
@@ -34930,7 +34930,7 @@ export const termsByPhrase = [
   {
     id: "f9QXS5Zi6D",
     title: "Unit 122",
-    cards: [
+    sets: [
       {
         spa: "aburrirse",
         eng: "get bored",
@@ -35104,7 +35104,7 @@ export const termsByPhrase = [
   {
     id: "3pCScVsZO6",
     title: "Unit 123",
-    cards: [
+    sets: [
       {
         spa: "ayúdala",
         eng: "help her",
@@ -35170,7 +35170,7 @@ export const termsByPhrase = [
   {
     id: "xB6uwe2vO9",
     title: "Unit 124",
-    cards: [
+    sets: [
       {
         spa: "despejado",
         eng: "clear",
@@ -35260,7 +35260,7 @@ export const termsByPhrase = [
   {
     id: "HSunLUUCnW",
     title: "Unit 125",
-    cards: [
+    sets: [
       {
         spa: "bueno",
         eng: "well",
@@ -35386,7 +35386,7 @@ export const termsByPhrase = [
   {
     id: "Cr6rTlInsR",
     title: "Unit 126",
-    cards: [
+    sets: [
       {
         spa: "conferencia",
         eng: "conference",
@@ -35452,7 +35452,7 @@ export const termsByPhrase = [
   {
     id: "LKxmkbE9gV",
     title: "Unit 127",
-    cards: [
+    sets: [
       {
         spa: "echar",
         eng: "throw",
@@ -35518,7 +35518,7 @@ export const termsByPhrase = [
   {
     id: "BeWdkUB5Ca",
     title: "Unit 128",
-    cards: [
+    sets: [
       {
         spa: "pasttense81",
         eng: "pasttense81",
@@ -35548,7 +35548,7 @@ export const termsByPhrase = [
   {
     id: "hHayO81oA2",
     title: "Unit 129",
-    cards: [
+    sets: [
       {
         spa: "afeitador",
         eng: "shaver",
@@ -35679,7 +35679,7 @@ export const termsByPhrase = [
   {
     id: "7LZOnz2Y5Q",
     title: "Unit 130",
-    cards: [
+    sets: [
       {
         spa: "apenas",
         eng: "barely",
@@ -35805,7 +35805,7 @@ export const termsByPhrase = [
   {
     id: "ZHdDBHqJMf",
     title: "Unit 131",
-    cards: [
+    sets: [
       {
         spa: "cubierto",
         eng: "covered",
@@ -35931,7 +35931,7 @@ export const termsByPhrase = [
   {
     id: "xrQx7ClEjb",
     title: "Unit 132",
-    cards: [
+    sets: [
       {
         spa: "aceptable",
         eng: "acceptable",
@@ -35997,7 +35997,7 @@ export const termsByPhrase = [
   {
     id: "ft6STL9VLo",
     title: "Unit 133",
-    cards: [
+    sets: [
       {
         spa: "ciudad natal",
         eng: "native city",
@@ -36087,7 +36087,7 @@ export const termsByPhrase = [
   {
     id: "tiaR4KL50K",
     title: "Unit 134",
-    cards: [
+    sets: [
       {
         spa: "arroyo",
         eng: "stream",
@@ -36153,7 +36153,7 @@ export const termsByPhrase = [
   {
     id: "2Teu0qyub4",
     title: "Unit 135",
-    cards: [
+    sets: [
       {
         spa: "anterior",
         eng: "former",
@@ -36279,7 +36279,7 @@ export const termsByPhrase = [
   {
     id: "cmLIVIGLvk",
     title: "Unit 136",
-    cards: [
+    sets: [
       {
         spa: "admitir",
         eng: "to admit",
@@ -36345,7 +36345,7 @@ export const termsByPhrase = [
   {
     id: "7ZOemsK1GK",
     title: "Unit 137",
-    cards: [
+    sets: [
       {
         spa: "cariñoso",
         eng: "affectionate",
@@ -36481,7 +36481,7 @@ export const termsByPhrase = [
   {
     id: "xOHTJceAwM",
     title: "Unit 138",
-    cards: [
+    sets: [
       {
         spa: "algún día",
         eng: "someday",
@@ -36547,7 +36547,7 @@ export const termsByPhrase = [
   {
     id: "F32pZSC43b",
     title: "Unit 139",
-    cards: [
+    sets: [
       {
         spa: "pronouns21",
         eng: "pronouns21",
@@ -36637,7 +36637,7 @@ export const termsByPhrase = [
   {
     id: "8eDwSWutFh",
     title: "Unit 140",
-    cards: [
+    sets: [
       {
         spa: "comenzado",
         eng: "started",
@@ -36708,7 +36708,7 @@ export const termsByPhrase = [
   {
     id: "wD9i5sEPTT",
     title: "Unit 141",
-    cards: [
+    sets: [
       {
         spa: "dar las gracias",
         eng: "give the thanks",
@@ -36839,7 +36839,7 @@ export const termsByPhrase = [
   {
     id: "Bv1jXhRF3a",
     title: "Unit 142",
-    cards: [
+    sets: [
       {
         spa: "concentrarse",
         eng: "concentrate",
@@ -36905,7 +36905,7 @@ export const termsByPhrase = [
   {
     id: "4gh5JBOq66",
     title: "Unit 143",
-    cards: [
+    sets: [
       {
         spa: "algunos de",
         eng: "some of",
@@ -36971,7 +36971,7 @@ export const termsByPhrase = [
   {
     id: "vJYwpGbFAZ",
     title: "Unit 144",
-    cards: [
+    sets: [
       {
         spa: "avena",
         eng: "oatmeal",
@@ -37037,7 +37037,7 @@ export const termsByPhrase = [
   {
     id: "jY1hd0Ykbz",
     title: "Unit 145",
-    cards: [
+    sets: [
       {
         spa: "bucear",
         eng: "Diving",
@@ -37103,7 +37103,7 @@ export const termsByPhrase = [
   {
     id: "cXevSnOayH",
     title: "Unit 146",
-    cards: [
+    sets: [
       {
         spa: "al revés",
         eng: "upside down",
@@ -37179,7 +37179,7 @@ export const termsByPhrase = [
   {
     id: "2XuBteIpzR",
     title: "Unit 147",
-    cards: [
+    sets: [
       {
         spa: "al aire libre",
         eng: "outdoor",
@@ -37305,7 +37305,7 @@ export const termsByPhrase = [
   {
     id: "jhIiLrTJE1",
     title: "Unit 148",
-    cards: [
+    sets: [
       {
         spa: "calabacín",
         eng: "zucchini",
@@ -37371,7 +37371,7 @@ export const termsByPhrase = [
   {
     id: "NPdfD4vF2F",
     title: "Unit 149",
-    cards: [
+    sets: [
       {
         spa: "subj51",
         eng: "subj51",
@@ -37461,7 +37461,7 @@ export const termsByPhrase = [
   {
     id: "8AK8GNTvpT",
     title: "Unit 150",
-    cards: [
+    sets: [
       {
         spa: "antes de que",
         eng: "before",
@@ -37527,7 +37527,7 @@ export const termsByPhrase = [
   {
     id: "l2zvdoQgKT",
     title: "Unit 151",
-    cards: [
+    sets: [
       {
         spa: "atención médica",
         eng: "medical care",
@@ -37653,7 +37653,7 @@ export const termsByPhrase = [
   {
     id: "Y654RjCySr",
     title: "Unit 152",
-    cards: [
+    sets: [
       {
         spa: "atraer",
         eng: "Attract",
@@ -37719,7 +37719,7 @@ export const termsByPhrase = [
   {
     id: "84q2Zcm7VS",
     title: "Unit 153",
-    cards: [
+    sets: [
       {
         spa: "británica",
         eng: "british",
@@ -37850,7 +37850,7 @@ export const termsByPhrase = [
   {
     id: "EBkUMUyTnd",
     title: "Unit 154",
-    cards: [
+    sets: [
       {
         spa: "ahorra",
         eng: "save",
@@ -37916,7 +37916,7 @@ export const termsByPhrase = [
   {
     id: "opKnB6DNTZ",
     title: "Unit 155",
-    cards: [
+    sets: [
       {
         spa: "passive1",
         eng: "passive1",
@@ -38006,7 +38006,7 @@ export const termsByPhrase = [
   {
     id: "SZDdWKeTu9",
     title: "Unit 156",
-    cards: [
+    sets: [
       {
         spa: "democracias",
         eng: "democracies",
@@ -38072,7 +38072,7 @@ export const termsByPhrase = [
   {
     id: "NLmlWZiUUk",
     title: "Unit 157",
-    cards: [
+    sets: [
       {
         spa: "armar",
         eng: "to assemble",
@@ -38263,7 +38263,7 @@ export const termsByPhrase = [
   {
     id: "C1ZNmIF33b",
     title: "Unit 158",
-    cards: [
+    sets: [
       {
         spa: "bigote",
         eng: "mustache",
@@ -38329,7 +38329,7 @@ export const termsByPhrase = [
   {
     id: "PJgfT4xADl",
     title: "Unit 159",
-    cards: [
+    sets: [
       {
         spa: "adolescencia",
         eng: "adolescence",
@@ -38419,7 +38419,7 @@ export const termsByPhrase = [
   {
     id: "dg52hQpCTJ",
     title: "Unit 160",
-    cards: [
+    sets: [
       {
         spa: "acostado",
         eng: "lying down",
@@ -38485,7 +38485,7 @@ export const termsByPhrase = [
   {
     id: "kg2gfeZkc4",
     title: "Unit 161",
-    cards: [
+    sets: [
       {
         spa: "esconder",
         eng: "hide",
@@ -38616,7 +38616,7 @@ export const termsByPhrase = [
   {
     id: "HglQJLyUuA",
     title: "Unit 162",
-    cards: [
+    sets: [
       {
         spa: "cartón",
         eng: "paperboard",
@@ -38682,7 +38682,7 @@ export const termsByPhrase = [
   {
     id: "Hxib5iYRSo",
     title: "Unit 163",
-    cards: [
+    sets: [
       {
         spa: "asiático",
         eng: "Asian",
@@ -38748,7 +38748,7 @@ export const termsByPhrase = [
   {
     id: "8WKnUhaCmE",
     title: "Unit 164",
-    cards: [
+    sets: [
       {
         spa: "cambiarse de",
         eng: "change from",
@@ -38819,7 +38819,7 @@ export const termsByPhrase = [
   {
     id: "a3YQecinAz",
     title: "Unit 165",
-    cards: [
+    sets: [
       {
         spa: "absurdo",
         eng: "absurd",
@@ -38969,7 +38969,7 @@ export const termsByPhrase = [
   {
     id: "quk7J9KZSs",
     title: "Unit 166",
-    cards: [
+    sets: [
       {
         spa: "avergonzado",
         eng: "ashamed",
@@ -39100,7 +39100,7 @@ export const termsByPhrase = [
   {
     id: "V21tDpUmyx",
     title: "Unit 167",
-    cards: [
+    sets: [
       {
         spa: "a distancia",
         eng: "from distance",
@@ -39236,7 +39236,7 @@ export const termsByPhrase = [
   {
     id: "jpHSLzCiYG",
     title: "Unit 168",
-    cards: [
+    sets: [
       {
         spa: "angustiado",
         eng: "distressed",
@@ -39367,7 +39367,7 @@ export const termsByPhrase = [
   {
     id: "Zf1US7rwIB",
     title: "Unit 169",
-    cards: [
+    sets: [
       {
         spa: "cada",
         eng: "each",
@@ -39493,7 +39493,7 @@ export const termsByPhrase = [
   {
     id: "25966iRANs",
     title: "Unit 170",
-    cards: [
+    sets: [
       {
         spa: "albergue",
         eng: "hostel",
@@ -39624,7 +39624,7 @@ export const termsByPhrase = [
   {
     id: "spcMVQFwOv",
     title: "Unit 171",
-    cards: [
+    sets: [
       {
         spa: "afortunado",
         eng: "lucky",
@@ -39750,7 +39750,7 @@ export const termsByPhrase = [
   {
     id: "8rQLkbNcog",
     title: "Unit 172",
-    cards: [
+    sets: [
       {
         spa: "adelanto",
         eng: "advancement",
@@ -39881,7 +39881,7 @@ export const termsByPhrase = [
   {
     id: "YK7eG49okJ",
     title: "Unit 173",
-    cards: [
+    sets: [
       {
         spa: "bautismo",
         eng: "baptism",
@@ -40007,7 +40007,7 @@ export const termsByPhrase = [
   {
     id: "4XE3FNhw60",
     title: "Unit 174",
-    cards: [
+    sets: [
       {
         spa: "asesoramiento",
         eng: "advice",
@@ -40133,7 +40133,7 @@ export const termsByPhrase = [
   {
     id: "9SOi3NSvk9",
     title: "Unit 175",
-    cards: [
+    sets: [
       {
         spa: "bronce",
         eng: "bronze",
@@ -40259,7 +40259,7 @@ export const termsByPhrase = [
   {
     id: "j7uEkTVfh0",
     title: "Unit 176",
-    cards: [
+    sets: [
       {
         spa: "confesar",
         eng: "to confess",
@@ -40390,7 +40390,7 @@ export const termsByPhrase = [
   {
     id: "fjdPktJKoc",
     title: "Unit 177",
-    cards: [
+    sets: [
       {
         spa: "aquí tiene",
         eng: "here you go",

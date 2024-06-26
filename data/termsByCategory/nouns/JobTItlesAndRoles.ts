@@ -1,4 +1,4 @@
-export const JobTItlesAndRoles = [
+export const JobTitlesAndRoles = [
   { spa: "contador", eng: "accountant", hint: "", id: "WFW608" },
   { spa: "auditor", eng: "auditor", hint: "", id: "UKN215" },
   { spa: "contador", eng: "bookkeeper", hint: "", id: "JYX121" },

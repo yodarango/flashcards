@@ -11,38 +11,32 @@ export enum EPage {
 }
 
 export type TCardSet = {
-  subsets: TCardSubset[] | TCardSubset[];
+  sets: TCardSet[] | TCard[];
   thumbnail: string;
   title: string;
-  slug: string;
-};
-
-export type TCardSubset = {
   id: string;
-  title: string;
-  cards: TCard[] | TCard[][];
 };
 
 const allCardSets: TCardSet[] = [
   {
     title: "By common phrases",
-    slug: "by-common-phrases",
-    subsets: termsByPhrase,
+    id: "by-common-phrases",
+    sets: termsByPhrase,
     thumbnail: "",
   },
   {
     title: "By category",
-    slug: "by-category",
-    subsets: termsByCategory,
+    id: "by-category",
+    sets: termsByCategory,
     thumbnail: "",
   },
 ];
 
 export type TDefaultCardsState = {
-  allCardSets: Record<string, any>; // All the available card sets
   selectedRangeOfCards: TCard[]; // the range of cards to be quizzed based on the start and end index
   randomNumberOfCards: number; // number of randomly selected cards including from 0 to the total number of cards
   isRandomQuizzingOn: boolean; // the user is testing themselves on a random set of cards
+  allCardSets: TCardSet[]; // All the available card sets
   currentCardIndex: number; // The index of the current card being displayed
   isShufflingOn: boolean; // shuffles the slice of cards encapsulated by the startIndex and endIndex
   isCardFlipped: boolean; // the current card being displayed is flipped or not?
@@ -79,7 +73,7 @@ export const initialData: TDefaultCardsState = {
 export const defaultContext = {
   state: getStateFromLocalStorage(),
   handleSaveSettings: (_: Partial<TDefaultCardsState>) => {},
-  handleAddHint: (_: string, __: number) => {},
+  handleAddHint: (_: string, __: string) => {},
   handleSelectCardSet: (_: string) => {},
   handleRedoWrongGuessesOnly: () => {},
   handleToggleRandomQuizzing: () => {},
