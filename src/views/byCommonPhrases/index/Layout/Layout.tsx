@@ -22,7 +22,7 @@ export const Layout = () => {
   );
 };
 
-function FallBackThumbnail({ title }: number) {
+function FallBackThumbnail({ title }: { title: number }) {
   const randomPastelColors = [
     "#ffadad",
     "#ffd6a5",
