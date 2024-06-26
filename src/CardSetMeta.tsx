@@ -1,8 +1,8 @@
 import { useCardsContext } from "./context/CardsContextProvider";
+import { HTMLAttributes } from "react";
 
 // styles
 import "./CardSetMeta.scss";
-import { HTMLAttributes } from "react";
 
 export const CardSetMeta = (props: HTMLAttributes<HTMLDivElement>) => {
   const { className, ...restOfProps } = props;

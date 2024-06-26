@@ -22,7 +22,7 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
   // this is the only available function at the beginning fo the app. Users must first select
   // a card set before they can start quizzing themselves
   function handleSelectCardSet(id: string) {
-    const cardSet = state.allCardSets.find((cardSet) => cardSet.id === id);
+    const cardSet = state.allCardSets.find((cardSet: any) => cardSet.id === id);
 
     if (!cardSet) return;
 

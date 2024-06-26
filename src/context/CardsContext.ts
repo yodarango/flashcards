@@ -1,5 +1,5 @@
-declare var flashCardsSets: any;
-
+import { termsByPhrase } from "../../data/termsByPhrase/index";
+import { termsByCategory } from "../../data/termsByCategory";
 import { EGuessedCorrectly, TCard } from "@types";
 import { shuffle } from "../utils/shuffle";
 import { createContext } from "react";
@@ -11,20 +11,41 @@ export enum EPage {
 }
 
 export type TCardSet = {
+  subsets: TCardSubset[] | TCardSubset[];
   thumbnail: string;
-  cards: TCard[];
   title: string;
-  id: string;
+  slug: string;
 };
 
+export type TCardSubset = {
+  id: string;
+  title: string;
+  cards: TCard[] | TCard[][];
+};
+
+const allCardSets: TCardSet[] = [
+  {
+    title: "By common phrases",
+    slug: "by-common-phrases",
+    subsets: termsByPhrase,
+    thumbnail: "",
+  },
+  {
+    title: "By category",
+    slug: "by-category",
+    subsets: termsByCategory,
+    thumbnail: "",
+  },
+];
+
 export type TDefaultCardsState = {
+  allCardSets: Record<string, any>; // All the available card sets
   selectedRangeOfCards: TCard[]; // the range of cards to be quizzed based on the start and end index
   randomNumberOfCards: number; // number of randomly selected cards including from 0 to the total number of cards
   isRandomQuizzingOn: boolean; // the user is testing themselves on a random set of cards
   currentCardIndex: number; // The index of the current card being displayed
   isShufflingOn: boolean; // shuffles the slice of cards encapsulated by the startIndex and endIndex
   isCardFlipped: boolean; // the current card being displayed is flipped or not?
-  allCardSets: TCardSet[]; // All the available card sets
   totalCorrect: number; // the total number of correct card guesses
   cardSetName: string; // this is not being used right now. In the future I might allow users to save different card sets
   isFinished: boolean; // the user has finished the quiz
@@ -37,7 +58,7 @@ export type TDefaultCardsState = {
 };
 
 export const initialData: TDefaultCardsState = {
-  allCardSets: flashCardsSets,
+  allCardSets,
   isRandomQuizzingOn: false,
   selectedRangeOfCards: [],
   currentPage: EPage.HOME,
