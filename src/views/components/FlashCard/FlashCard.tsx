@@ -1,5 +1,5 @@
-import { useCardsContext } from "./context/CardsContextProvider";
 import { HTMLAttributes, useRef } from "react";
+import { useCardsContext } from "@context";
 
 // styles
 import "./FlashCard.scss";

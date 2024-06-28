@@ -1,4 +1,4 @@
-import { useCardsContext } from "./context/CardsContextProvider";
+import { useCardsContext } from "@context";
 import { Button, If } from "@ds";
 
 import "./Finish.scss";

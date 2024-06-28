@@ -1,4 +1,4 @@
-import { EGuessedCorrectly, TCard } from "@types";
+import { EGuessedCorrectly, TCard, TCardSet } from "@types";
 import { shuffle } from "../utils/shuffle";
 import { createContext } from "react";
 
@@ -9,9 +9,9 @@ export enum EPage {
 }
 
 export type TDefaultCardsState = {
-  selectedRangeOfCards: TCard[]; // the range of cards to be quizzed based on the start and end index
   randomNumberOfCards: number; // number of randomly selected cards including from 0 to the total number of cards
   isRandomQuizzingOn: boolean; // the user is testing themselves on a random set of cards
+  currentCardsSet: TCardSet; // all the cards available
   currentCardIndex: number; // The index of the current card being displayed
   isShufflingOn: boolean; // shuffles the slice of cards encapsulated by the startIndex and endIndex
   isCardFlipped: boolean; // the current card being displayed is flipped or not?
@@ -22,13 +22,12 @@ export type TDefaultCardsState = {
   totalCards: number; // the total number of cards available
   totalWrong: number; // the total number of wrong card guesses
   startIndex: number; // the start index of the slice of cards to be quizzed
-  allCards: TCard[]; // all the cards available
   endIndex: number; // the end index of the slice of cards to be quizzed
 };
 
 export const initialData: TDefaultCardsState = {
+  currentCardsSet: {} as TCardSet,
   isRandomQuizzingOn: false,
-  selectedRangeOfCards: [],
   currentPage: EPage.HOME,
   randomNumberOfCards: 0,
   isShufflingOn: false,
@@ -40,7 +39,6 @@ export const initialData: TDefaultCardsState = {
   totalCards: 0,
   totalWrong: 0,
   startIndex: 0,
-  allCards: [],
   endIndex: 0,
 };
 
@@ -48,7 +46,6 @@ export const defaultContext = {
   state: getStateFromLocalStorage(),
   handleSaveSettings: (_: Partial<TDefaultCardsState>) => {},
   handleAddHint: (_: string, __: string) => {},
-  handleSelectCardSet: (_: string) => {},
   handleRedoWrongGuessesOnly: () => {},
   handleToggleRandomQuizzing: () => {},
   handlePreviousCard: (_: any) => {},
@@ -81,12 +78,13 @@ export function applySettingsToSet(
   isShufflingOn: boolean,
   startIndex: number,
   endIndex: number,
-  allCards: TCard[]
+  currentCardSetCards: TCard[]
 ) {
   // the start index and end index cannot be the same. The start index cannot be greater than the end index.
-  if (startIndex === endIndex || startIndex > endIndex) return allCards;
+  if (startIndex === endIndex || startIndex > endIndex)
+    return currentCardSetCards;
 
-  const cardsRange = allCards.slice(startIndex, endIndex + 1);
+  const cardsRange = currentCardSetCards.slice(startIndex, endIndex + 1);
 
   let cards = cardsRange;
 

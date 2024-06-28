@@ -9,6 +9,9 @@ import {
 } from "./CardsContext";
 import { useContext, useEffect, useState } from "react";
 import { EGuessedCorrectly, TCard } from "../types/card";
+import { useParams } from "react-router-dom";
+import { termsByPhrase } from "../../data/termsByPhrase";
+import { TCardSet } from "../types/cardSet";
 
 type TCardsContextProvider = {
   children: React.ReactNode;
@@ -17,36 +20,9 @@ type TCardsContextProvider = {
 export const CardsContextProvider = (props: TCardsContextProvider) => {
   const { children } = props;
 
+  const params = useParams();
+
   const [state, setState] = useState<TDefaultCardsState>(defaultContext.state);
-
-  // this is the only available function at the beginning fo the app. Users must first select
-  // a card set before they can start quizzing themselves
-  function handleSelectCardSet(id: string) {
-    const cardSet = state.allCardSets.find((cardSet: any) => cardSet.id === id);
-
-    if (!cardSet) return;
-
-    const selectedRangeOfCards = applySettingsToSet(
-      false,
-      0,
-      cardSet.cards.length - 1,
-      cardSet.cards
-    );
-
-    const updateTarget = {
-      $set: {
-        ...initialData,
-        selectedRangeOfCards,
-        endIndex: cardSet.cards.length - 1,
-        totalCards: cardSet.cards.length,
-        cardSetName: cardSet.title,
-        allCards: cardSet.cards,
-        currentPage: EPage.QUIZ,
-      },
-    };
-
-    setState(update(state, updateTarget));
-  }
 
   // global settings for the flash cards
   function handleSaveSettings(settings: Partial<TDefaultCardsState>) {
@@ -64,7 +40,7 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
       settings.isShufflingOn!,
       settings.startIndex!,
       settings.endIndex!,
-      state.allCards
+      state.currentCardsSet
     );
 
     // if the user wants to quiz themselves with a random number of cards
@@ -73,8 +49,8 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
       const appliedSettings = applySettingsToSet(
         true,
         0,
-        state.allCards.length - 1,
-        state.allCards
+        state.currentCardsSet.length - 1,
+        state.currentCardsSet
       );
 
       setWithAppliedSettings = appliedSettings.slice(
@@ -139,10 +115,10 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
 
   // adds a a hint to the specific card
   function handleAddHint(hint: string, id: string) {
-    const findIndex = state.allCards.findIndex((card) => card.id === id);
+    const findIndex = state.currentCardsSet.findIndex((card) => card.id === id);
 
     const updateTarget = {
-      allCards: {
+      currentCardsSet: {
         [findIndex]: {
           hint: { $set: hint },
         },
@@ -157,7 +133,7 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
   function handleGuess(guess: TCard["guess"]) {
     const updateTarget: Record<string, any> = {};
 
-    if (state.selectedRangeOfCards.length <= 0) return;
+    if (state.currentCardsSet.sets.length <= 0) return;
 
     // user has reviewed the last card, show the results
     if (state.currentCardIndex >= state.selectedRangeOfCards.length - 1) {
@@ -253,7 +229,20 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
 
   // update local storage every time state changes
   useEffect(() => {
-    localStorage.setItem("shrood__flashcards", JSON.stringify(state));
+    // localStorage.setItem("shrood__flashcards", JSON.stringify(state));
+
+    const title = params.set;
+
+    const cardSet: any =
+      termsByPhrase.find(
+        (cardSet) => cardSet.title.toLocaleLowerCase() === title
+      ) || {};
+
+    cardSet.totalTerms = String(cardSet?.sets?.length || 0);
+
+    const updateTarget = { currentCardsSet: { $set: cardSet } };
+
+    setState(update(state, updateTarget));
   }, [state]);
 
   return (
@@ -263,7 +252,6 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
         handleRedoWrongGuessesOnly,
         handleToggleRandomQuizzing,
         resetStateAndStartOver,
-        handleSelectCardSet,
         handleSaveSettings,
         handlePreviousCard,
         handleCorrectGuess,

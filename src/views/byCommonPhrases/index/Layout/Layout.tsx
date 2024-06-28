@@ -1,3 +1,5 @@
+import { ROUTE_WORDS_BY_COMMON_PHRASES_TITLE } from "@constants";
+import { Link, generatePath } from "react-router-dom";
 import { termsByPhrase as cardSets } from "@data";
 import { TermsSetCard } from "@components";
 import { TCardSet } from "@types";
@@ -9,13 +11,19 @@ export const Layout = () => {
   return (
     <div className='layout-words-by-common-phrases-39hh'>
       {cardSets.map((cardSet: Omit<TCardSet, "totalTerms">, i: number) => {
+        const setPath = generatePath(ROUTE_WORDS_BY_COMMON_PHRASES_TITLE, {
+          title: cardSet.title.replace(/ /g, "-").toLowerCase(),
+        });
+
         return (
-          <TermsSetCard
-            totalTerms={String(cardSet.sets.length)}
-            thumbnail={<FallBackThumbnail title={i + 1} />}
-            title={cardSet.title}
-            key={cardSet.id}
-          />
+          <Link to={setPath}>
+            <TermsSetCard
+              totalTerms={String(cardSet.sets.length)}
+              thumbnail={<FallBackThumbnail title={i + 1} />}
+              title={cardSet.title}
+              key={cardSet.id}
+            />
+          </Link>
         );
       })}
     </div>

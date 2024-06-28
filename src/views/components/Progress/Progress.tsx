@@ -1,6 +1,6 @@
-import { useCardsContext } from "./context/CardsContextProvider";
 import { useState, useEffect, HTMLAttributes } from "react";
-import { Settings } from "./Settings";
+import { Settings } from "../Settings/Settings";
+import { useCardsContext } from "@context";
 
 import "./Progress.scss";
 

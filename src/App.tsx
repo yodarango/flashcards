@@ -1,6 +1,13 @@
-import { ROUTE_HOME, ROUTE_WORDS_BY_COMMON_PHRASES } from "@constants";
-import { ViewIndex, ViewWordsByCommonPhrases } from "@views";
-import { CardsContextProvider } from "@context";
+import {
+  ROUTE_WORDS_BY_COMMON_PHRASES_TITLE,
+  ROUTE_WORDS_BY_COMMON_PHRASES,
+  ROUTE_HOME,
+} from "@constants";
+import {
+  ViewWordsByCommonPhrasesTitle,
+  ViewWordsByCommonPhrases,
+  ViewIndex,
+} from "@views";
 
 import {
   createRoutesFromElements,
@@ -18,16 +25,16 @@ const router = createBrowserRouter(
         path={ROUTE_WORDS_BY_COMMON_PHRASES}
         element={<ViewWordsByCommonPhrases />}
       />
+      <Route
+        element={<ViewWordsByCommonPhrasesTitle />}
+        path={ROUTE_WORDS_BY_COMMON_PHRASES_TITLE}
+      />
     </Route>
   )
 );
 
 function App() {
-  return (
-    <CardsContextProvider>
-      <RouterProvider router={router} />
-    </CardsContextProvider>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

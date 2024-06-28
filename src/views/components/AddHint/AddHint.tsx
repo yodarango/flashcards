@@ -1,6 +1,6 @@
 import { Button, Modal, Input, Portal, Snackbar, Toast, IfElse } from "@ds";
-import { useCardsContext } from "./context/CardsContextProvider";
 import { HTMLAttributes, useState } from "react";
+import { useCardsContext } from "@context";
 
 // styles
 import "./AddHint.scss";

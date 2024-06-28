@@ -1,4 +1,4 @@
-import { useCardsContext } from "./context/CardsContextProvider";
+import { useCardsContext } from "@context";
 import { HTMLAttributes } from "react";
 
 // styles
