@@ -9,7 +9,6 @@ import { useCardsContext } from "@context";
 import "./Container.scss";
 
 export const Container = () => {
-  const ctx = useCardsContext();
   // if (allCardSets.length === 0)
   //   return <div className='container-52tr'>Please load a card set first</div>;
 

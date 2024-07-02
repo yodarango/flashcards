@@ -9,7 +9,7 @@ export function Progress(props: HTMLAttributes<HTMLSelectElement>) {
 
   const { className, ...restOfProps } = props;
 
-  const totalCards = ctx.state.allCards;
+  const totalCards = ctx.state?.currentCardsSet?.sets || [];
   const totalCorrect = ctx.state.totalCorrect;
   const totalWrong = ctx.state.totalWrong;
 
@@ -18,9 +18,11 @@ export function Progress(props: HTMLAttributes<HTMLSelectElement>) {
   const [allCorrect, setAllCorrect] = useState(false);
   const [allWrong, setAllWrong] = useState(false);
 
+  // update the percentage of correct and wrong guesses every time the state changes
   function updatePercentage() {
     const totalCardsGuessed = totalWrong + totalCorrect;
 
+    // only calculate the percentage if there are cards and guesses
     if (totalCards.length > 0 && totalCardsGuessed > 0) {
       setCorrectBarPercentage((totalCorrect / totalCardsGuessed) * 100);
       setWrongBarPercentage((totalWrong / totalCardsGuessed) * 100);
@@ -48,7 +50,7 @@ export function Progress(props: HTMLAttributes<HTMLSelectElement>) {
         </div>
 
         {/* settings */}
-        <Settings />
+        {/* <Settings /> */}
 
         {/* correct */}
         <div

@@ -24,7 +24,7 @@
       "@constants": ["./src/constants"],
       "@context": ["./src/context"],
       "@utils": ["./src/utils"],
-      "@views": ["./src/views"],
+      "@views/*": ["./src/views/*"],
       "@types": ["./src/types"],
       "@ds": ["./src/@ds"],
       "@data": ["./data"]

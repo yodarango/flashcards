@@ -8,12 +8,14 @@ export const CardSetMeta = (props: HTMLAttributes<HTMLDivElement>) => {
   const { className, ...restOfProps } = props;
 
   const ctx = useCardsContext();
-  const { handleReset, state } = ctx;
+  // const { handleReset, state } = ctx;
+  const { state } = ctx;
+  const currentSetOfCards = state.currentCardsSet.sets || [];
 
-  const currentSetOfCards = state.allCards.slice(
-    state.startIndex,
-    state.endIndex
-  );
+  // const currentSetOfCards = state.currentCardsSet.sets.slice(
+  //   state.startIndex,
+  //   state.endIndex
+  // );
 
   const currentIndex = state.currentCardIndex + 1;
   const totalCards = currentSetOfCards.length + 1;
@@ -28,9 +30,9 @@ export const CardSetMeta = (props: HTMLAttributes<HTMLDivElement>) => {
   return (
     <div className={`cards-metta-20pt ${restOfProps}`} {...restOfProps}>
       <div className='d-flex align-items-center justify-content-between'>
-        <button onClick={handleReset} className='m-0 p-0 bg-nu'>
+        {/* <button onClick={handleReset} className='m-0 p-0 bg-nu'>
           <span className='icon icon-chevron-back-outline color-alpha' />
-        </button>
+        </button> */}
         <h3 className='text-center mb-4'>{setName}</h3>
         <div />
       </div>

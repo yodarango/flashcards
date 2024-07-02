@@ -1,4 +1,5 @@
-import { Container } from "../../../components/Container/Container";
+import { Container } from "@views/components";
+import { useCardsContext } from "../../../../context/CardsContextProvider";
 
 export const Layout = () => {
   return <Container />;

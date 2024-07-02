@@ -1,5 +1,6 @@
 import { HTMLAttributes, useRef } from "react";
 import { useCardsContext } from "@context";
+import { TCard } from "@types";
 
 // styles
 import "./FlashCard.scss";
@@ -9,13 +10,15 @@ export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
 
   const ctx = useCardsContext();
 
-  const { handlePreviousCard, handleNextCard, handleFlipCard, state } = ctx;
+  // const { handlePreviousCard, handleNextCard, handleFlipCard, state } = ctx;
+  const { state } = ctx;
 
-  const selectedRangeOfCards = state.selectedRangeOfCards;
+  // const selectedRangeOfCards = state.selectedRangeOfCards;
+  const selectedRangeOfCards: TCard[] = state.currentCardsSet.sets || [];
   const currentCardIndex = state.currentCardIndex;
 
-  const currentCardFront = selectedRangeOfCards[currentCardIndex]?.front;
-  const currentCardBack = selectedRangeOfCards[currentCardIndex]?.back;
+  const currentCardFront = selectedRangeOfCards[currentCardIndex]?.eng;
+  const currentCardBack = selectedRangeOfCards[currentCardIndex]?.spa;
   const isCardFlipped = state.isCardFlipped;
 
   const flashCardContentFront = useRef<any>(undefined);
@@ -34,7 +37,7 @@ export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
   return (
     <section
       className={`${className} flashcard d-flex align-items-center justify-content-center m-auto ${isFlippedClass}`}
-      onClick={handleFlipCard}
+      // onClick={handleFlipCard}
       {...restOfProps}
     >
       <div className={`flashcard-inner`}>
@@ -43,7 +46,7 @@ export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
           {/* actions */}
           <button
             className='flashcard-actions action-left d-flex align-items-center justify-content-center'
-            onClick={handlePreviousCard}
+            // onClick={handlePreviousCard}
           >
             <span className='icon icon-chevron-back-outline color-alpha' />
           </button>
@@ -56,7 +59,7 @@ export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
           </div>
           <button
             className='flashcard-actions action-right d-flex align-items-center justify-content-center'
-            onClick={handleNextCard}
+            // onClick={handleNextCard}
           >
             <span className='icon icon-chevron-forward-outline color-alpha' />
           </button>
@@ -67,7 +70,7 @@ export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
           {/* actions */}
           <button
             className='flashcard-actions action-left d-flex align-items-center justify-content-center'
-            onClick={handleFlipCard}
+            // onClick={handleFlipCard}
           >
             <span className='icon icon-chevron-back-outline color-alpha' />
           </button>
@@ -77,7 +80,7 @@ export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
           </div>
           <button
             className='flashcard-actions action-right d-flex align-items-center justify-content-center'
-            onClick={handleFlipCard}
+            // onClick={handleFlipCard}
           >
             <span className='icon icon-chevron-forward-outline color-alpha' />
           </button>

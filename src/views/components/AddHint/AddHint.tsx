@@ -1,15 +1,18 @@
 import { Button, Modal, Input, Portal, Snackbar, Toast, IfElse } from "@ds";
 import { HTMLAttributes, useState } from "react";
 import { useCardsContext } from "@context";
+import { TCard } from "@types";
 
 // styles
 import "./AddHint.scss";
 
 export const AddHint = (props: HTMLAttributes<HTMLDivElement>) => {
   const { handleAddHint, state } = useCardsContext();
+  const allCards: TCard[] = state.currentCardsSet.sets || [];
+  const index = state.currentCardIndex;
 
-  const currentCardHint = state.allCards[state.currentCardIndex]?.hint;
-  const currentCardId = state.allCards[state.currentCardIndex]?.id;
+  const currentCardHint = allCards[index]?.hint;
+  const currentCardId = allCards[index]?.id;
 
   const [formData, setFormData] = useState({
     currentCardHint,
