@@ -7,8 +7,9 @@ import "./Settings.scss";
 
 export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
   const ctx = useCardsContext();
-  const { handleToggleRandomQuizzing, handleSaveSettings, handleReset, state } =
-    ctx;
+  // const { handleToggleRandomQuizzing, handleSaveSettings, handleReset, state } =
+  //   ctx;
+  const { state } = ctx;
 
   const randomNumberOfCards = state.randomNumberOfCards;
   const isRandomQuizzingOn = state.isRandomQuizzingOn;
@@ -64,7 +65,7 @@ export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
       return;
     }
 
-    handleSaveSettings(formData);
+    // handleSaveSettings(formData);
     setIsModalOpen(false);
   }
 
@@ -138,7 +139,7 @@ export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
           <div className='d-flex align-items-center justify-between gap-4 mb-4'>
             <label className='opacity-60'>Random quizzing instead:</label>
             <Switch
-              onChange={handleToggleRandomQuizzing}
+              // onChange={handleToggleRandomQuizzing}
               checked={isRandomQuizzingOn}
             />
           </div>
@@ -180,7 +181,10 @@ export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
 
           {/*  delete all data  */}
 
-          <Button onClick={handleReset} className='w-100' danger>
+          <Button // onClick={handleReset}
+            className='w-100'
+            danger
+          >
             Clear all data
           </Button>
         </section>

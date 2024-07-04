@@ -50,7 +50,7 @@ export function Progress(props: HTMLAttributes<HTMLSelectElement>) {
         </div>
 
         {/* settings */}
-        {/* <Settings /> */}
+        <Settings />
 
         {/* correct */}
         <div

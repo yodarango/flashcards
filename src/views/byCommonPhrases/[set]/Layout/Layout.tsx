@@ -1,6 +1,10 @@
+import { SettingsContextProvider } from "@context";
 import { Container } from "@views/components";
-import { useCardsContext } from "../../../../context/CardsContextProvider";
 
 export const Layout = () => {
-  return <Container />;
+  return (
+    <SettingsContextProvider>
+      <Container />
+    </SettingsContextProvider>
+  );
 };

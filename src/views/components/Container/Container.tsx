@@ -3,23 +3,11 @@ import { CardSetMeta } from "../CardseMeta/CardSetMeta";
 import { FlashCard } from "../FlashCard/FlashCard";
 import { Progress } from "../Progress/Progress";
 import { AddHint } from "../AddHint/AddHint";
-import { useCardsContext } from "@context";
 
 // styles
 import "./Container.scss";
 
 export const Container = () => {
-  // if (allCardSets.length === 0)
-  //   return <div className='container-52tr'>Please load a card set first</div>;
-
-  // if (currentPage === EPage.FINISHED)
-  //   return (
-  //     <div className='container-52tr'>
-  //       <Finish />
-  //     </div>
-  //   );
-
-  // if (currentPage === EPage.QUIZ)
   return (
     <div className='container-52tr'>
       <Progress className='container-52tr__progress' />
@@ -29,6 +17,4 @@ export const Container = () => {
       <AddHint />
     </div>
   );
-
-  // return <CardsSets />;
 };

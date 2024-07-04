@@ -1,2 +1,2 @@
-export * from "./CardsContextProvider";
-export * from "./CardsContext";
+export * from "./SettingsContextProvider";
+export * from "./SettingsContext";

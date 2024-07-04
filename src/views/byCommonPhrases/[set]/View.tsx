@@ -1,4 +1,4 @@
-import { CardsContextProvider } from "../../../context/CardsContextProvider";
+import { CardsContextProvider } from "../../../context/SettingsContextProvider";
 import { Layout } from "./Layout/Layout";
 
 export const ViewWordsByCommonPhrasesTitle = () => {
