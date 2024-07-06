@@ -1,17 +1,19 @@
 import { useState, useEffect, HTMLAttributes } from "react";
 import { Settings } from "../Settings/Settings";
 import { useCardsContext } from "@context";
+import { If } from "../../../@ds/utils";
 
 import "./Progress.scss";
 
 export function Progress(props: HTMLAttributes<HTMLSelectElement>) {
   const ctx = useCardsContext();
+  console.log(ctx.state);
 
   const { className, ...restOfProps } = props;
 
   const totalCards = ctx.state?.currentCardsSet?.sets || [];
-  const totalCorrect = ctx.state.totalCorrect;
-  const totalWrong = ctx.state.totalWrong;
+  const totalCorrect = ctx.state.correctGuessIds.length;
+  const totalWrong = ctx.state.wrongGuessIds.length;
 
   const [correctBarPercentage, setCorrectBarPercentage] = useState(50);
   const [wrongBarPercentage, setWrongBarPercentage] = useState(50);
@@ -40,27 +42,31 @@ export function Progress(props: HTMLAttributes<HTMLSelectElement>) {
     <section className={`${className} progress-72lh`} {...restOfProps}>
       <div className='w-100 d-flex align-items-center justify-content-center'>
         {/* wrong */}
-        <div
-          className={`d-flex align-items-center justify-content-start bar left wrong bg-danger p-3 color-beta ${
-            allWrong ? "full-bar" : ""
-          }`}
-          style={{ width: `${wrongBarPercentage}%` }}
-        >
-          <b>{totalWrong}</b>
-        </div>
+        <If condition={totalCorrect === 0 || totalWrong > 0}>
+          <div
+            className={`d-flex align-items-center justify-content-start bar left wrong bg-danger p-3 color-beta ${
+              allWrong ? "full-bar" : ""
+            }`}
+            style={{ width: `${wrongBarPercentage}%` }}
+          >
+            <b>{totalWrong}</b>
+          </div>
+        </If>
 
         {/* settings */}
         <Settings />
 
         {/* correct */}
-        <div
-          className={`d-flex align-items-center justify-content-end bar right correct bg-success p-3 color-beta ${
-            allCorrect ? "full-bar" : ""
-          }`}
-          style={{ width: `${correctBarPercentage}%` }}
-        >
-          <b>{totalCorrect}</b>
-        </div>
+        <If condition={totalWrong === 0 || totalCorrect > 0}>
+          <div
+            className={`d-flex align-items-center justify-content-end bar right correct bg-success p-3 color-beta ${
+              allCorrect ? "full-bar" : ""
+            }`}
+            style={{ width: `${correctBarPercentage}%` }}
+          >
+            <b>{totalCorrect}</b>
+          </div>
+        </If>
       </div>
     </section>
   );

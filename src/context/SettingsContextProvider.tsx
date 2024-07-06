@@ -1,9 +1,9 @@
 import update from "immutability-helper";
 import {
   TDefaultSettingsState,
-  defaultContext,
+  defaultSettingsContext,
   SettingsContext,
-  initialData,
+  initialSettingsData,
 } from "./SettingsContext";
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -18,7 +18,7 @@ export const SettingsContextProvider = (props: TSettingsContextProvider) => {
   const params = useParams();
 
   const [state, setState] = useState<TDefaultSettingsState>(
-    defaultContext.state
+    defaultSettingsContext.state
   );
 
   // global settings for the flash cards
@@ -65,11 +65,14 @@ export const SettingsContextProvider = (props: TSettingsContextProvider) => {
   }
 
   function handleReset() {
-    localStorage.setItem("shrood__flashcards", JSON.stringify(initialData));
+    localStorage.setItem(
+      "shrood__flashcards",
+      JSON.stringify(initialSettingsData)
+    );
 
     const updateTarget = {
       $merge: {
-        ...initialData,
+        ...initialSettingsData,
       },
     };
 

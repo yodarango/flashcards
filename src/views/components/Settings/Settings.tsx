@@ -1,27 +1,32 @@
 import { Button, Input, Modal, Portal, Snackbar, Switch, Toast } from "@ds";
-import { TDefaultCardsState, useCardsContext } from "@context";
+import {
+  TDefaultSettingsState,
+  useSettingsContext,
+  useCardsContext,
+} from "@context";
 import { HTMLAttributes, useState } from "react";
 
 // styles
 import "./Settings.scss";
 
 export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
-  const ctx = useCardsContext();
-  // const { handleToggleRandomQuizzing, handleSaveSettings, handleReset, state } =
-  //   ctx;
-  const { state } = ctx;
+  const settingsCtx = useSettingsContext();
+  const cardsCtx = useCardsContext();
 
-  const randomNumberOfCards = state.randomNumberOfCards;
-  const isRandomQuizzingOn = state.isRandomQuizzingOn;
-  const isShufflingOn = state.isShufflingOn;
-  const startIndex = state.startIndex;
-  const endIndex = state.endIndex;
+  const settingsState = settingsCtx.state;
+  const cardsState = cardsCtx.state;
+
+  const randomNumberOfCards = settingsState.randomNumberOfCards;
+  const isRandomQuizzingOn = settingsState.isRandomQuizzingOn;
+  const isShufflingOn = settingsState.isShufflingOn;
+  const startIndex = settingsState.startIndex;
+  const endIndex = settingsState.endIndex;
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const { className = "", ...restOfProps } = props;
 
-  const [formData, setFormData] = useState<Partial<TDefaultCardsState>>({
+  const [formData, setFormData] = useState<Partial<TDefaultSettingsState>>({
     randomNumberOfCards,
     isShufflingOn,
     startIndex,
@@ -29,7 +34,7 @@ export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
   });
   const [toast, setToast] = useState<Record<string, any> | null>(null);
 
-  const totalCards = state.selectedRangeOfCards;
+  const totalCards = cardsState.currentCardsSet.sets || [];
 
   function handleChange(targetName: string, value: number | string | boolean) {
     setFormData((prev) => ({ ...prev, [targetName]: value }));

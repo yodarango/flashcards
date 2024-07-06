@@ -1,4 +1,4 @@
-import { useCardsContext } from "@context";
+import { useCardsContext, useSettingsContext } from "@context";
 import { HTMLAttributes } from "react";
 
 // styles
@@ -7,20 +7,26 @@ import "./CardSetMeta.scss";
 export const CardSetMeta = (props: HTMLAttributes<HTMLDivElement>) => {
   const { className, ...restOfProps } = props;
 
-  const ctx = useCardsContext();
-  // const { handleReset, state } = ctx;
-  const { state } = ctx;
-  const currentSetOfCards = state.currentCardsSet.sets || [];
+  const settingsCtx = useSettingsContext();
+  const cardsCtx = useCardsContext();
 
-  // const currentSetOfCards = state.currentCardsSet.sets.slice(
-  //   state.startIndex,
-  //   state.endIndex
-  // );
+  const settingsState = settingsCtx.state;
+  const cardsState = cardsCtx.state;
 
-  const currentIndex = state.currentCardIndex + 1;
-  const totalCards = currentSetOfCards.length + 1;
-  const isShufflingOn = state.isShufflingOn;
-  const setName = state.cardSetName;
+  let currentSetOfCards = cardsState.currentCardsSet.sets || [];
+
+  // only get a slice of the cards if the user has selected a range
+  if (settingsState.startIndex !== settingsState.endIndex) {
+    currentSetOfCards = currentSetOfCards.slice(
+      settingsState.startIndex,
+      settingsState.endIndex
+    );
+  }
+
+  const currentIndex = cardsState.currentCardIndex + 1;
+  const totalCards = cardsState.totalCards;
+  const isShufflingOn = settingsState.isShufflingOn;
+  const setName = cardsState.currentCardsSet.title;
 
   const shuffleLabel = isShufflingOn ? "Shuffle on" : "Shuffle off";
   const buttonShuffle = isShufflingOn
@@ -30,9 +36,12 @@ export const CardSetMeta = (props: HTMLAttributes<HTMLDivElement>) => {
   return (
     <div className={`cards-metta-20pt ${restOfProps}`} {...restOfProps}>
       <div className='d-flex align-items-center justify-content-between'>
-        {/* <button onClick={handleReset} className='m-0 p-0 bg-nu'>
+        <button
+          className='m-0 p-0 bg-nu'
+          //onClick={handleReset}
+        >
           <span className='icon icon-chevron-back-outline color-alpha' />
-        </button> */}
+        </button>
         <h3 className='text-center mb-4'>{setName}</h3>
         <div />
       </div>
