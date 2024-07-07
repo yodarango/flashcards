@@ -16,7 +16,7 @@ export const Layout = () => {
         });
 
         return (
-          <Link to={setPath}>
+          <Link to={setPath} key={cardSet.id}>
             <TermsSetCard
               totalTerms={String(cardSet.sets.length)}
               thumbnail={<FallBackThumbnail title={i + 1} />}
