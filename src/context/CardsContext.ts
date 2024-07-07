@@ -34,6 +34,7 @@ export const initialCardsData: TDefaultCardsState = {
 export const defaultCardsContext = {
   state: initialCardsData,
   handleUpdateSettings: (_: Record<string, any>) => {},
+  handleRedoWrongGuessesOnly: () => {},
   handlePreviousCard: (_: any) => {},
   handleNextCard: (_: any) => {},
   handleCorrectGuess: () => {},

@@ -5,7 +5,7 @@ import {
   CardsContext,
 } from "./CardsContext";
 import { useContext, useEffect, useState } from "react";
-import { EGuessedCorrectly, TCardSet } from "@types";
+import { EGuessedCorrectly, TCard, TCardSet } from "@types";
 import { useParams } from "react-router-dom";
 import { shuffle } from "../utils/shuffle";
 import { termsByPhrase } from "@data";
@@ -199,10 +199,43 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
     );
   }
 
+  // redo only the incorrect answers
+  async function handleRedoWrongGuessesOnly() {
+    const { wrongGuessIds } = state;
+
+    const cardsFromParams: TCardSet = await findCardSetFromParams();
+
+    const wrongCardsInSet: TCard[] = cardsFromParams.sets.filter((card) =>
+      wrongGuessIds.includes(card.id)
+    );
+
+    const currentCardsSet: TCardSet = {
+      ...cardsFromParams,
+      sets: wrongCardsInSet,
+    };
+
+    setState(
+      update(state, {
+        $merge: {
+          totalCardsInTheSet: cardsFromParams.sets.length,
+          totalCards: wrongCardsInSet.length,
+          isCardFlipped: false,
+          currentCardIndex: 0,
+          correctGuessIds: [],
+          isFinished: false,
+          wrongGuessIds: [],
+          currentCardsSet,
+          loading: false,
+        },
+      })
+    );
+  }
+
   return (
     <CardsContext.Provider
       value={{
         state,
+        handleRedoWrongGuessesOnly,
         handleUpdateSettings,
         handleCorrectGuess,
         handlePreviousCard,

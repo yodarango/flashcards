@@ -1,15 +1,17 @@
 import { useCardsContext } from "@context";
 import { Button, If } from "@ds";
 
-import "./Finish.scss";
+import "./Finished.scss";
 
-export const Finish = () => {
+export const Finished = () => {
   const ctx = useCardsContext();
 
-  const { handleRedoWrongGuessesOnly, resetStateAndStartOver } = ctx;
+  const cardsState = ctx.state;
 
-  const totalCorrect = ctx.state.totalCorrect;
-  const totalWrong = ctx.state.totalWrong;
+  const { handleRedoWrongGuessesOnly, handleResetState } = ctx;
+
+  const totalCorrect = cardsState.correctGuessIds.length;
+  const totalWrong = cardsState.wrongGuessIds.length;
 
   const totalCardsGuessed = totalWrong + totalCorrect;
 
@@ -70,7 +72,7 @@ export const Finish = () => {
             </div>
           </If>
         </div>
-        <Button primary className='w-100 mb-2' onClick={resetStateAndStartOver}>
+        <Button primary className='w-100 mb-2' onClick={handleResetState}>
           Start over
         </Button>
         <If condition={totalWrong > 0}>
