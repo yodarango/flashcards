@@ -16,6 +16,9 @@ export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
   const settingsState = settingsCtx.state;
   const cardsState = cardsCtx.state;
 
+  console.log("cardsState", cardsState);
+  console.log("settingsState", settingsState);
+
   const randomNumberOfCards = settingsState.randomNumberOfCards;
   const isRandomQuizzingOn = settingsState.isRandomQuizzingOn;
   const isShufflingOn = settingsState.isShufflingOn;
@@ -27,14 +30,14 @@ export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
   const { className = "", ...restOfProps } = props;
 
   const [formData, setFormData] = useState<Partial<TDefaultSettingsState>>({
-    randomNumberOfCards,
+    // randomNumberOfCards,
     isShufflingOn,
     startIndex,
     endIndex,
   });
   const [toast, setToast] = useState<Record<string, any> | null>(null);
 
-  const totalCards = cardsState.currentCardsSet.sets || [];
+  const totalCards = cardsState.totalCards;
 
   function handleChange(targetName: string, value: number | string | boolean) {
     setFormData((prev) => ({ ...prev, [targetName]: value }));
@@ -61,7 +64,7 @@ export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
       return;
     }
 
-    if (formData.randomNumberOfCards! > totalCards.length) {
+    if (formData.randomNumberOfCards! > totalCards) {
       setToast({
         type: "danger",
         messsage:
@@ -70,7 +73,32 @@ export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
       return;
     }
 
-    // handleSaveSettings(formData);
+    if (
+      Number(formData.startIndex) > totalCards ||
+      Number(formData.endIndex) > totalCards
+    ) {
+      console.log("totalCards.length", totalCards);
+      setToast({
+        type: "danger",
+        messsage:
+          "The start or end index cannot be greater than the total number of cards in this set.",
+      });
+      return;
+    }
+
+    if (
+      formData.endIndex !== settingsState.endIndex ||
+      formData.startIndex !== settingsState.startIndex ||
+      formData.isShufflingOn !== settingsState.isShufflingOn ||
+      formData.randomNumberOfCards !== settingsState.randomNumberOfCards
+    ) {
+      cardsCtx.handleUpdateStateFromSettings({
+        startIndex: formData.startIndex!,
+        endIndex: formData.endIndex!,
+      });
+    }
+
+    settingsCtx.handleSaveSettings(formData);
     setIsModalOpen(false);
   }
 
@@ -102,7 +130,7 @@ export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
             <h4 className='mt-0 mb-4'>Sequential Quizzing</h4>
             <p>Enter the range you want to be quizzed in</p>
             <p className='mb-4 color-lambda'>
-              Total cards in this set: {totalCards.length}
+              Total cards in this set: {totalCards}
             </p>
             <div className='mb-4 '>
               <label className='opacity-60'>Start at:</label>

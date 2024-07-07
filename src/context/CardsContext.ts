@@ -10,6 +10,8 @@ export type TDefaultCardsState = {
   // isFinished: boolean; // the user has finished the quiz
   totalCards: number; // the total number of cards available
   loading: boolean; // the initial loading state
+  startIndex: number; // the start index of the cards to be displayed. Must be in sync with the settings context
+  endIndex: number; // the end index of the cards to be displayed. Must be in sync with the settings context
 };
 
 export const initialCardsData: TDefaultCardsState = {
@@ -21,15 +23,19 @@ export const initialCardsData: TDefaultCardsState = {
   // isFinished: false,
   totalCards: 0,
   loading: true,
+  startIndex: 0,
+  endIndex: 0,
 };
 
 export const defaultCardsContext = {
   state: initialCardsData,
+  handleUpdateStateFromSettings: (_: Record<string, any>) => {},
   handlePreviousCard: (_: any) => {},
   handleNextCard: (_: any) => {},
   handleCorrectGuess: () => {},
   handleWrongGuess: () => {},
   handleFlipCard: () => {},
+  resetState: () => {},
 };
 
 export const CardsContext = createContext(defaultCardsContext);

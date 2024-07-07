@@ -23,7 +23,6 @@ export const SettingsContextProvider = (props: TSettingsContextProvider) => {
 
   // global settings for the flash cards
   function handleSaveSettings(settings: Partial<TDefaultSettingsState>) {
-    console.log(settings);
     // the start index and end index cannot be the same. The start index cannot be greater than the end index.
     // let setWithAppliedSettings = [];
     // if the user wants to quiz themselves with a random number of cards
@@ -44,16 +43,10 @@ export const SettingsContextProvider = (props: TSettingsContextProvider) => {
     //   settings.endIndex = setWithAppliedSettings.length - 1;
     //   settings.isShufflingOn = false;
     // }
-    // const updateTarget = {
-    //   $merge: {
-    //     ...settings,
-    //     selectedRangeOfSettings: setWithAppliedSettings, // update the selected range of cards
-    //     currentCardIndex: 0, // reset the current card index
-    //     totalCorrect: 0, // reset the total correct guesses
-    //     totalWrong: 0, // reset the total wrong guesses
-    //   },
-    // };
-    // setState(update(state, updateTarget));
+    const updateTarget = {
+      $merge: settings,
+    };
+    setState(update(state, updateTarget));
   }
 
   function handleToggleRandomQuizzing() {
@@ -71,9 +64,7 @@ export const SettingsContextProvider = (props: TSettingsContextProvider) => {
     );
 
     const updateTarget = {
-      $merge: {
-        ...initialSettingsData,
-      },
+      $merge: initialSettingsData,
     };
 
     setState(update(state, updateTarget));

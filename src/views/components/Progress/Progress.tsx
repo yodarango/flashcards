@@ -7,7 +7,6 @@ import "./Progress.scss";
 
 export function Progress(props: HTMLAttributes<HTMLSelectElement>) {
   const ctx = useCardsContext();
-  console.log(ctx.state);
 
   const { className, ...restOfProps } = props;
 

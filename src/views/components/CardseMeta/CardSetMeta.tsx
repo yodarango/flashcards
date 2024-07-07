@@ -13,20 +13,18 @@ export const CardSetMeta = (props: HTMLAttributes<HTMLDivElement>) => {
   const settingsState = settingsCtx.state;
   const cardsState = cardsCtx.state;
 
-  let currentSetOfCards = cardsState.currentCardsSet.sets || [];
-
-  // only get a slice of the cards if the user has selected a range
-  if (settingsState.startIndex !== settingsState.endIndex) {
-    currentSetOfCards = currentSetOfCards.slice(
-      settingsState.startIndex,
-      settingsState.endIndex
-    );
-  }
-
   const currentIndex = cardsState.currentCardIndex + 1;
-  const totalCards = cardsState.totalCards;
   const isShufflingOn = settingsState.isShufflingOn;
   const setName = cardsState.currentCardsSet.title;
+  let totalCards = cardsState.totalCards;
+
+  // only change the end index if the start index is different from the end index
+  if (settingsState.startIndex !== settingsState.endIndex) {
+    const startIndex =
+      settingsState.startIndex === 0 ? 0 : settingsState.startIndex - 1;
+
+    totalCards = settingsState.endIndex - startIndex;
+  }
 
   const shuffleLabel = isShufflingOn ? "Shuffle on" : "Shuffle off";
   const buttonShuffle = isShufflingOn

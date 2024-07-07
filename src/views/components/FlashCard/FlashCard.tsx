@@ -1,5 +1,5 @@
-import { HTMLAttributes, useRef } from "react";
-import { useCardsContext } from "@context";
+import { HTMLAttributes, useEffect, useRef, useState } from "react";
+import { useCardsContext, useSettingsContext } from "@context";
 import { TCard } from "@types";
 
 // styles
@@ -8,17 +8,39 @@ import "./FlashCard.scss";
 export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
   const { className, ...restOfProps } = props;
 
-  const ctx = useCardsContext();
+  const settingsCtx = useSettingsContext();
+  const cardsCtx = useCardsContext();
 
-  const { state, handlePreviousCard, handleNextCard, handleFlipCard } = ctx;
+  const { handlePreviousCard, handleNextCard, handleFlipCard } = cardsCtx;
+  const settingsState = settingsCtx.state;
+  const cardsState = cardsCtx.state;
 
-  // const selectedRangeOfCards = state.selectedRangeOfCards;
-  const selectedRangeOfCards: TCard[] = state.currentCardsSet.sets || [];
-  const currentCardIndex = state.currentCardIndex;
+  const [selectedRangeOfCards, setSelectedRangeOfCards] = useState<TCard[]>([]);
+  // get teh current card based on the settings index
+  useEffect(() => {
+    if (!(cardsState.currentCardsSet?.sets?.length > 0)) return;
+
+    if (settingsState.endIndex !== settingsState.startIndex) {
+      setSelectedRangeOfCards(
+        cardsState.currentCardsSet.sets.slice(
+          settingsState.startIndex,
+          settingsState.endIndex
+        )
+      );
+    } else {
+      setSelectedRangeOfCards(cardsState.currentCardsSet.sets);
+    }
+  }, [
+    settingsState.startIndex,
+    settingsState.endIndex,
+    cardsState.currentCardsSet,
+  ]);
+
+  const currentCardIndex = cardsState.currentCardIndex;
 
   const currentCardFront = selectedRangeOfCards[currentCardIndex]?.eng;
   const currentCardBack = selectedRangeOfCards[currentCardIndex]?.spa;
-  const isCardFlipped = state.isCardFlipped;
+  const isCardFlipped = cardsState.isCardFlipped;
 
   const flashCardContentFront = useRef<any>(undefined);
   const flashCardContentBack = useRef<any>(undefined);

@@ -5,10 +5,9 @@ import {
   CardsContext,
 } from "./CardsContext";
 import { useContext, useEffect, useState } from "react";
-import { EGuessedCorrectly, TCard, TCardSet } from "@types";
+import { EGuessedCorrectly, TCardSet } from "@types";
 import { useParams } from "react-router-dom";
 import { termsByPhrase } from "@data";
-import { shuffle } from "@utils";
 
 type TCardsContextProvider = {
   children: React.ReactNode;
@@ -126,15 +125,49 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
     handleGuess(EGuessedCorrectly.INCORRECT);
   }
 
+  // reset the state to the initial state
+  async function resetState() {
+    const currentCardsSet = await findCardSetFromParams();
+    const totalCards = currentCardsSet.sets.length;
+    setState({
+      ...initialCardsData,
+      currentCardsSet: currentCardsSet,
+      totalCards,
+    });
+  }
+
+  // merges the current state with the new state
+  async function handleUpdateStateFromSettings(settings: Record<string, any>) {
+    let currentCardsSet: TCardSet = await findCardSetFromParams();
+
+    currentCardsSet = {
+      ...currentCardsSet,
+      sets: currentCardsSet.sets.slice(settings.startIndex, settings.endIndex),
+    };
+
+    setState(
+      update(initialCardsData, {
+        $merge: {
+          totalCards: currentCardsSet.sets.length,
+          startIndex: settings.startIndex,
+          endIndex: settings.endIndex,
+          currentCardsSet,
+        },
+      })
+    );
+  }
+
   return (
     <CardsContext.Provider
       value={{
         state,
+        handleUpdateStateFromSettings,
         handleCorrectGuess,
         handlePreviousCard,
         handleWrongGuess,
         handleFlipCard,
         handleNextCard,
+        resetState,
       }}
     >
       {children}
