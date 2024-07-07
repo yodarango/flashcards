@@ -1,43 +1,31 @@
 import { Button, Input, Modal, Portal, Snackbar, Switch, Toast } from "@ds";
-import {
-  TDefaultSettingsState,
-  useSettingsContext,
-  useCardsContext,
-} from "@context";
-import { HTMLAttributes, useState } from "react";
+import { TDefaultSettingsState, useCardsContext } from "@context";
+import { HTMLAttributes, useEffect, useState } from "react";
 
 // styles
 import "./Settings.scss";
 
 export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
-  const settingsCtx = useSettingsContext();
   const cardsCtx = useCardsContext();
 
-  const settingsState = settingsCtx.state;
   const cardsState = cardsCtx.state;
 
   console.log("cardsState", cardsState);
-  console.log("settingsState", settingsState);
 
-  const randomNumberOfCards = settingsState.randomNumberOfCards;
-  const isRandomQuizzingOn = settingsState.isRandomQuizzingOn;
-  const isShufflingOn = settingsState.isShufflingOn;
-  const startIndex = settingsState.startIndex;
-  const endIndex = settingsState.endIndex;
+  const randomNumberOfCards = 0; //cardsState.randomNumberOfCards;
+  const isRandomQuizzingOn = false; // cardsState.isRandomQuizzingOn;
+  const isShufflingOn = cardsState.isShufflingOn;
+  const startIndex = cardsState.startIndex;
+  const endIndex = cardsState.endIndex;
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const { className = "", ...restOfProps } = props;
 
-  const [formData, setFormData] = useState<Partial<TDefaultSettingsState>>({
-    // randomNumberOfCards,
-    isShufflingOn,
-    startIndex,
-    endIndex,
-  });
+  const [formData, setFormData] = useState<Partial<TDefaultSettingsState>>({});
   const [toast, setToast] = useState<Record<string, any> | null>(null);
 
-  const totalCards = cardsState.totalCards;
+  const totalCards = cardsState.totalCardsInTheSet;
 
   function handleChange(targetName: string, value: number | string | boolean) {
     setFormData((prev) => ({ ...prev, [targetName]: value }));
@@ -77,7 +65,6 @@ export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
       Number(formData.startIndex) > totalCards ||
       Number(formData.endIndex) > totalCards
     ) {
-      console.log("totalCards.length", totalCards);
       setToast({
         type: "danger",
         messsage:
@@ -86,22 +73,19 @@ export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
       return;
     }
 
-    if (
-      formData.endIndex !== settingsState.endIndex ||
-      formData.startIndex !== settingsState.startIndex ||
-      formData.isShufflingOn !== settingsState.isShufflingOn ||
-      formData.randomNumberOfCards !== settingsState.randomNumberOfCards
-    ) {
-      cardsCtx.handleUpdateStateFromSettings({
-        startIndex: formData.startIndex!,
-        endIndex: formData.endIndex!,
-      });
-    }
+    cardsCtx.handleUpdateSettings(formData);
 
-    settingsCtx.handleSaveSettings(formData);
     setIsModalOpen(false);
   }
 
+  useEffect(() => {
+    setFormData({
+      isShufflingOn,
+      startIndex,
+      endIndex,
+      randomNumberOfCards,
+    });
+  }, [isShufflingOn, startIndex, endIndex, randomNumberOfCards]);
   return (
     <section className={`settings-00oo ${className}`} {...restOfProps}>
       <Portal>
@@ -136,9 +120,9 @@ export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
               <label className='opacity-60'>Start at:</label>
               <Input
                 onChange={({ target: { value } }) =>
-                  handleChange("startIndex", Number(value))
+                  handleChange("startIndex", Number(value) - 1)
                 }
-                value={formData.startIndex}
+                value={Number(formData.startIndex) + 1}
                 placeholder='Card number'
               />
             </div>
@@ -146,9 +130,9 @@ export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
               <label className='opacity-60'>End at:</label>
               <Input
                 onChange={({ target: { value } }) =>
-                  handleChange("endIndex", Number(value))
+                  handleChange("endIndex", Number(value) - 1)
                 }
-                value={formData.endIndex}
+                value={Number(formData.endIndex) + 1}
                 placeholder='Card number'
               />
             </div>

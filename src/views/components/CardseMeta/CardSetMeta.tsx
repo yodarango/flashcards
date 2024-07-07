@@ -1,4 +1,4 @@
-import { useCardsContext, useSettingsContext } from "@context";
+import { useCardsContext } from "@context";
 import { HTMLAttributes } from "react";
 
 // styles
@@ -7,24 +7,14 @@ import "./CardSetMeta.scss";
 export const CardSetMeta = (props: HTMLAttributes<HTMLDivElement>) => {
   const { className, ...restOfProps } = props;
 
-  const settingsCtx = useSettingsContext();
   const cardsCtx = useCardsContext();
 
-  const settingsState = settingsCtx.state;
   const cardsState = cardsCtx.state;
 
   const currentIndex = cardsState.currentCardIndex + 1;
-  const isShufflingOn = settingsState.isShufflingOn;
+  const isShufflingOn = cardsState.isShufflingOn;
   const setName = cardsState.currentCardsSet.title;
   let totalCards = cardsState.totalCards;
-
-  // only change the end index if the start index is different from the end index
-  if (settingsState.startIndex !== settingsState.endIndex) {
-    const startIndex =
-      settingsState.startIndex === 0 ? 0 : settingsState.startIndex - 1;
-
-    totalCards = settingsState.endIndex - startIndex;
-  }
 
   const shuffleLabel = isShufflingOn ? "Shuffle on" : "Shuffle off";
   const buttonShuffle = isShufflingOn

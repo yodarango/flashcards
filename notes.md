@@ -14,3 +14,7 @@
 
   - Turn this into an rpg where users defeat monsters as they progress? ....hhmm 🤔
   - make an app for my wife where she can rectify them all
+
+# LEFT OFF
+
+- Fix the range indexes in the settings component. it is off.

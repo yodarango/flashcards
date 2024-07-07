@@ -1,41 +1,20 @@
-import { HTMLAttributes, useEffect, useRef, useState } from "react";
-import { useCardsContext, useSettingsContext } from "@context";
+import { HTMLAttributes, useRef } from "react";
+import { useCardsContext } from "@context";
 import { TCard } from "@types";
 
 // styles
 import "./FlashCard.scss";
+import { If } from "../../../@ds/utils";
 
 export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
   const { className, ...restOfProps } = props;
 
-  const settingsCtx = useSettingsContext();
   const cardsCtx = useCardsContext();
 
   const { handlePreviousCard, handleNextCard, handleFlipCard } = cardsCtx;
-  const settingsState = settingsCtx.state;
   const cardsState = cardsCtx.state;
 
-  const [selectedRangeOfCards, setSelectedRangeOfCards] = useState<TCard[]>([]);
-  // get teh current card based on the settings index
-  useEffect(() => {
-    if (!(cardsState.currentCardsSet?.sets?.length > 0)) return;
-
-    if (settingsState.endIndex !== settingsState.startIndex) {
-      setSelectedRangeOfCards(
-        cardsState.currentCardsSet.sets.slice(
-          settingsState.startIndex,
-          settingsState.endIndex
-        )
-      );
-    } else {
-      setSelectedRangeOfCards(cardsState.currentCardsSet.sets);
-    }
-  }, [
-    settingsState.startIndex,
-    settingsState.endIndex,
-    cardsState.currentCardsSet,
-  ]);
-
+  const selectedRangeOfCards: TCard[] = cardsState.currentCardsSet.sets || [];
   const currentCardIndex = cardsState.currentCardIndex;
 
   const currentCardFront = selectedRangeOfCards[currentCardIndex]?.eng;
@@ -45,15 +24,25 @@ export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
   const flashCardContentFront = useRef<any>(undefined);
   const flashCardContentBack = useRef<any>(undefined);
 
-  // const onShowHint = () => {
-  //   // setHint(true);
-  // };
-
-  // const onRevealHint = () => {
-  //   // setRevealHint(true);
-  // };
-
   const isFlippedClass = isCardFlipped ? "is-flipped" : "is-not-flipped";
+  const isThisCardCorrectlyGuessed = cardsState.correctGuessIds.includes(
+    selectedRangeOfCards[currentCardIndex]?.id
+  );
+  const isThisCardWronglyGuessed = cardsState.wrongGuessIds.includes(
+    selectedRangeOfCards[currentCardIndex]?.id
+  );
+
+  const cardGuessClass = isThisCardWronglyGuessed
+    ? "icon-close bg-danger color-beta"
+    : isThisCardCorrectlyGuessed
+    ? "icon-checkmark bg-success color-beta"
+    : "";
+
+  const cardGuessLabel = isThisCardWronglyGuessed
+    ? "Wrong"
+    : isThisCardCorrectlyGuessed
+    ? "Correct"
+    : "";
 
   return (
     <section
@@ -75,9 +64,20 @@ export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
             className='flashcard-content d-flex align-items-center justify-content-start flex-column p-6'
             ref={flashCardContentFront}
           >
-            <p className='color-alpha opacity-60 fs-3'>
-              # {currentCardIndex + 1}
-            </p>
+            <div className='d-flex align-items-center justify-content-center column-gap-2 mb-2'>
+              <p className='color-alpha opacity-60 fs-3'>
+                # {currentCardIndex + 1}
+              </p>
+              <If condition={!!cardGuessLabel}>
+                <span
+                  className={
+                    "rounded fw-6 fs-6 p-1 d-inline-clock" + cardGuessClass
+                  }
+                >
+                  {cardGuessLabel}
+                </span>
+              </If>
+            </div>
             <h2>{currentCardFront}</h2>
           </div>
           <button
@@ -98,9 +98,20 @@ export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
             <span className='icon icon-chevron-back-outline color-alpha' />
           </button>
           <div className='flashcard-content p-6' ref={flashCardContentBack}>
-            <p className='color-alpha fs-3 opacity-60'>
-              # {currentCardIndex + 1}
-            </p>
+            <div className='d-flex align-items-center justify-content-center column-gap-2 mb-2'>
+              <p className='color-alpha opacity-60 fs-3 '>
+                # {currentCardIndex + 1}
+              </p>
+              <If condition={!!cardGuessLabel}>
+                <span
+                  className={
+                    "rounded fw-6 fs-6 p-1 d-inline-clock" + cardGuessClass
+                  }
+                >
+                  {cardGuessLabel}
+                </span>
+              </If>
+            </div>
             <h2>{currentCardBack}</h2>
           </div>
           <button

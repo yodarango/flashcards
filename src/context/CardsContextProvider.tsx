@@ -7,6 +7,7 @@ import {
 import { useContext, useEffect, useState } from "react";
 import { EGuessedCorrectly, TCardSet } from "@types";
 import { useParams } from "react-router-dom";
+import { shuffle } from "../utils/shuffle";
 import { termsByPhrase } from "@data";
 
 type TCardsContextProvider = {
@@ -31,8 +32,11 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
     const totalCards = currentCardsSet.sets.length;
 
     const updateTarget: Record<string, any> = {
+      totalCardsInTheSet: { $set: currentCardsSet.sets.length },
+      endIndex: { $set: currentCardsSet.sets.length - 1 },
       currentCardsSet: { $set: currentCardsSet },
       totalCards: { $set: totalCards },
+      startIndex: { $set: 0 },
       loading: { $set: false },
     };
 
@@ -95,22 +99,54 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
 
   // handle the guess of the card and update the state accordingly
   function handleGuess(guess: EGuessedCorrectly) {
-    if (state.currentCardIndex === state.totalCards - 1) {
-      alert("You have finished the quiz!");
+    const cardId = state.currentCardsSet.sets[state.currentCardIndex].id;
+    const isThisTheLastIndex = state.currentCardIndex === state.totalCards - 1; // not necessarily the last card to be guessed, just the last index
+    const totalNumberOfGuesses =
+      state.correctGuessIds.length + state.wrongGuessIds.length;
+    const isThisTheLastCardToBeGuessed =
+      totalNumberOfGuesses === state.totalCards - 1;
+
+    // check if the card has already been guessed according the the guess type being passed,
+    // otherwise it will result in a duplicate entry in the state.
+    if (
+      (guess === EGuessedCorrectly.CORRECT &&
+        state.correctGuessIds.includes(cardId)) ||
+      (guess === EGuessedCorrectly.INCORRECT &&
+        state.wrongGuessIds.includes(cardId))
+    ) {
       return;
     }
 
+    const oppositeGuessIdsObjectKey =
+      guess === EGuessedCorrectly.CORRECT ? "wrongGuessIds" : "correctGuessIds";
     const guessIdsObjectKey =
       guess === EGuessedCorrectly.CORRECT ? "correctGuessIds" : "wrongGuessIds";
 
     const updateTarget: Record<string, any> = {
-      currentCardIndex: { $set: state.currentCardIndex + 1 },
+      currentCardIndex: {
+        $set:
+          isThisTheLastIndex && isThisTheLastCardToBeGuessed
+            ? state.currentCardIndex
+            : state.currentCardIndex + 1,
+      },
 
       [guessIdsObjectKey]: {
-        $push: [state.currentCardsSet.sets[state.currentCardIndex].id],
+        $push: [cardId],
       },
       isCardFlipped: { $set: false },
+      isFinished: {
+        $set: isThisTheLastCardToBeGuessed,
+      },
     };
+
+    // If the card has already been guessed, and it is being guessed opposite to
+    // the previous guess, then it needs to be removed from the previous guess
+    // array before adding it to the new guess array.
+    if (state[oppositeGuessIdsObjectKey].includes(cardId)) {
+      updateTarget[oppositeGuessIdsObjectKey] = {
+        $splice: [[state[oppositeGuessIdsObjectKey].indexOf(cardId), 1]],
+      };
+    }
 
     setState(update(state, updateTarget));
   }
@@ -126,7 +162,7 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
   }
 
   // reset the state to the initial state
-  async function resetState() {
+  async function handleResetState() {
     const currentCardsSet = await findCardSetFromParams();
     const totalCards = currentCardsSet.sets.length;
     setState({
@@ -136,22 +172,28 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
     });
   }
 
-  // merges the current state with the new state
-  async function handleUpdateStateFromSettings(settings: Record<string, any>) {
-    let currentCardsSet: TCardSet = await findCardSetFromParams();
+  // adjust the card set according to the selected settings
+  async function handleUpdateSettings(settings: Record<string, any>) {
+    const { startIndex, endIndex } = settings;
+    const cardsFromParams: TCardSet = await findCardSetFromParams();
 
-    currentCardsSet = {
-      ...currentCardsSet,
-      sets: currentCardsSet.sets.slice(settings.startIndex, settings.endIndex),
+    const currentCardsSet = {
+      ...cardsFromParams,
+      sets: cardsFromParams.sets.slice(startIndex, endIndex + 1),
     };
 
+    if (settings.isShufflingOn) {
+      currentCardsSet.sets = shuffle(currentCardsSet.sets);
+    }
+
     setState(
-      update(initialCardsData, {
+      update(state, {
         $merge: {
+          totalCardsInTheSet: cardsFromParams.sets.length,
           totalCards: currentCardsSet.sets.length,
-          startIndex: settings.startIndex,
-          endIndex: settings.endIndex,
           currentCardsSet,
+          loading: false,
+          ...settings,
         },
       })
     );
@@ -161,13 +203,13 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
     <CardsContext.Provider
       value={{
         state,
-        handleUpdateStateFromSettings,
+        handleUpdateSettings,
         handleCorrectGuess,
         handlePreviousCard,
+        handleResetState,
         handleWrongGuess,
         handleFlipCard,
         handleNextCard,
-        resetState,
       }}
     >
       {children}

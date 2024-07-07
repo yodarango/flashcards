@@ -1,12 +1,14 @@
-import { CardsContextProvider, SettingsContextProvider } from "@context";
+import { Finish } from "../../../components/Finish/Finish";
 import { Container } from "@views/components";
+import { IfElse } from "../../../../@ds/utils";
+import { useCardsContext } from "@context";
 
 export const Layout = () => {
+  const cardsCtx = useCardsContext();
   return (
-    <SettingsContextProvider>
-      <CardsContextProvider>
-        <Container />
-      </CardsContextProvider>
-    </SettingsContextProvider>
+    <IfElse condition={cardsCtx.state.isFinished}>
+      <Finish />
+      <Container />
+    </IfElse>
   );
 };
