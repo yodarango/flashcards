@@ -6,9 +6,9 @@ import {
 } from "./CardsContext";
 import { useContext, useEffect, useState } from "react";
 import { EGuessedCorrectly, TCard, TCardSet } from "@types";
+import { allCardSets } from "@data/index";
 import { useParams } from "react-router-dom";
 import { shuffle } from "../utils/shuffle";
-import { termsByPhrase } from "@data";
 
 type TCardsContextProvider = {
   children: React.ReactNode;
@@ -17,7 +17,7 @@ type TCardsContextProvider = {
 export const CardsContextProvider = (props: TCardsContextProvider) => {
   const { children } = props;
 
-  const params = useParams();
+  const { category, title } = useParams();
 
   const [state, setState] = useState<TDefaultCardsState>(initialCardsData);
 
@@ -46,12 +46,40 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
   // find the card set based on the phrase from the URL
   function findCardSetFromParams(): Promise<TCardSet> {
     return new Promise((resolve) => {
-      const phrase = params.title?.toLowerCase();
-      const findCardSet =
-        termsByPhrase.find(
-          (term) => term.title.replace(" ", "-").toLocaleLowerCase() === phrase
-        ) || {};
-      resolve(findCardSet as TCardSet);
+      const setsTitle = title?.toLowerCase();
+      const setsCategory = category?.toLowerCase();
+
+      // check if they are loading words by category of by common phrase, since
+      // they have different nesting levels
+      if (category?.includes("--")) {
+        const [mainCategory, subCategory] = category.split("--");
+
+        const mainCategorySets =
+          allCardSets.find(
+            (cardSet: TCardSet) => cardSet.id === mainCategory
+          ) || ({} as TCardSet);
+
+        const subCardSet: any = mainCategorySets.sets?.find(
+          (cardSet: any) => cardSet.title.toLowerCase() === subCategory
+        );
+
+        const subCategoryCards = subCardSet?.sets.find((cardSet: any) => {
+          return cardSet.title.toLowerCase().replaceAll(" ", "-") === setsTitle;
+        });
+
+        resolve(subCategoryCards);
+      } else {
+        const mainCategorySets = allCardSets.find(
+          (cardSet: TCardSet) => cardSet.id === setsCategory
+        );
+
+        const subCardSet: any = mainCategorySets!.sets?.find(
+          (cardSet: any) =>
+            cardSet.title.toLowerCase().replaceAll(" ", "-") === setsTitle
+        );
+
+        resolve(subCardSet as TCardSet);
+      }
     });
   }
 

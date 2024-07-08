@@ -1,6 +1,7 @@
 # TODO
 
 - Eventually, I need to separate each language into its on array. This will allow me to include more languages without having to load them both in the same object, which will get quite BIG!
+- The array containing the terms should be called _words_ or _terms_ not _set_. Change this so in the future i can differentiate between an array that is an array of terms and an array of sets.
 
   ### Structure
 
@@ -17,4 +18,4 @@
 
 # LEFT OFF
 
-- Fix the range indexes in the settings component. it is off.
+- left of in [category]/layout, I am trying to render the subcategories for "words-by-category"

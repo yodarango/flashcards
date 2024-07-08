@@ -1,5 +1,5 @@
 import { Layout } from "./Layout/Layout";
 
-export const ViewWordsByCommonPhrases = () => {
+export const ViewWordsByCategory = () => {
   return <Layout />;
 };

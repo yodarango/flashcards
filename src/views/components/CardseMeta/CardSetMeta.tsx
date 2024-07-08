@@ -3,9 +3,12 @@ import { HTMLAttributes } from "react";
 
 // styles
 import "./CardSetMeta.scss";
+import { Link, useParams } from "react-router-dom";
 
 export const CardSetMeta = (props: HTMLAttributes<HTMLDivElement>) => {
   const { className, ...restOfProps } = props;
+
+  const { category } = useParams();
 
   const cardsCtx = useCardsContext();
 
@@ -24,12 +27,11 @@ export const CardSetMeta = (props: HTMLAttributes<HTMLDivElement>) => {
   return (
     <div className={`cards-metta-20pt ${restOfProps}`} {...restOfProps}>
       <div className='d-flex align-items-center justify-content-between'>
-        <button
-          className='m-0 p-0 bg-nu'
-          //onClick={handleReset}
-        >
-          <span className='icon icon-chevron-back-outline color-alpha' />
-        </button>
+        <Link to={`/${category}`}>
+          <button className='m-0 p-0 bg-nu'>
+            <span className='icon icon-chevron-back-outline color-alpha' />
+          </button>
+        </Link>
         <h3 className='text-center mb-4'>{setName}</h3>
         <div />
       </div>

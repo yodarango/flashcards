@@ -1,13 +1,13 @@
 import {
-  ROUTE_WORDS_BY_COMMON_PHRASES_TITLE,
-  ROUTE_WORDS_BY_COMMON_PHRASES,
+  ROUTE_WORDS_CATEGORY_TITLE,
+  ROUTE_WORDS_CATEGORY,
   ROUTE_HOME,
 } from "@constants";
 import {
-  ViewWordsByCommonPhrasesTitle,
-  ViewWordsByCommonPhrases,
+  ViewWordsByCategory,
+  ViewWordsByCategorySet,
   ViewIndex,
-} from "@views";
+} from "@views/index";
 
 import {
   createRoutesFromElements,
@@ -22,13 +22,10 @@ const router = createBrowserRouter(
     <Route path='' element={<Outlet />} errorElement={<></>}>
       <Route path={ROUTE_HOME} element={<ViewIndex />} />
       <Route
-        path={ROUTE_WORDS_BY_COMMON_PHRASES}
-        element={<ViewWordsByCommonPhrases />}
+        element={<ViewWordsByCategorySet />}
+        path={ROUTE_WORDS_CATEGORY_TITLE}
       />
-      <Route
-        element={<ViewWordsByCommonPhrasesTitle />}
-        path={ROUTE_WORDS_BY_COMMON_PHRASES_TITLE}
-      />
+      <Route path={ROUTE_WORDS_CATEGORY} element={<ViewWordsByCategory />} />
     </Route>
   )
 );

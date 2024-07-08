@@ -1,7 +1,7 @@
 import { CardsContextProvider } from "@context";
 import { Layout } from "./Layout/Layout";
 
-export const ViewWordsByCommonPhrasesTitle = () => {
+export const ViewWordsByCategorySet = () => {
   return (
     <CardsContextProvider>
       <Layout />

@@ -27,7 +27,7 @@
       "@views/*": ["./src/views/*"],
       "@types": ["./src/types"],
       "@ds": ["./src/@ds"],
-      "@data": ["./data"]
+      "@data/*": ["./data/*"]
     }
   },
   "include": ["src"],

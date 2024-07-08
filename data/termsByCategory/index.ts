@@ -636,7 +636,7 @@ export const termsByCategory = [
   },
   {
     title: "Adverbs",
-    id: "3HJ10",
+    id: "YT0PL1",
     sets: [
       {
         id: "70VC2JQ15G",
@@ -1018,7 +1018,7 @@ export const termsByCategory = [
   },
   {
     title: "Pronouns",
-    id: "3HJ10",
+    id: "PLT9S7",
     sets: [{ id: "4HJX10", title: "pronouns", sets: Pronouns }],
   },
   {
