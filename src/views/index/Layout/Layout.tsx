@@ -9,7 +9,7 @@ import "./Layout.scss";
 
 export const Layout = () => {
   return (
-    <div className='card-sets-67th d-flex align-items-center justify-content-center flex-wrap gap-4 pt-8'>
+    <div className='card-sets-67th d-flex align-items-center justify-content-center flex-wrap gap-4'>
       {allCardSets.map((cardSet: TCardSet) => {
         const cardSetPath = generatePath(ROUTE_WORDS_CATEGORY, {
           category: cardSet.id,

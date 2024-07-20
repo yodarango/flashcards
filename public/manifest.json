@@ -1,0 +1,13 @@
+{
+  "name": "Polynguo",
+  "short_name": "Polynguo",
+  "description": "Polynguo - Enhance your Spanish and English language skills in and interactive way. Quiz yourself, track your progress, and master vocabulary with engaging and effective flashcards. Perfect for students of all levels!",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "https://shrood.app/apps/polynguo/public/images/splash.webp",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

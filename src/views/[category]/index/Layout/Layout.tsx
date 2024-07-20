@@ -25,7 +25,7 @@ export const Layout = () => {
   localStorage.removeItem("shrood__polynguo");
 
   return (
-    <div className='layout-words-by-common-phrases-39hh'>
+    <div className='layout-select-category-39hh'>
       <IfElse condition={!!hasSubcategories}>
         <ByCategory />
         <ByPopularity />

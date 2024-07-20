@@ -1,6 +1,6 @@
 import { Button, Input, Modal, Portal, Snackbar, Switch, Toast } from "@ds";
-import { TDefaultSettingsState, useCardsContext } from "@context";
 import { HTMLAttributes, useEffect, useState } from "react";
+import { useCardsContext } from "@context";
 
 // styles
 import "./Settings.scss";
@@ -22,7 +22,7 @@ export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
 
   const { className = "", ...restOfProps } = props;
 
-  const [formData, setFormData] = useState<Partial<TDefaultSettingsState>>({});
+  const [formData, setFormData] = useState<Record<string, any>>({});
   const [toast, setToast] = useState<Record<string, any> | null>(null);
 
   const totalCards = cardsState.totalCardsInTheSet;
@@ -149,11 +149,11 @@ export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
             </div>
           </div>
 
-          <hr className='mb-4' />
+          {/* <hr className='mb-4' /> */}
 
-          {/* random quizzing */}
+          {/* random quizzing: deactivated for now*/}
 
-          <div className='d-flex align-items-center justify-between gap-4 mb-4'>
+          {/* <div className='d-flex align-items-center justify-between gap-4 mb-4'>
             <label className='opacity-60'>Random quizzing instead:</label>
             <Switch
               // onChange={handleToggleRandomQuizzing}
@@ -178,7 +178,7 @@ export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
               value={formData.randomNumberOfCards}
               className='mb-4'
             />
-          </div>
+          </div> */}
 
           <hr className='mb-4' />
 

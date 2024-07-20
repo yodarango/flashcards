@@ -1,3 +1,4 @@
+import { MainLayout } from "./components/MainLayout/MainLayout";
 import {
   ROUTE_WORDS_CATEGORY_TITLE,
   ROUTE_WORDS_CATEGORY,
@@ -13,13 +14,12 @@ import {
   createRoutesFromElements,
   createBrowserRouter,
   RouterProvider,
-  Outlet,
   Route,
 } from "react-router-dom";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='' element={<Outlet />} errorElement={<></>}>
+    <Route path='' element={<MainLayout />} errorElement={<></>}>
       <Route path={ROUTE_HOME} element={<ViewIndex />} />
       <Route
         element={<ViewWordsByCategorySet />}

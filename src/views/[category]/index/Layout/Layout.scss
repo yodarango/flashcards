@@ -1,5 +1,8 @@
-.layout-words-by-common-phrases-39hh {
-  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
-  gap: var(--dr-spacing-4);
-  display: grid;
+.layout-select-category-39hh {
+  .layout-words-by-common-phrases-39hh,
+  .layout-words-by-category-07pt {
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    gap: var(--dr-spacing-4);
+    display: grid;
+  }
 }

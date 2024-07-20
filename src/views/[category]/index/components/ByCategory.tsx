@@ -51,7 +51,7 @@ export const ByCategory = () => {
   }, [category]);
 
   return (
-    <div className='layout-words-by-common-phrases-39hh'>
+    <div className='layout-words-by-category-07pt'>
       {cardSets.map((cardSet: TCardSet, i: number) => {
         let setPath;
 
