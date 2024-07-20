@@ -1,8 +1,8 @@
 import { Link, generatePath } from "react-router-dom";
 import { ROUTE_WORDS_CATEGORY } from "@constants";
 import { TermsSetCard } from "@components";
+import { allCardSets } from "@data/index";
 import { TCardSet } from "@types";
-import { allCardSets } from "@data";
 
 // styles
 import "./Layout.scss";
@@ -15,7 +15,6 @@ export const Layout = () => {
           category: cardSet.id,
         });
 
-        console.log("cardSetPath", cardSetPath);
         return (
           <Link to={cardSetPath} key={cardSet.id}>
             <TermsSetCard

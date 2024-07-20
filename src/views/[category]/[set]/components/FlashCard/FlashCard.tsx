@@ -1,10 +1,10 @@
 import { HTMLAttributes, useRef } from "react";
+import { If } from "../../../../../@ds/utils";
 import { useCardsContext } from "@context";
 import { TCard } from "@types";
 
 // styles
 import "./FlashCard.scss";
-import { If } from "../../../@ds/utils";
 
 export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
   const { className, ...restOfProps } = props;

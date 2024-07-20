@@ -27,7 +27,7 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
 
   // initialize the state on initial render render. The only state items that need to be initialized are the
   // currentCardsSet, and totalCards.
-  async function initializeState() {
+  async function initializeStateFromFile() {
     const currentCardsSet = await findCardSetFromParams();
     const totalCards = currentCardsSet.sets.length;
 
@@ -41,6 +41,25 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
     };
 
     setState(update(state, updateTarget));
+  }
+
+  // initialize the state on initial render render from the local storage
+  function initializeStateFromLocalStorage() {
+    const localStorageData = localStorage.getItem("shrood__polynguo");
+    const parsedData = JSON.parse(localStorageData!);
+
+    setState(parsedData);
+  }
+
+  // initialize the state on initial render render.
+  async function initializeState() {
+    const localStorageData = localStorage.getItem("shrood__polynguo");
+
+    if (localStorageData) {
+      initializeStateFromLocalStorage();
+    } else {
+      await initializeStateFromFile();
+    }
   }
 
   // find the card set based on the phrase from the URL
@@ -191,6 +210,8 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
 
   // reset the state to the initial state
   async function handleResetState() {
+    localStorage.removeItem("shrood__polynguo");
+
     const currentCardsSet = await findCardSetFromParams();
     const totalCards = currentCardsSet.sets.length;
     setState({
@@ -202,9 +223,10 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
 
   // adjust the card set according to the selected settings
   async function handleUpdateSettings(settings: Record<string, any>) {
-    const { startIndex, endIndex } = settings;
+    const { startIndex, endIndex, isShufflingOn } = settings;
     const cardsFromParams: TCardSet = await findCardSetFromParams();
 
+    console.log("cardsFromParams", cardsFromParams);
     const currentCardsSet = {
       ...cardsFromParams,
       sets: cardsFromParams.sets.slice(startIndex, endIndex + 1),
@@ -219,9 +241,12 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
         $merge: {
           totalCardsInTheSet: cardsFromParams.sets.length,
           totalCards: currentCardsSet.sets.length,
+          correctGuessIds: [],
+          currentCardIndex: 0,
+          wrongGuessIds: [],
           currentCardsSet,
           loading: false,
-          ...settings,
+          isShufflingOn,
         },
       })
     );
@@ -258,6 +283,13 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
       })
     );
   }
+
+  // save state to local storage every time it changes but only if there is a set present
+  useEffect(() => {
+    if (Object.keys(state.currentCardsSet).length === 0) return;
+
+    localStorage.setItem("shrood__polynguo", JSON.stringify(state));
+  }, [state]);
 
   return (
     <CardsContext.Provider

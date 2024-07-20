@@ -1,5 +1,5 @@
-import { Finished } from "../../../components/Finished/Finished";
-import { Container } from "@views/components";
+import { Container } from "../components/Container/Container";
+import { Finished } from "../components/Finished/Finished";
 import { IfElse } from "../../../../@ds/utils";
 import { useCardsContext } from "@context";
 

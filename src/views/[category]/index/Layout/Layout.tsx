@@ -1,103 +1,35 @@
-import { Link, generatePath, useParams } from "react-router-dom";
-import { ROUTE_WORDS_CATEGORY, ROUTE_WORDS_CATEGORY_TITLE } from "@constants";
-import { TermsSetCard } from "@components";
-import { allCardSets } from "@data/index";
-import { TCardSet } from "@types";
+/**************************************************************************************************************************
+ * This layout accounts for a one livel object where the terms to be quizzed are nested within within the first level
+ * and the object where the terms are nested within the second level. 🦚
+ * *********************************************************************
+ *
+ */
+
+import { ByPopularity } from "../components/ByPopularity";
+import { ByCategory } from "../components/ByCategory";
+import { useParams } from "react-router-dom";
+import { IfElse } from "@ds";
 
 // styles
 import "./Layout.scss";
-import { useEffect, useState } from "react";
 
 export const Layout = () => {
   const { category } = useParams();
 
-  const [hasSubcategories, setHasSubcategories] = useState<boolean>(
-    category === "words-by-category"
-  );
-  const [cardSets, setCardSets] = useState<any>([]);
+  // the data object that holds the terms by category has nested card sets, therefore selecting one
+  // will not  load the cards to be quizzed
+  const hasSubcategories = category?.includes("words-by-category");
 
-  // check if this is a sub category or a main category
-  useEffect(() => {
-    if (category?.includes("--")) {
-      const [mainCategory, subCategory] = category.split("--");
-
-      const mainCategorySets =
-        allCardSets.find((cardSet: TCardSet) => cardSet.id === mainCategory) ||
-        ({} as TCardSet);
-
-      const subCardSet: any = mainCategorySets.sets?.find(
-        (cardSet: any) => cardSet.title.toLowerCase() === subCategory
-      );
-
-      setCardSets(subCardSet?.sets || []);
-      setHasSubcategories(false);
-    } else {
-      const cardSets = allCardSets.find(
-        (cardSet: TCardSet) => cardSet.id === category
-      );
-      setCardSets(cardSets?.sets);
-    }
-  }, [category]);
+  // every time a user lands here, make sure that the local storage is cleared
+  // to avoid any data that may have been stored from the previous session
+  localStorage.removeItem("shrood__polynguo");
 
   return (
     <div className='layout-words-by-common-phrases-39hh'>
-      {cardSets.map((cardSet: Omit<TCardSet, "totalTerms">, i: number) => {
-        let setPath;
-
-        if (hasSubcategories) {
-          setPath = generatePath(ROUTE_WORDS_CATEGORY, {
-            category: `${category!}--${cardSet.title
-              .replace(/ /g, "-")
-              .toLowerCase()}`,
-          });
-        } else {
-          setPath = generatePath(ROUTE_WORDS_CATEGORY_TITLE, {
-            title: cardSet.title.replace(/ /g, "-").toLowerCase(),
-            category,
-          });
-        }
-
-        return (
-          <Link to={setPath} key={cardSet.id}>
-            <TermsSetCard
-              totalTerms={String(cardSet.sets.length)}
-              thumbnail={<FallBackThumbnail title={i + 1} />}
-              title={cardSet.title!}
-              key={cardSet.id}
-            />
-          </Link>
-        );
-      })}
+      <IfElse condition={!!hasSubcategories}>
+        <ByCategory />
+        <ByPopularity />
+      </IfElse>
     </div>
   );
 };
-
-function FallBackThumbnail({ title }: { title: number }) {
-  const randomPastelColors = [
-    "#ffadad",
-    "#ffd6a5",
-    "#fdffb6",
-    "#caffbf",
-    "#9bf6ff",
-    "#a0c4ff",
-    "#bdb2ff",
-    "#c8b6ff",
-    "#ffc6ff",
-    "#fffffc",
-  ];
-  return (
-    <div
-      className='d-flex align-items-center justify-content-center'
-      style={{
-        backgroundColor:
-          randomPastelColors[
-            Math.floor(Math.random() * randomPastelColors.length)
-          ],
-        height: "100%",
-        width: "100%",
-      }}
-    >
-      <h1 className='text-center color-beta'>{title}</h1>
-    </div>
-  );
-}
