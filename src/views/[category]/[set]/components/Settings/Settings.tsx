@@ -10,8 +10,6 @@ export const Settings = (props: HTMLAttributes<HTMLDivElement>) => {
 
   const cardsState = cardsCtx.state;
 
-  console.log("cardsState", cardsState);
-
   const randomNumberOfCards = 0; //cardsState.randomNumberOfCards;
   const isRandomQuizzingOn = false; // cardsState.isRandomQuizzingOn;
   const isShufflingOn = cardsState.isShufflingOn;
