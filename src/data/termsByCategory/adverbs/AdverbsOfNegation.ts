@@ -1,0 +1,15 @@
+export const AdverbsOfNegation = [
+  { spa: "no", eng: "not", hint: "", id: "SDX331" },
+  { spa: "no", eng: "never", hint: "", id: "KFJ471" },
+  { spa: "dificilmente", eng: "hardly", hint: "", id: "WBO767" },
+  { spa: "apenas", eng: "scarcely", hint: "", id: "IWX846" },
+  { spa: "apenas", eng: "barely", hint: "", id: "ERW343" },
+  { spa: "rara vez", eng: "seldom", hint: "", id: "EVM736" },
+  { spa: "raramente", eng: "rarely", hint: "", id: "TPX916" },
+  { spa: "tampoco", eng: "neither", hint: "", id: "PFX732" },
+  { spa: "ningún lado", eng: "nowhere", hint: "", id: "GUU925" },
+  { spa: "de ninguna manera", eng: "noway", hint: "", id: "YDK708" },
+  { spa: "en ninguna manera", eng: "nowise", hint: "", id: "NBC828" },
+  { spa: "ninguno", eng: "none", hint: "", id: "ALI833" },
+  { spa: "ni", eng: "nor", hint: "", id: "DKR714" },
+];

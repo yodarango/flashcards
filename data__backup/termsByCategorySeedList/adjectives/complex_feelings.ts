@@ -1,0 +1,18 @@
+export const complexFeelings = [
+  "ambivalent",
+  "conflicted",
+  "confused",
+  "desolate",
+  "dejected",
+  "disillusioned",
+  "envious",
+  "frustrated",
+  "indecisive",
+  "melancholic",
+  "overwhelmed",
+  "paranoid",
+  "resentful",
+  "skeptical",
+  "uncomfortable",
+  "vulnerable",
+];
