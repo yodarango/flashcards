@@ -22,9 +22,10 @@
     "paths": {
       "@components": ["./src/components"],
       "@constants": ["./src/constants"],
+      "@assets/*": ["./src/assets/*"],
       "@context": ["./src/context"],
-      "@utils": ["./src/utils"],
       "@views/*": ["./src/views/*"],
+      "@utils": ["./src/utils"],
       "@types": ["./src/types"],
       "@ds": ["./src/@ds"],
       "@data/*": ["./data/*"]
