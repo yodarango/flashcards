@@ -1,0 +1,1 @@
+scp -r /Users/yodarango/Desktop/repos/flashcards/app/dist/* root@96.30.194.79:/var/www/repos/polynguo/app
