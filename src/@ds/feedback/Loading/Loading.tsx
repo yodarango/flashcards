@@ -96,7 +96,7 @@ type TSparklesLoader = {
   size: number;
 };
 
-const SparklesLoader = ({ size, children }: TSparklesLoader) => {
+const SparklesLoader = ({ children }: TSparklesLoader) => {
   return (
     <div className='loading-23nxo--sparkles d-flex align-items-center justify-content-center w-100'>
       <div className='d-flex align-items-center justify-content-start flex-column'>

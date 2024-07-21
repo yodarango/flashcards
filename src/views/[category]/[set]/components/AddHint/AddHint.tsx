@@ -7,12 +7,11 @@ import { TCard } from "@types";
 import "./AddHint.scss";
 
 export const AddHint = (props: HTMLAttributes<HTMLDivElement>) => {
-  const { handleAddHint, state } = useCardsContext();
+  const { state } = useCardsContext();
   const allCards: TCard[] = state.currentCardsSet.sets || [];
   const index = state.currentCardIndex;
 
   const currentCardHint = allCards[index]?.hint || "";
-  const currentCardId = allCards[index]?.id;
 
   const [formData, setFormData] = useState({
     currentCardHint,
@@ -33,7 +32,6 @@ export const AddHint = (props: HTMLAttributes<HTMLDivElement>) => {
       return;
     }
 
-    handleAddHint(formData.currentCardHint, currentCardId);
     setShowModal(false);
     setToast({
       type: "success",
