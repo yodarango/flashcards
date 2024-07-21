@@ -11,7 +11,6 @@
  */
 
 //import fallbackImg from "@assets/images/fallback.png";
-import { useEffect, useState } from "react";
 
 // styles
 import "./Thumbnail.scss";
@@ -28,12 +27,9 @@ export type TThumbnail = {
   src: string;
 };
 
-const fallbackImg = "";
-
 export const Thumbnail = ({
   className = "",
   maxHeight,
-  fallback,
   maxWidth,
   height,
   width,

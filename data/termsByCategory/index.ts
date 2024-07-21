@@ -139,7 +139,7 @@ import { HobbiesAndInterests as nounsHobbiesAndInterests } from "./nouns/Hobbies
 import { HouseholdObjects as nounsHouseholdObjects } from "./nouns/HouseholdObjects";
 import { InternationalRelations as nounsInternationalRelations } from "./nouns/InternationalRelations";
 import { InternetAndCommunication as nounsInternetAndCommunication } from "./nouns/InternetAndCommunication";
-import { JobTitlesAndRoles as nounsJobTitlesAndRoles } from "./nouns/JobTitlesAndRoles";
+import { JobTitlesAndRoles as nounsJobTitlesAndRoles } from "./nouns/JobTItlesAndRoles";
 import { LegalTerms as nounsLegalTerms } from "./nouns/LegalTerms";
 import { LegumesAndNuts as nounsLegumesAndNuts } from "./nouns/LegumesAndNuts";
 import { LiteraryTerms as nounsLiteraryTerms } from "./nouns/LiteraryTerms";
@@ -188,8 +188,8 @@ import { TravelRelatedTerms as nounsTravelRelatedTerms } from "./nouns/TravelRel
 import { Weather as nounsWeather } from "./nouns/Weather";
 import { WeatherConditions as nounsWeatherConditions } from "./nouns/WeatherConditions";
 import { WildAnimals as nounsWildAnimals } from "./nouns/WildAnimals";
-import { Prepositions } from "./prepositions/Prepositions";
-import { Pronouns } from "./pronouns/Pronouns";
+import { Prepositions } from "./prepositions/prepositions";
+import { Pronouns } from "./pronouns/pronouns";
 import { Acquiring as verbsAcquiring } from "./verbs/Acquiring";
 import { Analyzing as verbsAnalyzing } from "./verbs/Analyzing";
 import { ArtisticCreation as verbsArtisticCreation } from "./verbs/ArtisticCreation";

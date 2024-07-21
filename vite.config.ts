@@ -17,7 +17,7 @@ export default defineConfig({
       "@utils": path.resolve(__dirname, "./src/utils"),
       "@ds": path.resolve(__dirname, "./src/@ds"),
       "@seed": path.resolve(__dirname, "./seed"),
-      "@data": path.resolve(__dirname, "./src/data"),
+      "@data": path.resolve(__dirname, "./data"),
     },
   },
   base: "./",
