@@ -21,5 +21,25 @@ export default defineConfig({
       "@data": path.resolve(__dirname, "./data"),
     },
   },
-  base: "./",
+  base: "/web-app-assets/polynguo/",
+
+  build: {
+    rollupOptions: {
+      output: {
+        entryFileNames: "index.js",
+        chunkFileNames: "index.js",
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name && /\.css$/.test(assetInfo.name)) {
+            return "index.css";
+          } else if (
+            assetInfo.name &&
+            /\.(png|jpe?g|svg|gif|tiff|bmp|webp)$/i.test(assetInfo.name)
+          ) {
+            return "assets/[name][extname]";
+          }
+          return "[name][extname]";
+        },
+      },
+    },
+  },
 });
