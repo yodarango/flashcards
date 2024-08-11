@@ -19,7 +19,7 @@ import {
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='' element={<MainLayout />} errorElement={<></>}>
+    <Route path={""} element={<MainLayout />} errorElement={<></>}>
       <Route path={ROUTE_HOME} element={<ViewIndex />} />
       <Route
         element={<ViewWordsByCategorySet />}
