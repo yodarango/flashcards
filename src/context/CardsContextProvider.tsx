@@ -155,11 +155,7 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
 
     // check if the card has already been guessed according the the guess type being passed,
     // otherwise it will result in a duplicate entry in the state.
-    console.log(
-      "state.correctGuessIds",
-      state.currentCardIndex === state.totalCards - 1 &&
-        totalNumberOfGuesses < state.totalCards - 1
-    );
+
     if (
       (guess === EGuessedCorrectly.CORRECT &&
         state.correctGuessIds.includes(cardId)) ||
@@ -235,7 +231,6 @@ export const CardsContextProvider = (props: TCardsContextProvider) => {
     const { startIndex, endIndex, isShufflingOn } = settings;
     const cardsFromParams: TCardSet = await findCardSetFromParams();
 
-    console.log("cardsFromParams", cardsFromParams);
     const currentCardsSet = {
       ...cardsFromParams,
       sets: cardsFromParams.sets.slice(startIndex, endIndex + 1),

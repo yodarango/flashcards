@@ -1,4 +1,4 @@
-import PolynguoLogo from "@assets/images/polynguo_logo.webp";
+import PolynguoLogo from "@assets/images/logo.png";
 import { ROUTE_HOME } from "@constants";
 import { Link } from "react-router-dom";
 import { HTMLProps } from "react";
