@@ -71,7 +71,7 @@ export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
               <If condition={!!cardGuessLabel}>
                 <span
                   className={
-                    "rounded fw-6 fs-6 p-1 d-inline-clock" + cardGuessClass
+                    "rounded fw-6 fs-6 p-1 d-inline-clock " + cardGuessClass
                   }
                 >
                   {cardGuessLabel}
