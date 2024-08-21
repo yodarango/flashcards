@@ -42,9 +42,7 @@ export const Toast = (props: TToast) => {
       className={`toast-04hl ${closeClass} ${cardClass} d-flex align-items-center justify-content-start gap-3 color-beta`}
       style={style}
     >
-      {icon && (
-        <span className={`icon icon-${icon} color-beta flex-shrink-0`} />
-      )}
+      {icon && <ion-icon name={icon} className={`color-beta flex-shrink-0`} />}
       <div className='w-100'>
         <div className='d-flex align-items-center justify-content-end column-gap-4'>
           <div className='w-100'>
@@ -53,7 +51,7 @@ export const Toast = (props: TToast) => {
           </div>
           <If condition={!!onClose}>
             <button className='btn-base flex-shrink-0' onClick={onClose}>
-              <span className='icon icon-close color-beta' />
+              <ion-icon name='close' className='color-beta' />
             </button>
           </If>
         </div>

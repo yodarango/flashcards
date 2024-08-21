@@ -33,9 +33,9 @@ export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
   );
 
   const cardGuessClass = isThisCardWronglyGuessed
-    ? "icon-close bg-danger color-beta"
+    ? "bg-danger color-beta"
     : isThisCardCorrectlyGuessed
-    ? "icon-checkmark bg-success color-beta"
+    ? "bg-success color-beta"
     : "";
 
   const cardGuessLabel = isThisCardWronglyGuessed
@@ -58,7 +58,7 @@ export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
             className='flashcard-actions action-left d-flex align-items-center justify-content-center'
             onClick={handlePreviousCard}
           >
-            <span className='icon icon-chevron-back-outline color-alpha' />
+            <ion-icon name='chevron-back-outline' className='color-alpha' />
           </button>
           <div
             className='flashcard-content d-flex align-items-center justify-content-start flex-column p-6'
@@ -84,7 +84,7 @@ export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
             className='flashcard-actions action-right d-flex align-items-center justify-content-center'
             onClick={handleNextCard}
           >
-            <span className='icon icon-chevron-forward-outline color-alpha' />
+            <ion-icon name='chevron-forward-outline' className='color-alpha' />
           </button>
         </div>
 
@@ -95,7 +95,7 @@ export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
             className='flashcard-actions action-left d-flex align-items-center justify-content-center'
             onClick={handlePreviousCard}
           >
-            <span className='icon icon-chevron-back-outline color-alpha' />
+            <ion-icon name='chevron-back-outline' className='color-alpha' />
           </button>
           <div className='flashcard-content p-6' ref={flashCardContentBack}>
             <div className='d-flex align-items-center justify-content-center column-gap-2 mb-2'>
@@ -118,7 +118,7 @@ export function FlashCard(props: HTMLAttributes<HTMLSelectElement>) {
             className='flashcard-actions action-right d-flex align-items-center justify-content-center'
             onClick={handleNextCard}
           >
-            <span className='icon icon-chevron-forward-outline color-alpha' />
+            <ion-icon name='chevron-forward-outline' className='color-alpha' />
           </button>
         </div>
       </div>
