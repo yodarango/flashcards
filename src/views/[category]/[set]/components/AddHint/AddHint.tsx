@@ -117,8 +117,8 @@ export const AddHint = (props: HTMLAttributes<HTMLDivElement>) => {
             }}
             primary
           >
-            <ion-icon name='eye-outline' className=' me-2' />
-            <span>View Hint</span>
+            <ion-icon name='eye-outline' />
+            <span className='ms-2'>View Hint</span>
           </Button>
           <Button
             className='w-100 d-flex align-items-center justify-center-center'
@@ -128,8 +128,10 @@ export const AddHint = (props: HTMLAttributes<HTMLDivElement>) => {
             }}
             secondary
           >
-            <ion-icon name='pencil-outline' className='me-2' />
-            <span>Edit Hint</span>
+            <span>
+              <ion-icon name='pencil-outline' />
+            </span>
+            <span className='ms-2'>Edit Hint</span>
           </Button>
         </div>
       </IfElse>

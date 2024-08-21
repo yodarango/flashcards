@@ -99,8 +99,8 @@ type TSparklesLoader = {
 const SparklesLoader = ({ children }: TSparklesLoader) => {
   return (
     <div className='loading-23nxo--sparkles d-flex align-items-center justify-content-center w-100'>
-      <div className='d-flex align-items-center justify-content-start flex-column'>
-        <ion-icon name='sparkles' className='color-alpha' />
+      <div className='d-flex align-items-center color-alpha justify-content-start flex-column'>
+        <ion-icon name='sparkles' />
         <IfElse condition={typeof children === "string"}>
           <p className='mt-2 text-center loader--label'>{children}</p>
           <div className='mt-2'>{children}</div>

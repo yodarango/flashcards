@@ -42,7 +42,11 @@ export const Toast = (props: TToast) => {
       className={`toast-04hl ${closeClass} ${cardClass} d-flex align-items-center justify-content-start gap-3 color-beta`}
       style={style}
     >
-      {icon && <ion-icon name={icon} className={`color-beta flex-shrink-0`} />}
+      {icon && (
+        <div className='color-beta flex-shrink-0'>
+          <ion-icon name={icon} />
+        </div>
+      )}
       <div className='w-100'>
         <div className='d-flex align-items-center justify-content-end column-gap-4'>
           <div className='w-100'>
@@ -50,8 +54,11 @@ export const Toast = (props: TToast) => {
             <p>{children}</p>
           </div>
           <If condition={!!onClose}>
-            <button className='btn-base flex-shrink-0' onClick={onClose}>
-              <ion-icon name='close' className='color-beta' />
+            <button
+              className='btn-base flex-shrink-0 color-beta'
+              onClick={onClose}
+            >
+              <ion-icon name='close' />
             </button>
           </If>
         </div>

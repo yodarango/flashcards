@@ -33,8 +33,8 @@ export const CardSetMeta = (props: HTMLAttributes<HTMLDivElement>) => {
     <div className={`cards-metta-20pt ${restOfProps}`} {...restOfProps}>
       <div className='d-flex align-items-center justify-content-between'>
         <Link to={`${categoryPath}`}>
-          <button className='m-0 p-0 bg-nu'>
-            <ion-icon name='chevron-back-outline' className='color-alpha' />
+          <button className='m-0 p-0 bg-nu color-alpha'>
+            <ion-icon name='chevron-back-outline' />
           </button>
         </Link>
         <h3 className='text-center mb-4'>{setName}</h3>

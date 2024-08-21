@@ -37,9 +37,9 @@ export const SectionalButton = (props: TSectionalButtonProps) => {
       {...rest}
     >
       <span>{label}</span>
-      <span className='d-inline-flex align-items-center justify-content-end gap-2'>
+      <span className='d-inline-flex color-alpha align-items-center justify-content-end gap-2'>
         <span>{value}</span>
-        <ion-icon name={icon} className={`color-alpha`} />
+        <ion-icon name={icon} />
       </span>
     </button>
   );

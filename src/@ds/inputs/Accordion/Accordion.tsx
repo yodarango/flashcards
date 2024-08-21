@@ -36,9 +36,9 @@ export const Accordion = (props: TAccordionProps) => {
   return (
     <div className={`accordion-11cn ${variantClass} ${className}`}>
       <details {...rest}>
-        <summary className='accordion-11cn__trigger d-flex align-items-center justify-content-between gap-2'>
+        <summary className='accordion-11cn__trigger color-alpha d-flex align-items-center justify-content-between gap-2'>
           <span>{label}</span>
-          <ion-icon name={icon} className={`color-alpha`} />
+          <ion-icon name={icon} />
         </summary>
         <div className={`accordion-11cn__content ${contentClassName}`}>
           {children}
