@@ -1,9 +1,10 @@
 # TODO
 
-- Change "by common phrases" to "by popularity"
+- I really don't need so many cards, come up with a plan where I can have the "by category" and only one for the other that acomodates to my Spanish Class. I may alos leave duolingo's in place, who knows
 
 * Eventually, I need to separate each language into its on array. This will allow me to include more languages without having to load them both in the same object, which will get quite BIG!
 * The array containing the terms should be called _words_ or _terms_ not _set_. Change this so in the future i can differentiate between an array that is an array of terms and an array of sets.
+* I need to create a building process that will change all the env variables like `const ROUTE_HOME` at compile time and copy it to the corresponding shrood app dir
 
   ### Structure
 

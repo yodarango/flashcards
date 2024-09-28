@@ -7,6 +7,7 @@
 
 import { ByPopularity } from "../components/ByPopularity";
 import { ByCategory } from "../components/ByCategory";
+import { LOCAL_STORAGE_KEY } from "@constants";
 import { useParams } from "react-router-dom";
 import { IfElse } from "@ds";
 
@@ -22,7 +23,7 @@ export const Layout = () => {
 
   // every time a user lands here, make sure that the local storage is cleared
   // to avoid any data that may have been stored from the previous session
-  localStorage.removeItem("shrood__polynguo");
+  localStorage.removeItem(LOCAL_STORAGE_KEY);
 
   return (
     <div className='layout-select-category-39hh'>
